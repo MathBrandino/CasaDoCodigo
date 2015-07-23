@@ -23,6 +23,7 @@ public class LivroConverter {
     private final String VALOR_FISICO = "valorFisico";
     private final String VALOR_VIRTUAL = "valorVirtual";
     private final String VALOR_VIRTUAL_COM_FISICO = "valorVirtualComFisico";
+    private final String URL_IMAGEM = "imagemUrl";
 
     public List<Livro> fromJson(String json) throws JSONException {
 
@@ -61,6 +62,7 @@ public class LivroConverter {
         livro.setValorFisico(objectLivro.getDouble(VALOR_FISICO));
         livro.setValorVirtual(objectLivro.getDouble(VALOR_VIRTUAL));
         livro.setValorDoisJuntos(objectLivro.getDouble(VALOR_VIRTUAL_COM_FISICO));
+        livro.setImagemUrl(objectLivro.getString(URL_IMAGEM));
 
         return livro;
     }

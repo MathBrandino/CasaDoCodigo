@@ -1,6 +1,7 @@
 package br.com.caelum.casadocodigo.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,9 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +40,7 @@ public class LivroActivity extends AppCompatActivity {
         }
 
         ImageView imageView = (ImageView) findViewById(R.id.imagem_livro_desc);
-        imageView.setImageResource(R.drawable.games_android_featured_large);
+        Picasso.with(this).load(Uri.parse(livro.getImagemUrl())).into(imageView);
 
         TextView nomeLivro = (TextView) findViewById(R.id.nome_livro_detalhe);
         nomeLivro.setText(livro.getNomeLivro());

@@ -9,7 +9,8 @@
       "valorFisico": 59.9,
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
-      "ISBN": "978-85-5519-013-1"
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/games-android-miniature.png"
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
       "valorFisico": 59.9,
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
-      "ISBN": "978-85-5519-013-1"
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/spring-mvc-miniature.png?"
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "valorFisico": 59.9,
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
-      "ISBN": "978-85-5519-013-1"
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/testes-de-software-miniature.png"
     },
     {
       "id": 4,
@@ -42,7 +45,44 @@
       "valorFisico": 59.9,
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
-      "ISBN": "978-85-5519-013-1"
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/plsql-featured_medium.png"
+    },
+    {
+      "id": 5,
+      "nomeLivro": "Controlando versões com Git e GitHub",
+      "descricaoLivro": "Desenvolver software não é fácil. Há sempre demandas de novas funcionalidades a serem desenvolvidas e de alterações nas funcionalidades já existentes. Por isso, uma das preocupações nos projetos é manter um histórico de evolução do código fonte, facilitando o trabalho de desfazer algumas dessas alterações, caso seja necessário. Além disso, como geralmente trabalhamos em equipe, outra preocupação é sobre a integração do trabalho entre os membros da equipe. Diversos problemas relacionados com essas preocupações podem acontecer durante o desenvolvimento de um software, e, para evitá-los, é essencial a utilização de uma ferramenta de controle de versão.  O Git é uma dessas ferramentas de controle de versão. Foi criado em 2005 por Linus Torvalds, o criador do Linux, e hoje é uma das ferramentas de controle de versão mais utilizadas nos projetos de desenvolvimento de software, por ser mais rápido e eficiente do que as outras ferramentas tradicionais, como CVS e SVN.  Já o GitHub é um serviço web que nos permite hospedar repositórios de projetos que utilizam o Git, facilitando, assim, o trabalho em equipe e a colaboração com projetos open source. ",
+      "dataPublicacao": " 08/2014",
+      "numeroPaginas": 199,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/git-github-miniature.png"
+    },
+    {
+      "id": 6,
+      "nomeLivro": "Scrum 360: Um guia completo e prático de agilidade",
+      "descricaoLivro": "Trabalhar com agilidade não é fácil. Fazer com que um time inteiro trabalhe de forma ágil, entregando resultados, produzindo de forma plena e sem impedimentos é muito mais difícil. Justamente para isso temos o Scrum, uma metodologia para gerenciamento de projetos que o torna produtivo.  Nesse livro, Jorge Audy vai ensinar de forma objetiva e prática a metodologia, mostrando como ela se cruza com outras práticas, como XP, PMBOK, Lean. Além de também formar no leitor a base dos princípios ágeis, pré-requisito para qualquer gerente de projetos do mercado contemporâneo.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/scrum360-miniature.png?"
+    },
+    {
+      "id": 7,
+      "nomeLivro": "Swift: Programe para iPhone e iPad",
+      "descricaoLivro": "Desenvolver aplicativos para iPhone e iPad nunca foi tão prazeroso. Com a nova linguagem da Apple (Swift) e com a recente versão do iOS, o desenvolvimento se torna descomplicado, pois há uma nova gama de recursos disponíveis que mantêm a clássica elegância da principal plataforma mobile do mundo.  Programadores do mundo inteiro estão aprendendo a programar para iOS com Swift. Nesse livro, Guilherme Silveira e Joviane Jardim vão ensinar como entrar nesse universo e criar sua aplicação, do início ao fim, aprendendo os recursos da nova linguagem e do novo iOS, usando várias boas práticas de programação de quebra.",
+      "dataPublicacao": " 12/2014",
+      "numeroPaginas": 261,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/swift-ios-miniature.png"
     }
   ]
 }

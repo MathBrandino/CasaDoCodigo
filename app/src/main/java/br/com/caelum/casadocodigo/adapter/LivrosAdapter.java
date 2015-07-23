@@ -2,7 +2,9 @@ package br.com.caelum.casadocodigo.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.view.ActionMode;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -10,6 +12,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.net.URI;
+import java.net.URL;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
@@ -31,6 +38,7 @@ public class LivrosAdapter extends BaseAdapter {
         this.activity = activity;
 
     }
+
 
     private class ViewHolder{
 
@@ -103,10 +111,12 @@ public class LivrosAdapter extends BaseAdapter {
         TextView descricaoLivro = holder.descricaoLivro;
         Button adicionarCarrinho = holder.adicionarCarrinho;
 
-        if (position % 2 == 0) {
-            imagemLivro.setImageResource(R.drawable.games_android_featured_large);
-        } else {
-            imagemLivro.setImageResource(R.drawable.plsql_featured_large);
+        if (livro.getImagemUrl() != null) {
+
+            Picasso.with(activity).
+                    load(livro.getImagemUrl()).
+                    fit().
+                    into(imagemLivro);
         }
 
         nomeLivro.setText(livro.getNomeLivro());

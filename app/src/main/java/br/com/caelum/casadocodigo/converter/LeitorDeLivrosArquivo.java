@@ -38,7 +38,6 @@ public class LeitorDeLivrosArquivo implements LeitorDeLivros {
         try {
             while ((line = bufferedReader.readLine()) != null){
                 json += line;
-                Log.i("JSON", json);
             }
         } catch (IOException e) {
             e.printStackTrace();
