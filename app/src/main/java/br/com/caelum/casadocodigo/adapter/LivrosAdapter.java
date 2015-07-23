@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -127,7 +128,21 @@ public class LivrosAdapter extends BaseAdapter {
         adicionarCarrinho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(activity).setMessage("Voce comprou : " + livro.getNomeLivro()).show();
+
+                final View alertView = View.inflate(activity, R.layout.opcao_compra, null);
+
+                RadioButton virtual = (RadioButton) alertView.findViewById(R.id.valor_virtual);
+                virtual.setText("Virtual : R$ " + livro.getValorVirtual());
+
+                RadioButton fisico = (RadioButton) alertView.findViewById(R.id.valor_fisico);
+                fisico.setText("Fisico : R$ " + livro.getValorFisico());
+
+                RadioButton juntos = (RadioButton) alertView.findViewById(R.id.valor_juntos);
+                juntos.setText("Juntos : R$ " + livro.getValorDoisJuntos());
+
+
+
+                new AlertDialog.Builder(activity).setView(alertView).setTitle(livro.getNomeLivro()).show();
             }
         });
 
