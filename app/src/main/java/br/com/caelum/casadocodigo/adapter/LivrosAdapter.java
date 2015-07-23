@@ -23,11 +23,30 @@ public class LivrosAdapter extends BaseAdapter {
 
     private List<Livro> livros;
     private Activity activity;
-
     public LivrosAdapter(List<Livro> livros, Activity activity) {
 
         this.livros = livros;
         this.activity = activity;
+
+    }
+
+    private class ViewHolder{
+
+        final TextView nomeLivro;
+        final TextView descricaoLivro;
+        final Button adicionarCarrinho;
+        final ImageView imagemLivro;
+
+
+        public ViewHolder(View view) {
+
+            nomeLivro = (TextView) view.findViewById(R.id.nome_livro);
+            descricaoLivro = (TextView) view.findViewById(R.id.desc_livro);
+            adicionarCarrinho = (Button) view.findViewById(R.id.botao_comprar);
+            imagemLivro = (ImageView) view.findViewById(R.id.imagem_livro);
+
+        }
+
 
     }
 
@@ -46,33 +65,54 @@ public class LivrosAdapter extends BaseAdapter {
         return livros.get(position).getId();
     }
 
+
+    @Override
+    public int getViewTypeCount() {
+        return 2;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position % 2;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view;
-        if(position % 2 == 0){
-            view = View.inflate(activity, R.layout.livro_item, null);
-        }else {
-            view = View.inflate(activity, R.layout.livro_item_impar, null);
+        ViewHolder holder;
+
+        if (convertView != null) {
+            view = convertView;
+            holder = (ViewHolder) view.getTag();
+        } else {
+            if (position % 2 == 0) {
+                view = View.inflate(activity, R.layout.livro_item, null);
+            } else {
+                view = View.inflate(activity, R.layout.livro_item_impar, null);
+            }
+            holder = new ViewHolder(view);
+            view.setTag(holder);
         }
 
         final Livro livro = (Livro) getItem(position);
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.imagem_livro);
-        if(position % 2 == 0){
-            imageView.setImageResource(R.drawable.games_android_featured_large);
-        }else {
-            imageView.setImageResource(R.drawable.plsql_featured_large);
+        ImageView imagemLivro = holder.imagemLivro;
+        TextView nomeLivro =  holder.nomeLivro;
+        TextView descricaoLivro = holder.descricaoLivro;
+        Button adicionarCarrinho = holder.adicionarCarrinho;
+
+        if (position % 2 == 0) {
+            imagemLivro.setImageResource(R.drawable.games_android_featured_large);
+        } else {
+            imagemLivro.setImageResource(R.drawable.plsql_featured_large);
         }
-        TextView nomeLivro = (TextView) view.findViewById(R.id.nome_livro);
-        TextView descLivro = (TextView) view.findViewById(R.id.desc_livro);
 
         nomeLivro.setText(livro.getNomeLivro());
-        descLivro.setText(livro.getDescricaoLivro());
+        descricaoLivro.setText(livro.getDescricaoLivro());
 
-        Button comprar = (Button) view.findViewById(R.id.botao_comprar);
-        comprar.setText("Comprar");
+        adicionarCarrinho.setText("Comprar");
 
-        comprar.setOnClickListener(new View.OnClickListener() {
+        adicionarCarrinho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(activity).setMessage("Voce comprou : " + livro.getNomeLivro()).show();
