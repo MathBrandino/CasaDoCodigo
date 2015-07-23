@@ -21,8 +21,10 @@ import br.com.caelum.casadocodigo.modelo.Livro;
  */
 public class LivrosAdapter extends BaseAdapter {
 
+    private final String LIVRO = "livro";
     private List<Livro> livros;
     private Activity activity;
+
     public LivrosAdapter(List<Livro> livros, Activity activity) {
 
         this.livros = livros;
@@ -110,7 +112,7 @@ public class LivrosAdapter extends BaseAdapter {
         nomeLivro.setText(livro.getNomeLivro());
         descricaoLivro.setText(livro.getDescricaoLivro());
 
-        adicionarCarrinho.setText("Comprar");
+        adicionarCarrinho.setText(view.getResources().getString(R.string.comprar));
 
         adicionarCarrinho.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +125,7 @@ public class LivrosAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent mostraLivro = new Intent(activity, LivroActivity.class);
-                mostraLivro.putExtra("livro", livro);
+                mostraLivro.putExtra(LIVRO, livro);
                 activity.startActivity(mostraLivro);
             }
         });

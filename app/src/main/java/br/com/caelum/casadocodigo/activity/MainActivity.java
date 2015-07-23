@@ -1,17 +1,17 @@
 package br.com.caelum.casadocodigo.activity;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.LivrosAdapter;
+import br.com.caelum.casadocodigo.converter.LeitorDeLivros;
+import br.com.caelum.casadocodigo.factory.LeitorDeLivrosFactory;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+/*
         Livro l1 = new Livro();
         l1.setNomeLivro("Jogos Android: Crie um game do zero usando classes nativas");
         l1.setDescricaoLivro("195, 300, 800 milhões de dólares!!! Essas são as cifras por trás dos jogos Angry Birds, Candy Crush e Clash of Clans. Quer pensar em cifras menores? Que tal 120 mil reais por dia? Foi o que Flappy Bird chegou a faturar. Pois é, já pensou em trabalhar com algo criativo, divertido e recompensador? Desenvolver jogos pode ser assim.   Neste livro, Felipe Torres mostra como criar um jogo do zero sem usar frameworks e discute as vantagens e desvantagens dessa abordagem usada pelo criador de Flappy Bird. Usando a linguagem Java, você vai desenvolver um jogo para Android e entender de fato como funciona a criação de jogos através da óptica do desenvolvedor e terá mais confiança e informação para decidir os caminhos do que esperamos. Seja o novo jogo viral do mercado!");
@@ -59,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
         livros.add(l5);
         livros.add(l6);
         livros.add(l7);
+*/
+
+
+        LeitorDeLivros leitorDeLivros = LeitorDeLivrosFactory.getLeitorDeLivros(this);
+
+        List<Livro> livros = leitorDeLivros.devolveLista();
+
+
 
         ListView lista = (ListView) findViewById(R.id.lista_livros);
 
