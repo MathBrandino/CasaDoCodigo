@@ -22,6 +22,7 @@ import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.activity.LivroActivity;
+import br.com.caelum.casadocodigo.listener.ListenerComprar;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -139,6 +140,11 @@ public class LivrosAdapter extends BaseAdapter {
 
                 RadioButton juntos = (RadioButton) alertView.findViewById(R.id.valor_juntos);
                 juntos.setText("Juntos : R$ " + livro.getValorDoisJuntos());
+
+                Button comprar = (Button) alertView.findViewById(R.id.botao_comprar_livro_alert);
+                comprar.setOnClickListener(new ListenerComprar(activity));
+
+
 
 
 

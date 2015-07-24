@@ -63,6 +63,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal|center"
                 android:layout_height="wrap_content"
+                android:text="@string/comprar"
                 android:id="@+id/botao_comprar_livro"/>
 
         </LinearLayout>
