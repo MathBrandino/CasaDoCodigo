@@ -5,6 +5,7 @@ import android.app.Activity;
 import br.com.caelum.casadocodigo.converter.LeitorDeLivros;
 import br.com.caelum.casadocodigo.converter.LeitorDeLivrosArquivo;
 import br.com.caelum.casadocodigo.converter.LeitorDeLivrosHardCode;
+import br.com.caelum.casadocodigo.converter.OnlyOpenRawResource;
 
 /**
  * Created by matheus on 23/07/15.
@@ -13,9 +14,9 @@ public class LeitorDeLivrosFactory {
 
     public static LeitorDeLivros getLeitorDeLivros(Activity activity){
 
-        LeitorDeLivros leitorDeLivros = new LeitorDeLivrosArquivo(activity);
-
-        //LeitorDeLivros leitorDeLivros = new LeitorDeLivrosHardCode();
+        LeitorDeLivros leitorDeLivros = new LeitorDeLivrosArquivo(new OnlyOpenRawResource(activity.getResources()));
+        //um jeito de fazer if baseado no ambiente
+       // LeitorDeLivros leitorDeLivros = new LeitorDeLivrosHardCode();
 
 
         return leitorDeLivros;

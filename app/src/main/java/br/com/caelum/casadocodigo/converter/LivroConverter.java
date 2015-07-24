@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.caelum.casadocodigo.modelo.Autor;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -24,6 +25,12 @@ public class LivroConverter {
     private final String VALOR_VIRTUAL = "valorVirtual";
     private final String VALOR_VIRTUAL_COM_FISICO = "valorVirtualComFisico";
     private final String URL_IMAGEM = "imagemUrl";
+    private final String ID_AUTOR = "idAutor";
+    private final String NOME_AUTOR = "nomeAutor";
+    private final String DETALHES_AUTOR = "detalhesAutor";
+    private final String IMAGEM_AUTOR = "imagemAutor";
+    private final String AUTORES = "autores";
+    private final String LIVROS = "livros";
 
     public List<Livro> fromJson(String json) throws JSONException {
 
@@ -32,22 +39,41 @@ public class LivroConverter {
         if (json != null) {
 
 
-            JSONObject jsonObject = new JSONObject(json);
-            JSONArray jsonArray = jsonObject.getJSONArray("livros");
+            JSONObject jsonObjectTodosLivros = new JSONObject(json);
+            JSONArray jsonArrayLivros = jsonObjectTodosLivros.getJSONArray(LIVROS);
 
-            int nLivros = jsonArray.length();
+            int nLivros = jsonArrayLivros.length();
             for (int i = 0; i < nLivros; i++) {
 
-                JSONObject objectLivro = jsonArray.getJSONObject(i);
+                JSONObject objectLivro = jsonArrayLivros.getJSONObject(i);
 
                 Livro livro = geraLivroPorJSONObject(objectLivro);
+
+                List<Autor> autores = getAutores(objectLivro);
+
+                livro.setAutores(autores);
 
                 livros.add(livro);
             }
         }
         return livros;
+    }
 
+    private List<Autor> getAutores(JSONObject objectLivro) throws JSONException {
+        List<Autor> autors = new ArrayList<>();
 
+        JSONArray jsonArrayAutores = objectLivro.getJSONArray(AUTORES);
+
+        int nAutores = jsonArrayAutores.length();
+        for (int j = 0; j < nAutores; j++) {
+
+            JSONObject objectAutor = jsonArrayAutores.getJSONObject(j);
+
+            Autor autor = geraAutorPorJSONObjetct(objectAutor);
+
+            autors.add(autor);
+        }
+        return autors;
     }
 
     private Livro geraLivroPorJSONObject(JSONObject objectLivro) throws JSONException {
@@ -64,8 +90,20 @@ public class LivroConverter {
         livro.setValorDoisJuntos(objectLivro.getDouble(VALOR_VIRTUAL_COM_FISICO));
         livro.setImagemUrl(objectLivro.getString(URL_IMAGEM));
 
+
+
         return livro;
     }
 
 
+    private Autor geraAutorPorJSONObjetct(JSONObject objectAutor) throws JSONException {
+        Autor autor = new Autor();
+
+        autor.setIdAutor(objectAutor.getLong(ID_AUTOR));
+        autor.setNomeAutor(objectAutor.getString(NOME_AUTOR));
+        autor.setDetalhesAutor(objectAutor.getString(DETALHES_AUTOR));
+        autor.setImagemAutorUrl(objectAutor.getString(IMAGEM_AUTOR));
+
+        return autor;
+    }
 }

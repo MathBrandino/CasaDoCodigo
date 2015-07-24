@@ -10,7 +10,15 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/games-android-miniature.png"
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/games-android-miniature.png",
+      "autores": [
+        {
+          "idAutor": 1,
+          "nomeAutor": "Felipe",
+          "detalhesAutor": "Felipe é magro",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        }
+      ]
     },
     {
       "id": 2,
@@ -22,7 +30,15 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/spring-mvc-miniature.png?"
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/spring-mvc-miniature.png?",
+      "autores": [
+        {
+          "idAutor": 1,
+          "nomeAutor": "Felipe",
+          "detalhesAutor": "Felipe é magro",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        }
+      ]
     },
     {
       "id": 3,
@@ -34,7 +50,15 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/testes-de-software-miniature.png"
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/testes-de-software-miniature.png",
+      "autores": [
+        {
+          "idAutor": 1,
+          "nomeAutor": "Felipe",
+          "detalhesAutor": "Felipe é magro",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        }
+      ]
     },
     {
       "id": 4,
@@ -46,7 +70,15 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/plsql-featured_medium.png"
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/plsql-featured_medium.png",
+      "autores": [
+        {
+          "idAutor": 1,
+          "nomeAutor": "Felipe",
+          "detalhesAutor": "Felipe é magro",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        }
+      ]
     },
     {
       "id": 5,
@@ -58,7 +90,15 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/git-github-miniature.png"
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/git-github-miniature.png",
+      "autores": [
+        {
+          "idAutor": 1,
+          "nomeAutor": "Felipe",
+          "detalhesAutor": "Felipe é magro",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        }
+      ]
     },
     {
       "id": 6,
@@ -70,7 +110,15 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/scrum360-miniature.png?"
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/scrum360-miniature.png?",
+      "autores": [
+        {
+          "idAutor": 1,
+          "nomeAutor": "Felipe",
+          "detalhesAutor": "Felipe é magro",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        }
+      ]
     },
     {
       "id": 7,
@@ -82,7 +130,15 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/swift-ios-miniature.png"
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/swift-ios-miniature.png",
+      "autores": [
+        {
+          "idAutor": 1,
+          "nomeAutor": "Felipe",
+          "detalhesAutor": "Felipe é magro",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        }
+      ]
     }
   ]
 }

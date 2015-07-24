@@ -1,7 +1,5 @@
 package br.com.caelum.casadocodigo.converter;
 
-import android.app.Activity;
-import android.util.Log;
 
 import org.json.JSONException;
 
@@ -20,15 +18,16 @@ import br.com.caelum.casadocodigo.modelo.Livro;
  */
 public class LeitorDeLivrosArquivo implements LeitorDeLivros {
 
-    private Activity activity;
+    private OnlyOpenRawResource resource;
 
-    public LeitorDeLivrosArquivo(Activity activity) {
-        this.activity = activity;
+    public LeitorDeLivrosArquivo(OnlyOpenRawResource resources) {
+        this.resource = resources;
     }
 
     private String leArquivo(){
 
-        InputStream inputStream = activity.getResources().openRawResource(R.raw.listalivros);
+
+        InputStream inputStream = resource.openRawResource(R.raw.listalivros);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 

@@ -23,6 +23,7 @@ import java.util.List;
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.activity.LivroActivity;
 import br.com.caelum.casadocodigo.listener.ListenerComprar;
+import br.com.caelum.casadocodigo.listener.ListenerMenuCompra;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -90,67 +91,13 @@ public class LivrosAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view;
-        ViewHolder holder;
 
-        if (convertView != null) {
-            view = convertView;
-            holder = (ViewHolder) view.getTag();
-        } else {
-            if (position % 2 == 0) {
-                view = View.inflate(activity, R.layout.livro_item, null);
-            } else {
-                view = View.inflate(activity, R.layout.livro_item_impar, null);
-            }
-            holder = new ViewHolder(view);
-            view.setTag(holder);
-        }
+        View view = criaView(position, convertView);
+
 
         final Livro livro = (Livro) getItem(position);
 
-        ImageView imagemLivro = holder.imagemLivro;
-        TextView nomeLivro =  holder.nomeLivro;
-        TextView descricaoLivro = holder.descricaoLivro;
-        Button adicionarCarrinho = holder.adicionarCarrinho;
-
-        if (livro.getImagemUrl() != null) {
-
-            Picasso.with(activity).
-                    load(livro.getImagemUrl()).
-                    fit().
-                    into(imagemLivro);
-        }
-
-        nomeLivro.setText(livro.getNomeLivro());
-        descricaoLivro.setText(livro.getDescricaoLivro());
-
-        adicionarCarrinho.setText(view.getResources().getString(R.string.comprar));
-
-        adicionarCarrinho.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                final View alertView = View.inflate(activity, R.layout.opcao_compra, null);
-
-                RadioButton virtual = (RadioButton) alertView.findViewById(R.id.valor_virtual);
-                virtual.setText("Virtual : R$ " + livro.getValorVirtual());
-
-                RadioButton fisico = (RadioButton) alertView.findViewById(R.id.valor_fisico);
-                fisico.setText("Fisico : R$ " + livro.getValorFisico());
-
-                RadioButton juntos = (RadioButton) alertView.findViewById(R.id.valor_juntos);
-                juntos.setText("Juntos : R$ " + livro.getValorDoisJuntos());
-
-                Button comprar = (Button) alertView.findViewById(R.id.botao_comprar_livro_alert);
-                comprar.setOnClickListener(new ListenerComprar(activity));
-
-
-
-
-
-                new AlertDialog.Builder(activity).setView(alertView).setTitle(livro.getNomeLivro()).show();
-            }
-        });
+        populaView(view, livro);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,6 +108,47 @@ public class LivrosAdapter extends BaseAdapter {
             }
         });
 
+        return view;
+    }
+
+    private void populaView(View view, final Livro livro) {
+        ViewHolder holder = (ViewHolder) view.getTag();
+
+        ImageView imagemLivro = holder.imagemLivro;
+        TextView nomeLivro =  holder.nomeLivro;
+        TextView descricaoLivro = holder.descricaoLivro;
+        Button adicionarCarrinho = holder.adicionarCarrinho;
+
+        if (livro.getImagemUrl() != null) {
+
+            Picasso.with(activity).
+                    load(livro.getImagemUrl()).
+                    into(imagemLivro);
+        }
+
+        nomeLivro.setText(livro.getNomeLivro());
+        descricaoLivro.setText(livro.getDescricaoLivro());
+
+        adicionarCarrinho.setText(view.getResources().getString(R.string.comprar));
+
+        adicionarCarrinho.setOnClickListener(new ListenerMenuCompra(activity, livro));
+    }
+
+    private View criaView(int position, View convertView) {
+        View view;ViewHolder holder;
+
+
+        if (convertView != null) {
+            view = convertView;
+        } else {
+            if (position % 2 == 0) {
+                view = View.inflate(activity, R.layout.livro_item, null);
+            } else {
+                view = View.inflate(activity, R.layout.livro_item_impar, null);
+            }
+            holder = new ViewHolder(view);
+            view.setTag(holder);
+        }
         return view;
     }
 }

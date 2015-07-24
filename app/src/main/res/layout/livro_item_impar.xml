@@ -7,6 +7,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:paddingRight="3sp"
         android:layout_weight="3"
         android:orientation="vertical">
 
@@ -25,19 +26,13 @@
             android:layout_weight="1"
             android:id="@+id/desc_livro"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+        <Button
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/botao_comprar"/>
 
-            <Button
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/botao_comprar"/>
-
-        </LinearLayout>
 
 
 

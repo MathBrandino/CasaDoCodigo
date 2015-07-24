@@ -2,6 +2,7 @@ package br.com.caelum.casadocodigo.modelo;
 
 import java.io.Serializable;
 import java.net.URL;
+import java.util.List;
 
 /**
  * Created by matheus on 22/07/15.
@@ -18,6 +19,16 @@ public class Livro implements Serializable {
     private double valorDoisJuntos;
     private long id;
     private String imagemUrl;
+    private List<Autor> autores;
+
+
+    public List<Autor> getAutores() {
+        return autores;
+    }
+
+    public void setAutores(List<Autor> autores) {
+        this.autores = autores;
+    }
 
     public String getImagemUrl() {
         return imagemUrl;

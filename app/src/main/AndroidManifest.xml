@@ -7,7 +7,8 @@
         android:allowBackup="true"
         android:icon="@drawable/casadocodigo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:name=".aplication.CasaDoCodigoStore">
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name">
