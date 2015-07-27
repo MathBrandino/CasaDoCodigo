@@ -60,7 +60,15 @@ public class LivroAutorAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View view = activity.getLayoutInflater().inflate(R.layout.listagem_autor_livro, parent , false);
+        View view;
+        if (convertView != null) {
+            view = convertView;
+        } else {
+
+            view = activity.getLayoutInflater().inflate(R.layout.listagem_autor_livro, parent, false);
+
+        }
+
 
         ViewHolder holder = new ViewHolder(view);
 

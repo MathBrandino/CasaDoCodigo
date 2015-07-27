@@ -12,6 +12,7 @@ import java.util.concurrent.Callable;
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.TipoDeCompra;
 import br.com.caelum.casadocodigo.activity.MainActivity;
+import br.com.caelum.casadocodigo.auxiliador.Auxiliador;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -63,23 +64,11 @@ public class ListenerMenuCompra implements View.OnClickListener {
 
         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
 
-        switch (radioGroup.getCheckedRadioButtonId()){
+        Auxiliador auxiliador = new Auxiliador();
 
-            case (R.id.valor_virtual):
-                tipoDeCompra = TipoDeCompra.VIRTUAL;
-                return tipoDeCompra;
+        tipoDeCompra =  auxiliador.auxilia(radioGroup);
 
-            case (R.id.valor_fisico):
-                tipoDeCompra = TipoDeCompra.FISICO;
-                return tipoDeCompra;
-
-            case (R.id.valor_juntos):
-                tipoDeCompra = TipoDeCompra.JUNTOS;
-                return tipoDeCompra;
-
-            default:
-                return null;
-        }
+        return tipoDeCompra;
     };
 
 

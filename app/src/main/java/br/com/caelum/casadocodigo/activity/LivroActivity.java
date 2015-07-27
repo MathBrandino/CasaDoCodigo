@@ -17,6 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.TipoDeCompra;
+import br.com.caelum.casadocodigo.auxiliador.Auxiliador;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
 import br.com.caelum.casadocodigo.listener.ListenerComprarPeloDetalhe;
 import br.com.caelum.casadocodigo.modelo.Livro;
@@ -177,25 +178,12 @@ public class LivroActivity extends AppCompatActivity {
 
         RadioGroup radioGroup = holder.radioGroup;
 
-        switch (radioGroup.getCheckedRadioButtonId()){
+        Auxiliador auxiliador = new Auxiliador();
 
-            case (R.id.valor_virtual):
-                tipoDeCompra = TipoDeCompra.VIRTUAL;
-                return tipoDeCompra;
-
-            case (R.id.valor_fisico):
-                tipoDeCompra = TipoDeCompra.FISICO;
-                return tipoDeCompra;
-
-            case (R.id.valor_juntos):
-                tipoDeCompra = TipoDeCompra.JUNTOS;
-                return tipoDeCompra;
-
-            default:
-                return null;
-        }
+        tipoDeCompra = auxiliador.auxilia(radioGroup);
 
 
+        return tipoDeCompra;
 
     };
 }

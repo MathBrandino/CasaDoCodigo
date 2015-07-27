@@ -63,7 +63,7 @@ public class CarrinhoAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
-        View view = View.inflate(activity, R.layout.item_carrinho,null);
+        View view = criaView(convertView);
 
         Livro livro = (Livro) getItem(position);
 
@@ -75,6 +75,18 @@ public class CarrinhoAdapter extends BaseAdapter {
 
 
 
+        return view;
+    }
+
+    private View criaView(View convertView) {
+        View view;
+
+
+        if (convertView != null){
+            view = convertView;
+        }else {
+            view = View.inflate(activity, R.layout.item_carrinho,null);
+        }
         return view;
     }
 
