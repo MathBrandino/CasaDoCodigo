@@ -2,27 +2,20 @@ package br.com.caelum.casadocodigo.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.view.ActionMode;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
-import java.net.URI;
-import java.net.URL;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.activity.LivroActivity;
-import br.com.caelum.casadocodigo.listener.ListenerComprar;
+import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.listener.ListenerMenuCompra;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -33,9 +26,9 @@ public class LivrosAdapter extends BaseAdapter {
 
     private final String LIVRO = "livro";
     private List<Livro> livros;
-    private Activity activity;
+    private MainActivity activity;
 
-    public LivrosAdapter(List<Livro> livros, Activity activity) {
+    public LivrosAdapter(List<Livro> livros, MainActivity activity) {
 
         this.livros = livros;
         this.activity = activity;

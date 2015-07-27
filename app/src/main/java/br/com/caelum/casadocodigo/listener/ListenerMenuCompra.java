@@ -5,18 +5,23 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
+import java.util.concurrent.Callable;
 
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.TipoDeCompra;
+import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
  * Created by matheus on 24/07/15.
  */
 public class ListenerMenuCompra implements View.OnClickListener {
-    private Activity activity;
+    private MainActivity activity;
     private Livro livro;
 
-    public ListenerMenuCompra(Activity activity, Livro livro) {
+    public ListenerMenuCompra(MainActivity activity, Livro livro) {
         this.activity = activity;
         this.livro = livro;
     }
@@ -24,6 +29,7 @@ public class ListenerMenuCompra implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         final View alertView = View.inflate(activity, R.layout.opcao_compra, null);
+
 
         RadioButton virtual = (RadioButton) alertView.findViewById(R.id.valor_virtual);
         virtual.setText("Virtual : R$ " + livro.getValorVirtual());
@@ -33,14 +39,50 @@ public class ListenerMenuCompra implements View.OnClickListener {
 
         RadioButton juntos = (RadioButton) alertView.findViewById(R.id.valor_juntos);
         juntos.setText("Juntos : R$ " + livro.getValorDoisJuntos());
-
-        Button comprar = (Button) alertView.findViewById(R.id.botao_comprar_livro_alert);
-        comprar.setOnClickListener(new ListenerComprar(activity));
-
-
-
+        juntos.toggle();
 
 
         new AlertDialog.Builder(activity).setView(alertView).setTitle(livro.getNomeLivro()).show();
+
+
+        Button comprar = (Button) alertView.findViewById(R.id.botao_comprar_livro_alert);
+
+        comprar.setOnClickListener(new ListenerComprarPeloMain(this, livro, activity, new Callable<TipoDeCompra>(){
+
+            @Override
+            public TipoDeCompra call() throws Exception {
+                return getTipoDeCompra(alertView);
+            }
+        }));
+
     }
+
+    public TipoDeCompra getTipoDeCompra(View view){
+
+        TipoDeCompra tipoDeCompra = null;
+
+        RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
+
+        switch (radioGroup.getCheckedRadioButtonId()){
+
+            case (R.id.valor_virtual):
+                tipoDeCompra = TipoDeCompra.VIRTUAL;
+                return tipoDeCompra;
+
+            case (R.id.valor_fisico):
+                tipoDeCompra = TipoDeCompra.FISICO;
+                return tipoDeCompra;
+
+            case (R.id.valor_juntos):
+                tipoDeCompra = TipoDeCompra.JUNTOS;
+                return tipoDeCompra;
+
+            default:
+                return null;
+        }
+    };
+
+
+
+
 }

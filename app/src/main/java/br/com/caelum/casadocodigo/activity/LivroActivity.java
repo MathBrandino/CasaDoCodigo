@@ -6,34 +6,38 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.TipoDeCompra;
-import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
-import br.com.caelum.casadocodigo.listener.ListenerComprar;
+import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
+import br.com.caelum.casadocodigo.listener.ListenerComprarPeloDetalhe;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 
 public class LivroActivity extends AppCompatActivity {
 
+    private final String LIVRO = "livro";
     private Livro livro;
 
     private class ViewHolder {
 
         final TextView nomeLivro;
+        final TextView nomeAutor;
         final TextView descricaoLivro;
         final Button adicionarCarrinho;
         final ImageView imagemLivro;
         final RadioButton virtual;
         final RadioButton fisico;
         final RadioButton juntos;
+        final RadioGroup radioGroup;
 
         public ViewHolder(){
 
@@ -44,6 +48,8 @@ public class LivroActivity extends AppCompatActivity {
             virtual = (RadioButton) findViewById(R.id.valor_virtual);
             fisico = (RadioButton) findViewById(R.id.valor_fisico);
             juntos = (RadioButton) findViewById(R.id.valor_juntos);
+            nomeAutor = (TextView) findViewById(R.id.autor_livro);
+            radioGroup = (RadioGroup) findViewById(R.id.radio_group);
 
         }
     }
@@ -66,7 +72,11 @@ public class LivroActivity extends AppCompatActivity {
         populaFormaPagmento(holder);
 
 
+
+
+
     }
+
 
     private void populaLivro(ViewHolder holder) {
         ImageView imagemLivro = holder.imagemLivro;
@@ -78,11 +88,40 @@ public class LivroActivity extends AppCompatActivity {
         TextView nomeLivro = holder.nomeLivro;
         nomeLivro.setText(livro.getNomeLivro());
 
+        TextView autorLivro = holder.nomeAutor;
+
+        String nomes = "";
+
+        for (int i = 0; i < livro.getAutores().size(); i++) {
+
+            if (i  == livro.getAutores().size() -1 ){
+                nomes += livro.getAutores().get(i).getNomeAutor() ;
+            }else  {
+                nomes += livro.getAutores().get(i).getNomeAutor() + ", ";
+
+            }
+
+
+
+        }
+        autorLivro.setText(nomes);
+
+        autorLivro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mostraAutores = new Intent(LivroActivity.this, AutorActivity.class);
+                mostraAutores.putExtra(LIVRO, livro);
+                startActivity(mostraAutores);
+            }
+        });
         TextView descricaoLivro = holder.descricaoLivro;
         descricaoLivro.setText(livro.getDescricaoLivro());
     }
 
     private void populaFormaPagmento(ViewHolder holder) {
+
+
+
         RadioButton virtual = holder.virtual;
         virtual.setText("Virtual : R$ " + livro.getValorVirtual());
 
@@ -91,10 +130,14 @@ public class LivroActivity extends AppCompatActivity {
 
         RadioButton juntos = holder.juntos;
         juntos.setText("Juntos : R$ " + livro.getValorDoisJuntos());
+        juntos.toggle();
+
 
         Button comprar = holder.adicionarCarrinho;
 
-        comprar.setOnClickListener(new ListenerComprar(LivroActivity.this));
+
+
+        comprar.setOnClickListener(new ListenerComprarPeloDetalhe(LivroActivity.this, livro));
     }
 
 
@@ -113,11 +156,46 @@ public class LivroActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id){
+
+            case (R.id.carrinho_compras) :
+                item.setOnMenuItemClickListener(new ListenerCarrinho(this));
+                return true;
+
         }
+
 
         return super.onOptionsItemSelected(item);
     }
+
+    public TipoDeCompra getTipoDeCompra(){
+
+        TipoDeCompra tipoDeCompra = null;
+
+        ViewHolder holder = new ViewHolder();
+
+
+        RadioGroup radioGroup = holder.radioGroup;
+
+        switch (radioGroup.getCheckedRadioButtonId()){
+
+            case (R.id.valor_virtual):
+                tipoDeCompra = TipoDeCompra.VIRTUAL;
+                return tipoDeCompra;
+
+            case (R.id.valor_fisico):
+                tipoDeCompra = TipoDeCompra.FISICO;
+                return tipoDeCompra;
+
+            case (R.id.valor_juntos):
+                tipoDeCompra = TipoDeCompra.JUNTOS;
+                return tipoDeCompra;
+
+            default:
+                return null;
+        }
+
+
+
+    };
 }

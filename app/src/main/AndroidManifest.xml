@@ -21,6 +21,8 @@
 
         <activity android:name=".activity.LivroActivity" />
 
+        <activity android:name=".activity.CarrinhoComprasActivity"/>
+        <activity android:name=".activity.AutorActivity"/>
     </application>
 
 </manifest>

@@ -97,6 +97,12 @@
           "nomeAutor": "Felipe",
           "detalhesAutor": "Felipe é magro",
           "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        },
+        {
+          "idAutor": 2,
+          "nomeAutor": "Jeferson",
+          "detalhesAutor": "Jeferson é o sensei",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
         }
       ]
     },
@@ -116,6 +122,12 @@
           "idAutor": 1,
           "nomeAutor": "Felipe",
           "detalhesAutor": "Felipe é magro",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        },
+        {
+          "idAutor": 2,
+          "nomeAutor": "Jeferson",
+          "detalhesAutor": "Jeferson é o sensei",
           "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
         }
       ]
