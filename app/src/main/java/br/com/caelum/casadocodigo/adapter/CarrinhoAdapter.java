@@ -67,13 +67,9 @@ public class CarrinhoAdapter extends BaseAdapter {
 
         Livro livro = (Livro) getItem(position);
 
-        ViewHolder holder = new ViewHolder(view);
-
+        ViewHolder holder = (ViewHolder) view.getTag();
 
         populaView(position, livro, holder);
-
-
-
 
         return view;
     }
@@ -86,6 +82,8 @@ public class CarrinhoAdapter extends BaseAdapter {
             view = convertView;
         }else {
             view = View.inflate(activity, R.layout.item_carrinho,null);
+            ViewHolder viewHolder = new ViewHolder(view);
+            view.setTag(viewHolder);
         }
         return view;
     }

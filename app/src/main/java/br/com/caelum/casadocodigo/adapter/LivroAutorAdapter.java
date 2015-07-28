@@ -60,20 +60,29 @@ public class LivroAutorAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+
+        View view = criaView(convertView, parent);
+
+        ViewHolder holder = (ViewHolder) view.getTag();
+
+        
+
+        populaAutor(position, holder);
+
+        return view;
+    }
+
+    private View criaView(View convertView, ViewGroup parent) {
         View view;
         if (convertView != null) {
             view = convertView;
         } else {
 
             view = activity.getLayoutInflater().inflate(R.layout.listagem_autor_livro, parent, false);
+            ViewHolder holder; holder = new ViewHolder(view);
+            view.setTag(holder);
 
         }
-
-
-        ViewHolder holder = new ViewHolder(view);
-
-        populaAutor(position, holder);
-
         return view;
     }
 

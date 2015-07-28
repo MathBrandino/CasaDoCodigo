@@ -15,7 +15,7 @@ public class LeitorDeLivrosFactory {
     public static LeitorDeLivros getLeitorDeLivros(Activity activity){
 
         LeitorDeLivros leitorDeLivros = new LeitorDeLivrosArquivo(new OnlyOpenRawResource(activity.getResources()));
-        //um jeito de fazer if baseado no ambiente
+
        // LeitorDeLivros leitorDeLivros = new LeitorDeLivrosHardCode();
 
 

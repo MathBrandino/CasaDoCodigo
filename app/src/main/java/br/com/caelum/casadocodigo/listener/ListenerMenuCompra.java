@@ -1,6 +1,5 @@
 package br.com.caelum.casadocodigo.listener;
 
-import android.app.Activity;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +11,6 @@ import java.util.concurrent.Callable;
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.TipoDeCompra;
 import br.com.caelum.casadocodigo.activity.MainActivity;
-import br.com.caelum.casadocodigo.auxiliador.Auxiliador;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -43,18 +41,11 @@ public class ListenerMenuCompra implements View.OnClickListener {
         juntos.toggle();
 
 
-        new AlertDialog.Builder(activity).setView(alertView).setTitle(livro.getNomeLivro()).show();
-
+        AlertDialog alertDialog =  new AlertDialog.Builder(activity).setView(alertView).setTitle(livro.getNomeLivro()).show();
 
         Button comprar = (Button) alertView.findViewById(R.id.botao_comprar_livro_alert);
 
-        comprar.setOnClickListener(new ListenerComprarPeloMain(this, livro, activity, new Callable<TipoDeCompra>(){
-
-            @Override
-            public TipoDeCompra call() throws Exception {
-                return getTipoDeCompra(alertView);
-            }
-        }));
+        comprar.setOnClickListener(new ListenerComprarPeloMain(this, livro, activity, alertView, alertDialog));
 
     }
 
@@ -64,14 +55,33 @@ public class ListenerMenuCompra implements View.OnClickListener {
 
         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
 
-        Auxiliador auxiliador = new Auxiliador();
-
-        tipoDeCompra =  auxiliador.auxilia(radioGroup);
+        tipoDeCompra = devolveTipoCompra(radioGroup);
 
         return tipoDeCompra;
     };
 
 
+    private TipoDeCompra devolveTipoCompra(RadioGroup radioGroup){
+        TipoDeCompra tipoDeCompra;
+
+        switch (radioGroup.getCheckedRadioButtonId()){
+
+            case (R.id.valor_virtual):
+                tipoDeCompra = TipoDeCompra.VIRTUAL;
+                return tipoDeCompra;
+
+            case (R.id.valor_fisico):
+                tipoDeCompra = TipoDeCompra.FISICO;
+                return tipoDeCompra;
+
+            case (R.id.valor_juntos):
+                tipoDeCompra = TipoDeCompra.JUNTOS;
+                return tipoDeCompra;
+
+            default:
+                return null;
+        }
+    }
 
 
 }

@@ -1,31 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/foto_autor_livro"/>
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="2">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5sp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/foto_autor_livro"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:gravity="center"
-            android:id="@+id/nome_autor_livro"/>
-        <TextView
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:id="@+id/detalhes_autor_livro"
-            android:textAlignment="center"/>
-
+            android:id="@+id/nome_autor_livro"/>
     </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp"
+        android:id="@+id/detalhes_autor_livro"
+        android:textAlignment="center"/>
+
+
 
 </LinearLayout>

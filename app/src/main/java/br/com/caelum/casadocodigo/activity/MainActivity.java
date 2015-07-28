@@ -1,6 +1,5 @@
 package br.com.caelum.casadocodigo.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -10,29 +9,24 @@ import android.widget.ListView;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.adapter.LivrosAdapter;
-import br.com.caelum.casadocodigo.converter.LeitorDeLivros;
-import br.com.caelum.casadocodigo.factory.LeitorDeLivrosFactory;
+import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        LeitorDeLivros leitorDeLivros = LeitorDeLivrosFactory.getLeitorDeLivros(this);
-
-        List<Livro> livros = leitorDeLivros.devolveLista();
-
         ListView lista = (ListView) findViewById(R.id.lista_livros);
 
-        LivrosAdapter adapter = new LivrosAdapter(livros, this);
+        CarregadorCatalogoTask myAsync = new CarregadorCatalogoTask(this, lista);
+        myAsync.execute();
 
-        lista.setAdapter(adapter);
 
     }
 
@@ -51,18 +45,14 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        switch (id){
-
-            case (R.id.carrinho_compras) :
-                item.setOnMenuItemClickListener(new ListenerCarrinho(this));
-                return true;
+        if (id == R.id.carrinho_compras) {
+            item.setOnMenuItemClickListener(new ListenerCarrinho(this));
+            return true;
 
         }
 
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
 }

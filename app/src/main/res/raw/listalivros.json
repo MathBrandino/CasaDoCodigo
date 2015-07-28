@@ -14,8 +14,8 @@
       "autores": [
         {
           "idAutor": 1,
-          "nomeAutor": "Felipe",
-          "detalhesAutor": "Felipe é magro",
+          "nomeAutor": "Felipe Torres",
+          "detalhesAutor": "Felipe Torres é Bacharel em Ciência da Computação pelo IME-USP e atua como instrutor e desenvolvedor Android há mais de 5 anos na Caelum. Apaixonado por programação de jogos, criou sua versão de Carmen Sandiego, que teve mais de 100.000 downloads no Google Play Store. Além disso, participa ativamente de diversas comunidades como o GUJ, onde foca no ensino e solução de dúvidas e o Android Open Source Project, com contribuições no código-fonte do sistema Android.",
           "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
         }
       ]
@@ -33,10 +33,10 @@
       "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/spring-mvc-miniature.png?",
       "autores": [
         {
-          "idAutor": 1,
-          "nomeAutor": "Felipe",
-          "detalhesAutor": "Felipe é magro",
-          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+          "idAutor": 2,
+          "nomeAutor": "Alberto Souza",
+          "detalhesAutor": "Alberto Souza é Bacharel em Ciência da Computação pela Universidade Salvador e desenvolvedor desde 2005, tendo participado de muitos projetos web e experimentado diversas linguagens. Participa de projetos open source como o Stella e VRaptor. Possui a certificação SCJP e trabalha como desenvolvedor e instrutor pela Caelum. Seu Twitter é @alberto_souza e você também pode encontrá-lo no Github, no endereço http://www.github.com/asouza",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/alberto-souza_medium.png"
         }
       ]
     },
@@ -53,10 +53,10 @@
       "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/testes-de-software-miniature.png",
       "autores": [
         {
-          "idAutor": 1,
-          "nomeAutor": "Felipe",
-          "detalhesAutor": "Felipe é magro",
-          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+          "idAutor": 3,
+          "nomeAutor": "Maurício Aniche",
+          "detalhesAutor": "Maurício é instrutor e desenvolvedor da Caelum, possui mais de 9 anos de experiência de desenvolvimento de softwares, tendo participado de projetos para grandes empresas nacionais e internacionais. Mauricio é também mestre em Ciência da Computação pela Universidade de São Paulo (USP), onde pesquisa sobre TDD e sua influência no design de sistemas orientados a objetos. Atualmente, é aluno de doutorado pelo mesmo instituto. Palestrante em eventos nacionais e internacionais, com destaque para sua apresentação no 1o Workshop Internacional sobre Test-Driven Development, localizado em Paris, no ano de 2010, Agile Brazil 2010, 2011 e 2012, e QCON SP 2010 e 2012. Mauricio gosta de discutir sobre TDD, melhores práticas e princípios de orientação a objetos, métodos ágeis de desenvolvimento de software e linguagens de programação. Está no Twitter como @mauricioaniche .",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/mauricio-aniche_small.png"
         }
       ]
     },
@@ -74,9 +74,9 @@
       "autores": [
         {
           "idAutor": 1,
-          "nomeAutor": "Felipe",
-          "detalhesAutor": "Felipe é magro",
-          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+          "nomeAutor": "Eduardo Gonçalves",
+          "detalhesAutor": "Eduardo Gonçalves é formado em Tecnologia da Informação e possui mais de 14 anos de experiência em análise e desenvolvimentos de sistema em Oracle SQL e PL/SQL. Também tem experiência em análise de performance e monitoramento de aplicações (Tuning). Já trabalhou para grandes empresas como Lojas Renner, Mundial S.A, Tigre S.A, Pernambucanas, Tractebel Energia, Portobello Cerâmica, Bematech, Positivo, entre outras. É instrutor de cursos oficiais da Oracle nas linguagens SQL e PL/SQL, e também atua no desenvolvimento de aplicações mobile para a plataforma iOS. Atualmente, é líder operacional de projetos e atua ativamente na frente de desenvolvimento mobile na empresa Supero TI.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/eduardo-goncalves_small.png"
         }
       ]
     },
@@ -93,16 +93,16 @@
       "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/git-github-miniature.png",
       "autores": [
         {
-          "idAutor": 1,
-          "nomeAutor": "Felipe",
-          "detalhesAutor": "Felipe é magro",
-          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+          "idAutor": 5,
+          "nomeAutor": "Alexandre Aquiles",
+          "detalhesAutor": "Alexandre Aquiles formou-se em Engenharia da Computação pela Unicamp e pós-graduou-se em Engenharia de Software Ágil pela UNA/BH. Desenvolve software profissionalmente desde 2005, tendo trabalhado nas áreas de logística, governo, mineração e seguros. Acredita que softwares devem ser desenvolvidos de forma iterativa e incremental, entregando continuamente software de valor e com qualidade.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/alexandre-aquiles_small.png"
         },
         {
-          "idAutor": 2,
-          "nomeAutor": "Jeferson",
-          "detalhesAutor": "Jeferson é o sensei",
-          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+          "idAutor": 6,
+          "nomeAutor": "Rodrigo Ferreira",
+          "detalhesAutor": "Rodrigo Ferreira é bacharel em Sistemas de Informação pela Universidade Católica de Brasília e trabalha com desenvolvimento de software há mais de 5 anos. Sempre focado em boas práticas de programação, qualidade e produtividade. Atualmente, é instrutor na Caelum, onde ministra treinamentos de Java, Front-end e Agile.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/rodrigo-ferreira_small.png"
         }
       ]
     },
@@ -119,16 +119,10 @@
       "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/scrum360-miniature.png?",
       "autores": [
         {
-          "idAutor": 1,
-          "nomeAutor": "Felipe",
-          "detalhesAutor": "Felipe é magro",
-          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
-        },
-        {
-          "idAutor": 2,
-          "nomeAutor": "Jeferson",
-          "detalhesAutor": "Jeferson é o sensei",
-          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+          "idAutor": 7,
+          "nomeAutor": "Jorge Audy",
+          "detalhesAutor": "Jorge Audy é escoteiro e agilista. Formou-se em 1986, foi concursado nos anos 80 e empresário nos 90. Também é Mestre em Administração na linha de pesquisa de Gestão da Informação e foi coordenador de desenvolvimento na ADP Brasil nos anos 2000 e no Grupo RBS até 2013, em equipes corporativas e de produtos digitais. Desde então, é consultor na DBServer. Praticante de métodos ágeis desde 2008, e Agile Coach desde 2011; e palestrante e participante ativo em eventos sobre métodos ágeis, equipes de alta performance e, mais especificamente, SCRUM. Confira mais sobre o autor em https://jorgekotickaudy.wordpress.com/about/.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/jorge-audy_medium.png"
         }
       ]
     },
@@ -145,10 +139,96 @@
       "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/swift-ios-miniature.png",
       "autores": [
         {
-          "idAutor": 1,
-          "nomeAutor": "Felipe",
-          "detalhesAutor": "Felipe é magro",
-          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+          "idAutor": 8,
+          "nomeAutor": "Guilherme Silveira",
+          "detalhesAutor": "Guilherme Silveira é líder técnico na Caelum e no Alura, cofundador do GUJ.com.br e um dos criadores do VRaptor. Especializou-se na área de ensino de Desenvolvimento de Software e é um dos principais autores dos cursos online do Alura. Ele pode ser encontrado no twitter em @guilhermecaelum.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/guilherme-silveira_small.png?54691"
+        },
+        {
+          "idAutor": 9,
+          "nomeAutor": "Joviane Jardim",
+          "detalhesAutor": "Joviane Jardim já trabalhou como desenvolvedora C e com banco de dados Oracle utilizando PL/SQL por 5,5 anos. Hoje é instrutora e desenvolvedora na Caelum dos cursos de iOS. Gosta também de C, Prolog, Java e Ruby.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/joviane-jardim_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "nomeLivro": "CSS Eficiente: Técnicas e ferramentas que fazem a diferença nos seus estilos",
+      "descricaoLivro": "Quando aprendemos a trabalhar com CSS, frequentemente nos pegamos perdidos em detalhes fundamentais que não nos são explicados. Por vezes, alguns desses detalhes passam despercebidos até pelo desenvolvedor front-end mais experiente. Mas como ir além do conhecimento básico do CSS e preparar o caminho para explorar tópicos mais avançados?  Neste livro, Tárcio Zemel ensina como organizar seu estilo, entender especificidade, como usar diferentes seletores, trabalhar orientado a objetos com CSS e várias outras técnicas que farão diferença no dia a dia do trabalho com os estilos e abrirão novas possibilidades para você explorar ainda mais o CSS.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/css-eficiente-featured_medium.png",
+      "autores": [
+        {
+          "idAutor": 10,
+          "nomeAutor": "Tárcio Zemel",
+          "detalhesAutor": "Tárcio Zemel trabalha com desenvolvimento web há 15 anos e atuar nessa área é uma das coisas que mais gosta de fazer. É sócio-fundador da empresa webfatorial, na qual trabalha em projetos web para grandes marcas do mundo todo.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/tarcio-zemel_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "nomeLivro": "Google Android: crie aplicações para celulares e tablets",
+      "descricaoLivro": "Faça as melhores aplicações Android com as melhores práticas da área. Aprenda como publicar a aplicação e tê-la no ar em 1 dia, saiba como utilizar o máximo dos aparelhos e crie aplicações extremamente ricas para celulares e tablets!  Desenvolva para todas as versões do Android e conheça as novidades da versão 5.0 (Lollipop)! Durante o livro, você criará uma aplicação que envolverá funcionalidades das suas principais versões e aprenderá como utilizar a ActionBar, o Navigation Drawer e também os novos widgets do Android 5.0, como o botão de ação flutuante e os cartões, e também vai descobrir como engajar o usuário projetando um esquema efetivo de navegação entre as telas do seu aplicativo.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/android-featured_medium.png?v=1411489561",
+      "autores": [
+        {
+          "idAutor": 11,
+          "nomeAutor": "João Bosco Monteiro",
+          "detalhesAutor": "João Bosco Monteiro é engenheiro de computação e possui especialização em Engenharia de Software. Começou a trabalhar com Java e web em 2002 e, desde então, tem participado e liderado projetos utilizando essa plataforma. Participou de grupos de pesquisa na área de Visão Computacional, tendo publicado diversos artigos científicos. Atuante nas comunidades de usuários e palestrante em eventos, é também um dos coordenadores do JUGMS. Entusiasta de novas tecnologias, agora se dedica ao desenvolvimento mobile e atualmente coordena a área de mobilidade da TecSinapse. Está no Twitter como @joaobmonteiro.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/joao-bosco-monteiro_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "nomeLivro": "Aplicações web real-time com Node.js",
+      "descricaoLivro": "Node.js é uma poderosa plataforma. Ele permite escrever aplicações JavaScript no server-side, tirando proveito da sintaxe e familiaridade da linguagem para escrever aplicações web escaláveis.  Como o Node.js usa um modelo orientado a eventos, focado em I/O não bloqueante, desenvolver nele pode ser diferente para quem está acostumado às aplicações web tradicionais. Neste livro, Caio Ribeiro Pereira quebra essa enorme barreira, mostrando claramente essa mudança de paradigma, além de focar em tópicos importantes, as APIs principais e frameworks como o Express e o Socket.IO.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/nodejs-featured_medium.png?v=1411486494",
+      "autores": [
+        {
+          "idAutor": 12,
+          "nomeAutor": "Caio Ribeiro Pereira",
+          "detalhesAutor": "Caio Ribeiro Pereira trabalha como web developer na Concrete Solutions e sua experiência é baseado no domínio dessa sopa de letrinhas: Node.js; Javascript; Meteor; Ruby; Java; MongoDB; Redis; Riak; Filosofia Lean; Agile; XP e TDD.  É bacharel em Sistemas de Informação, blogueiro nos tempos livres e apaixonado por programação, web, tecnologia, filmes e seriados. Participante ativo das comunidades: NodeBr, DevInSantos e Guru-Baixada e iniciou-se, em 2011, como palestrante nos eventos DevInSantos e Exatec, abordando temas atuais sobre Node.js e Javascript. Criador do DevFreeCasts e DevFreeBooks, moderador da comunidade Meteor Brasil e editor do UDGWebDev Weekly.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/caio-ribeiro-pereira_small.png?54691"
+        }
+      ]
+    } ,
+    {
+      "id": 11,
+      "nomeLivro": "REST: Construa API's inteligentes de maneira simples",
+      "descricaoLivro": "De alguma maneira, os sistemas modernos precisam se integrar com outros sistemas, seja para coletar dados, enviar informações, autenticação ou várias outras funcionalidades.  Neste livro, Alexandre Saudate ensina como implementar APIs REST, que são simples e fáceis de manter, indo desde o básico dos formatos de dados como XML e JSON, passando por uma implementação rústica de um serviço e evoluindo para uso da poderosa especificação Java, o JAX-RS. Você ainda vai aprender técnicas avançadas, como trabalhar com as Hypermedias, criando fluxos inteligentes nos seus serviços. Veja também como realizar autenticação através do OAuth e muito mais!",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/rest-featured_medium.png?v=1411566684",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Alexandre Saudate",
+          "detalhesAutor": "Alexandre Saudate é graduado em Sistemas de Informação pela Universidade de São Paulo (USP). Trabalha com desenvolvimento desde 2005 e com SOA desde 2008. Desde então, tem trabalhado com pesquisa e desenvolvimento sobre esse tipo de arquitetura e também com projetos envolvendo tecnologias de ponta, para empresas como Porto Seguro, Serasa, Porto de Santos, iG e outras.  Foi instrutor Oracle e, mais recentemente, se tornou instrutor da SOA|Expert, uma escola especializada no assunto. Hoje, é especialista em projetos de integração SOA e/ou Cloud Computing.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/alexandre-saudate_small.png?54691"
         }
       ]
     }

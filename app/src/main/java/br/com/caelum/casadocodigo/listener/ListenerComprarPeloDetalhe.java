@@ -20,7 +20,6 @@ public class ListenerComprarPeloDetalhe implements View.OnClickListener {
     private LivroActivity activity;
     private Livro livro;
     private CasaDoCodigoStore casaDoCodigoStore;
-    private TipoDeCompra tipoDeCompra;
 
     public ListenerComprarPeloDetalhe(LivroActivity activity, Livro livro) {
         this.activity = activity;
@@ -34,17 +33,10 @@ public class ListenerComprarPeloDetalhe implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-        tipoDeCompra = activity.getTipoDeCompra();
-
-        Item item = new Item();
-        item.setLivro(livro);
-        item.setTipoDeCompra(tipoDeCompra);
-
+        Item item = new Item(livro, activity.getTipoDeCompra());
         casaDoCodigoStore.getCarrinho().adicionar(item);
 
         Toast.makeText(activity, item.getLivro().getNomeLivro() + " adicionado ao carrinho", Toast.LENGTH_LONG).show();
-
-
 
     }
 

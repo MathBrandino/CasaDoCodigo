@@ -26,6 +26,10 @@ public class Carrinho implements Serializable {
         items.remove(position);
     }
 
+    public void limpaLista(List<Item> items){
+        items.removeAll(items);
+    }
+
     public Item  getItem(int position) {
         return items.get(position);
     }
