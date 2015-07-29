@@ -90,8 +90,6 @@ public class LivroConverter {
         livro.setValorDoisJuntos(objectLivro.getDouble(VALOR_VIRTUAL_COM_FISICO));
         livro.setImagemUrl(objectLivro.getString(URL_IMAGEM));
 
-
-
         return livro;
     }
 

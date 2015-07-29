@@ -21,7 +21,6 @@ import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
 import br.com.caelum.casadocodigo.modelo.Livro;
-import br.com.caelum.casadocodigo.receiver.ObservadorDeEvento;
 
 
 public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate {
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     private CarregadorCatalogoTask catalogoTask;
 
 
-    private ObservadorDeEvento observadorDeEvento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +43,6 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         catalogoTask.execute();
 
 
-        observadorDeEvento = new ObservadorDeEvento(this);
-
-
-        LocalBroadcastManager.getInstance(this.getApplication()).registerReceiver(observadorDeEvento, new IntentFilter("Meu evento"));
     }
 
     @Override
@@ -101,9 +95,4 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         return (CasaDoCodigoStore) getApplication();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        catalogoTask.cancel(true);
-    }
 }

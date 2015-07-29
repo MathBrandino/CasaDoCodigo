@@ -14,6 +14,7 @@ public class LeitorDeLivrosFactory {
 
     public static LeitorDeLivros getLeitorDeLivros(Activity activity){
 
+
         LeitorDeLivros leitorDeLivros = new LeitorDeLivrosArquivo(new OnlyOpenRawResource(activity.getResources()));
 
        // LeitorDeLivros leitorDeLivros = new LeitorDeLivrosHardCode();
