@@ -9,6 +9,7 @@ import java.util.List;
 import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.adapter.LivrosAdapter;
 import br.com.caelum.casadocodigo.converter.LeitorDeLivros;
+import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
 import br.com.caelum.casadocodigo.factory.LeitorDeLivrosFactory;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -18,39 +19,46 @@ import br.com.caelum.casadocodigo.modelo.Livro;
  */
 public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
 
-    private MainActivity activity;
+    private BuscaLivrosDelegate delegate;
+    private Exception erro;
+
     private List<Livro> livros;
     private ProgressDialog progressDialog;
-    private ListView lista;
 
+    public CarregadorCatalogoTask(BuscaLivrosDelegate delegate) {
+        this.delegate = delegate;
+        this.delegate.getCasaDoCodigoStore().registra(this);
 
-    public CarregadorCatalogoTask(MainActivity activity, ListView lista) {
-        this.activity = activity;
-        this.lista = lista;
     }
 
     @Override
     protected List<Livro> doInBackground(Void... params) {
 
+        try {
+            LeitorDeLivros leitorDeLivros = LeitorDeLivrosFactory.getLeitorDeLivros(delegate.retornaActivity());
 
-        LeitorDeLivros leitorDeLivros = LeitorDeLivrosFactory.getLeitorDeLivros(activity);
+            livros = leitorDeLivros.devolveLista();
 
-        livros = leitorDeLivros.devolveLista();
+            int n = Integer.MIN_VALUE;
+            while (n < Integer.MAX_VALUE) {
+                n++;
+            }
 
+            return livros;
 
-        int n =0;
-        while (n < Integer.MAX_VALUE){
-            n++;
+        } catch (Exception e){
+            erro = e;
+
+            return null;
         }
 
-        return livros;
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
 
-        progressDialog = ProgressDialog.show(activity ,"Aguarde...", "Pegando livros do servidor ", true);
+        progressDialog = ProgressDialog.show(delegate.retornaActivity() ,"Aguarde...", "Pegando livros do servidor ", true);
 
     }
 
@@ -59,12 +67,16 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
     protected void onPostExecute(List<Livro> livros) {
         super.onPostExecute(livros);
 
-        LivrosAdapter adapter = new LivrosAdapter(livros, activity);
+        if (livros != null ){
+            delegate.lidaComRetorno(livros);
+        } else {
+            delegate.lidaComErro(erro);
+        }
 
-        lista.setAdapter(adapter);
-
+        delegate.getCasaDoCodigoStore().remove(this);
         progressDialog.dismiss();
     }
+
 
 
 }
