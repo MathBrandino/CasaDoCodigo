@@ -39,11 +39,6 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
 
             livros = leitorDeLivros.devolveLista();
 
-            int n = Integer.MIN_VALUE;
-            while (n < Integer.MAX_VALUE) {
-                n++;
-            }
-
             return livros;
 
         } catch (Exception e){
