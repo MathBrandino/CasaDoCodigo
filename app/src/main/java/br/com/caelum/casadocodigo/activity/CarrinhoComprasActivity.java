@@ -18,6 +18,7 @@ import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.TipoDeCompra;
 import br.com.caelum.casadocodigo.adapter.CarrinhoAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
+import br.com.caelum.casadocodigo.converter.LivroConverter;
 import br.com.caelum.casadocodigo.modelo.Item;
 
 /**
@@ -153,6 +154,12 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                 .setPositiveButton("Sim ! ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        LivroConverter converter = new LivroConverter();
+                        String json = converter.toJson(itens);
+
+                        new AlertDialog.Builder(CarrinhoComprasActivity.this).setMessage(json).show();
+
                         casaDoCodigoStore.getCarrinho().limpaLista(itens);
                         atualizaListas();
                         Toast.makeText(CarrinhoComprasActivity.this, "Sua compra já foi recebida e logo você receberá as instrucões", Toast.LENGTH_LONG).show();

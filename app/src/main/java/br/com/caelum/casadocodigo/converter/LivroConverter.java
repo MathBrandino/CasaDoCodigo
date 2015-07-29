@@ -3,11 +3,13 @@ package br.com.caelum.casadocodigo.converter;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONStringer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.modelo.Autor;
+import br.com.caelum.casadocodigo.modelo.Item;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -16,7 +18,7 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 public class LivroConverter {
 
     private final String ID = "id";
-    private final String NOME_LIVRO = "nomeLivro";
+    private final String NOME_LIVRO_ENVIAR = "nomeLivro";
     private final String DESCRICAO_LIVRO = "descricaoLivro";
     private final String DATA_PUBLICACAO = "dataPublicacao";
     private final String ISBN = "ISBN";
@@ -30,7 +32,11 @@ public class LivroConverter {
     private final String DETALHES_AUTOR = "detalhesAutor";
     private final String IMAGEM_AUTOR = "imagemAutor";
     private final String AUTORES = "autores";
+    private final String LIVROS_ENVIAR = "livros";
     private final String LIVROS = "livros";
+    private final String ID_LIVRO = "idLivro";
+    private final String NOME_LIVRO = "nomeLivro";
+    private final String TIPO_LIVRO = "tipoLivro";
 
     public List<Livro> fromJson(String json) throws JSONException {
 
@@ -57,6 +63,29 @@ public class LivroConverter {
             }
         }
         return livros;
+    }
+
+
+    public String toJson(List<Item> items){
+
+        try{
+            JSONStringer jsonStringer = new JSONStringer();
+            jsonStringer.object().key(LIVROS_ENVIAR).array();
+
+            for (Item item : items){
+
+                jsonStringer.object()
+                        .key(ID_LIVRO).value(item.getLivro().getId())
+                        .key(NOME_LIVRO_ENVIAR).value(item.getLivro().getNomeLivro())
+                        .key(TIPO_LIVRO).value(item.getTipoDeCompra())
+                        .endObject();
+            }
+
+            return jsonStringer.endArray().endObject().toString();
+
+        } catch (JSONException e){
+            throw  new RuntimeException(e);
+        }
     }
 
     private List<Autor> getAutores(JSONObject objectLivro) throws JSONException {
