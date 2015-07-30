@@ -2,12 +2,9 @@ package br.com.caelum.casadocodigo.async;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.widget.ListView;
 
 import java.util.List;
 
-import br.com.caelum.casadocodigo.activity.MainActivity;
-import br.com.caelum.casadocodigo.adapter.LivrosAdapter;
 import br.com.caelum.casadocodigo.converter.LeitorDeLivros;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
 import br.com.caelum.casadocodigo.factory.LeitorDeLivrosFactory;
@@ -35,7 +32,7 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
     protected List<Livro> doInBackground(Void... params) {
 
         try {
-            LeitorDeLivros leitorDeLivros = LeitorDeLivrosFactory.getLeitorDeLivros(delegate.retornaActivity());
+            LeitorDeLivros leitorDeLivros = LeitorDeLivrosFactory.getLeitorDeLivros();
 
             livros = leitorDeLivros.devolveLista();
 
@@ -71,7 +68,5 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
         delegate.getCasaDoCodigoStore().remove(this);
         progressDialog.dismiss();
     }
-
-
 
 }

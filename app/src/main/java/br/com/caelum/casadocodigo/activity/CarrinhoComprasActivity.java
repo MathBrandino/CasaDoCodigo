@@ -155,8 +155,9 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        LivroConverter converter = new LivroConverter();
-                        String json = converter.toJson(itens);
+                        String json = geraJson();
+
+
 
                         new AlertDialog.Builder(CarrinhoComprasActivity.this).setMessage(json).show();
 
@@ -170,8 +171,14 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                 .show();
     }
 
+    private String geraJson() {
+        LivroConverter converter = new LivroConverter();
+        return converter.toJson(itens);
+    }
+
     private void atualizaListas() {
         adapter.notifyDataSetChanged();
         atualizaValorCompra(contador);
     }
+
 }

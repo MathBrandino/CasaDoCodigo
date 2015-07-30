@@ -81,7 +81,9 @@ public class LivroConverter {
                         .endObject();
             }
 
-            return jsonStringer.endArray().endObject().toString();
+            String jsonSaida = jsonStringer.endArray().endObject().toString();
+
+            return jsonSaida;
 
         } catch (JSONException e){
             throw  new RuntimeException(e);

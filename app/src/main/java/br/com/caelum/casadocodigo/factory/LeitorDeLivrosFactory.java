@@ -13,7 +13,7 @@ import br.com.caelum.casadocodigo.converter.OnlyOpenRawResource;
  */
 public class LeitorDeLivrosFactory {
 
-    public static LeitorDeLivros getLeitorDeLivros(Activity activity){
+    public static LeitorDeLivros getLeitorDeLivros(){
 
 
        // LeitorDeLivros leitorDeLivros = new LeitorDeLivrosArquivo(new OnlyOpenRawResource(activity.getResources()));

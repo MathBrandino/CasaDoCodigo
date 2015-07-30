@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.modelo.Carrinho;
+import br.com.caelum.casadocodigo.modelo.Item;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -16,7 +17,6 @@ public class CasaDoCodigoStore extends Application {
 
     private Carrinho carrinho;
     private List<AsyncTask<?,?,?>> tasks = new ArrayList<>();
-
 
     @Override
     public void onTerminate() {

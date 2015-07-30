@@ -25,10 +25,11 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 
 public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate {
 
+    private final String LIVROS = "livros";
     private ListView lista ;
     private LivrosAdapter adapter;
     private CarregadorCatalogoTask catalogoTask;
-
+    private List<Livro> livros;
 
 
     @Override
@@ -36,13 +37,15 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         lista = (ListView) findViewById(R.id.lista_livros);
 
+        buscaDadosServidor();
+
+    }
+
+    private void buscaDadosServidor() {
         catalogoTask = new CarregadorCatalogoTask(this);
         catalogoTask.execute();
-
-
     }
 
     @Override
@@ -79,6 +82,19 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
     }
 
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(LIVROS, (Serializable) livros);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        livros = (List<Livro>) savedInstanceState.getSerializable(LIVROS);
+    }
+
     @Override
     public void lidaComErro(Exception e) {
         e.printStackTrace();
@@ -95,4 +111,9 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         return (CasaDoCodigoStore) getApplication();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        getCasaDoCodigoStore().onTerminate();
+    }
 }

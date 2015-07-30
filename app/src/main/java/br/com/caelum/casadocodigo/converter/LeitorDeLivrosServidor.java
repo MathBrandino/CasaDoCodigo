@@ -15,6 +15,7 @@ import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.modelo.Livro;
+import br.com.caelum.casadocodigo.servidor.MexeServidor;
 
 /**
  * Created by matheus on 29/07/15.
@@ -26,7 +27,10 @@ public class LeitorDeLivrosServidor implements  LeitorDeLivros {
     public List<Livro> devolveLista() {
 
         try {
-            HttpURLConnection connection = abreConexao();
+
+            MexeServidor servidor = new MexeServidor();
+
+            HttpURLConnection connection = servidor.abreConexao();
 
             connection.setDoInput(true);
 
@@ -55,10 +59,6 @@ public class LeitorDeLivrosServidor implements  LeitorDeLivros {
         livros = converter.fromJson(json);
     }
 
-    private HttpURLConnection abreConexao() throws IOException {
-        URL url = new URL("https://raw.githubusercontent.com/MathBrandino/CasaDoCodigo/master/app/src/main/res/raw/listalivros.json");
-        return (HttpURLConnection) url.openConnection();
-    }
 
     private String devolveJson(HttpURLConnection connection) throws IOException {
         InputStream inputStream = connection.getInputStream();
