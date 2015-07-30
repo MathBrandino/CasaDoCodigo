@@ -28,7 +28,7 @@ public class LivrosRecebidos extends BroadcastReceiver {
         receiver.delegate = delegate;
 
         LocalBroadcastManager
-                .getInstance(delegate.getCasaDoCodigoStore())
+                .getInstance(delegate.retornaActivity())
                 .registerReceiver(receiver,
                         new IntentFilter(LIVROS_RECEBIDOS));
 

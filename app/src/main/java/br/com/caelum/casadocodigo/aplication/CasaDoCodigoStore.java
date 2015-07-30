@@ -18,7 +18,9 @@ public class CasaDoCodigoStore extends Application {
     private List<AsyncTask<?,?,?>> tasks = new ArrayList<>();
     private List<Livro> livros;
 
-
+    public CasaDoCodigoStore() {
+        carrinho = new Carrinho();
+    }
 
     public void registra(AsyncTask<? , ? , ?> task ){
         tasks.add(task);
