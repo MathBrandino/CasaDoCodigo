@@ -3,12 +3,16 @@ package br.com.caelum.casadocodigo.async;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 
+import java.io.Serializable;
 import java.util.List;
 
+import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.converter.LeitorDeLivros;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
 import br.com.caelum.casadocodigo.factory.LeitorDeLivrosFactory;
 import br.com.caelum.casadocodigo.modelo.Livro;
+import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 
 
 /**
@@ -16,16 +20,16 @@ import br.com.caelum.casadocodigo.modelo.Livro;
  */
 public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
 
-    private BuscaLivrosDelegate delegate;
     private Exception erro;
 
     private List<Livro> livros;
     private ProgressDialog progressDialog;
+    private CasaDoCodigoStore casaDoCodigoStore;
 
-    public CarregadorCatalogoTask(BuscaLivrosDelegate delegate) {
-        this.delegate = delegate;
-        this.delegate.getCasaDoCodigoStore().registra(this);
+    public CarregadorCatalogoTask(CasaDoCodigoStore casaDoCodigoStore) {
 
+        this.casaDoCodigoStore = casaDoCodigoStore;
+        this.casaDoCodigoStore.registra(this);
     }
 
     @Override
@@ -51,8 +55,6 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
     protected void onPreExecute() {
         super.onPreExecute();
 
-        progressDialog = ProgressDialog.show(delegate.retornaActivity() ,"Aguarde...", "Pegando livros do servidor ", true);
-
     }
 
 
@@ -62,18 +64,15 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
 
         trataListaDeRetorno(livros);
 
-        delegate.getCasaDoCodigoStore().remove(this);
-
-        progressDialog.dismiss();
-
+        casaDoCodigoStore.remove(this);
     }
 
     private void trataListaDeRetorno(List<Livro> livros) {
 
         if (livros != null ){
-            delegate.lidaComRetorno(livros);
+            LivrosRecebidos.notifica(casaDoCodigoStore, livros, true);
         } else {
-            delegate.lidaComErro(erro);
+            LivrosRecebidos.notifica(casaDoCodigoStore, livros, false);
         }
     }
 

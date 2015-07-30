@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.modelo.Carrinho;
-import br.com.caelum.casadocodigo.modelo.Item;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -19,6 +18,8 @@ public class CasaDoCodigoStore extends Application {
     private List<AsyncTask<?,?,?>> tasks = new ArrayList<>();
     private List<Livro> livros;
 
+
+
     public void registra(AsyncTask<? , ? , ?> task ){
         tasks.add(task);
     }
@@ -27,9 +28,6 @@ public class CasaDoCodigoStore extends Application {
         tasks.remove(task);
     }
 
-    public CasaDoCodigoStore() {
-        carrinho = new Carrinho();
-    }
 
     public Carrinho getCarrinho() {
         return carrinho;
@@ -38,6 +36,7 @@ public class CasaDoCodigoStore extends Application {
     public List<Livro> getLivros() {
         return livros;
     }
+
 
     public void setLivros(List<Livro> livros) {
         this.livros = livros;

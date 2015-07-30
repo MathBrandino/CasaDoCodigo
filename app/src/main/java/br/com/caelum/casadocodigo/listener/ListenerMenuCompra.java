@@ -27,17 +27,7 @@ public class ListenerMenuCompra implements View.OnClickListener {
     public void onClick(View v) {
         final View alertView = View.inflate(activity, R.layout.opcao_compra, null);
 
-
-        RadioButton virtual = (RadioButton) alertView.findViewById(R.id.valor_virtual);
-        virtual.setText("Virtual : R$ " + livro.getValorVirtual());
-
-        RadioButton fisico = (RadioButton) alertView.findViewById(R.id.valor_fisico);
-        fisico.setText("Fisico : R$ " + livro.getValorFisico());
-
-        RadioButton juntos = (RadioButton) alertView.findViewById(R.id.valor_juntos);
-        juntos.setText("Juntos : R$ " + livro.getValorDoisJuntos());
-        juntos.toggle();
-
+        populaRadioGroup(alertView);
 
         AlertDialog alertDialog =  new AlertDialog.Builder(activity).setView(alertView).setTitle(livro.getNomeLivro()).show();
 
@@ -45,6 +35,19 @@ public class ListenerMenuCompra implements View.OnClickListener {
 
         comprar.setOnClickListener(new ListenerComprarPeloMain(livro, activity, alertDialog));
 
+    }
+
+    private void populaRadioGroup(View alertView) {
+        RadioButton virtual = (RadioButton) alertView.findViewById(R.id.valor_virtual);
+        RadioButton fisico = (RadioButton) alertView.findViewById(R.id.valor_fisico);
+        RadioButton juntos = (RadioButton) alertView.findViewById(R.id.valor_juntos);
+
+
+        virtual.setText("Virtual : R$ " + livro.getValorVirtual());
+        fisico.setText("Fisico : R$ " + livro.getValorFisico());
+        juntos.setText("Juntos : R$ " + livro.getValorDoisJuntos());
+
+        juntos.toggle();
     }
 
 }

@@ -17,6 +17,7 @@ import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
 import br.com.caelum.casadocodigo.modelo.Livro;
+import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 
 
 public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate {
@@ -25,12 +26,15 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     private LivrosAdapter adapter;
     private CarregadorCatalogoTask catalogoTask;
     private List<Livro> livros;
-
+    private LivrosRecebidos livrosRecebidos;
+    private CasaDoCodigoStore casaDoCodigoStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        casaDoCodigoStore = getCasaDoCodigoStore();
 
         lista = (ListView) findViewById(R.id.lista_livros);
 
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         verificaSeJaPossuiLista();
 
+        livrosRecebidos = LivrosRecebidos.registraObservador(this);
     }
 
     private void verificaSeJaPossuiLista() {
@@ -50,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     }
 
     private void buscaDadosServidor() {
-        catalogoTask = new CarregadorCatalogoTask(this);
+        catalogoTask = new CarregadorCatalogoTask(casaDoCodigoStore);
         catalogoTask.execute();
     }
 
