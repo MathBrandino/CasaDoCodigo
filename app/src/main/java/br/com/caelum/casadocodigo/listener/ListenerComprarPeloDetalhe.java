@@ -1,12 +1,8 @@
 package br.com.caelum.casadocodigo.listener;
 
-import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.TipoDeCompra;
 import br.com.caelum.casadocodigo.activity.LivroActivity;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.modelo.Item;

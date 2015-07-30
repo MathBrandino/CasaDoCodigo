@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.TipoDeCompra;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
 import br.com.caelum.casadocodigo.listener.ListenerComprarPeloDetalhe;
 import br.com.caelum.casadocodigo.modelo.Livro;

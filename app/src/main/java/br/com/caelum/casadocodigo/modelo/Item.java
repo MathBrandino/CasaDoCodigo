@@ -1,6 +1,6 @@
 package br.com.caelum.casadocodigo.modelo;
 
-import br.com.caelum.casadocodigo.TipoDeCompra;
+import br.com.caelum.casadocodigo.activity.TipoDeCompra;
 
 /**
  * Created by matheus on 27/07/15.

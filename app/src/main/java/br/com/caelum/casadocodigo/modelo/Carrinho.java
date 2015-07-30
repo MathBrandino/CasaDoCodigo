@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.caelum.casadocodigo.TipoDeCompra;
-
 /**
  * Created by matheus on 27/07/15.
  */

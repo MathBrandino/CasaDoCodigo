@@ -6,10 +6,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import java.util.concurrent.Callable;
-
 import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.TipoDeCompra;
+import br.com.caelum.casadocodigo.activity.TipoDeCompra;
 import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
