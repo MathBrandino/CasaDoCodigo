@@ -242,7 +242,7 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/bancomysql-featured_small.png",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/bancomysql-featured_medium.png",
       "autores": [
         {
           "idAutor": 13,
@@ -262,7 +262,7 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/oy0mvtYotVNh0eUSt2CAC3Kf7j_qtMIxtd31jNUYP08_size_1024x768_size_mode_2_small.jpeg?v=1438176025",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/oy0mvtYotVNh0eUSt2CAC3Kf7j_qtMIxtd31jNUYP08_size_1024x768_size_mode_2_medium.jpeg?v=1438176025",
       "autores": [
         {
           "idAutor": 13,
@@ -282,7 +282,7 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/cover-apis-java_small.jpeg?v=1423244220",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/cover-apis-java_medium.jpeg?v=1423244220",
       "autores": [
         {
           "idAutor": 13,
@@ -302,13 +302,13 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/cover_ce399913-9822-4509-ab16-fad1cfad2df3_small.jpeg?v=1421769309",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/cover_ce399913-9822-4509-ab16-fad1cfad2df3_medium.jpeg?v=1421769309",
       "autores": [
         {
           "idAutor": 16,
           "nomeAutor": "Andre Cardoso",
           "detalhesAutor": "Andre Cardoso é desenvolvedor PHP, bacharelando em Análise e Desenvolvimento de Sistemas, Técnico em Informática com foco em desenvolvimento de sistemas Web-based. Trabalha exclusivamente com PHP há cerca de 5 anos e durante este período esteve envolvido em projetos de todos os portes para grandes clientes como HSBC, Renault e Liquigás. Também desenvolveu sistemas para inúmeras startups nos estados do Paraná, Santa Catarina e São Paulo. Antes do PHP, aventurou-se com Java, um pouco de .Net e Delphi, mas foi no PHP que decidiu focar e especializar-se.  Atualmente, trabalha na empresa Redsuns Tecnologia em Curitiba que tem foco em soluções tecnológicas inteligentes e desenvolvimento de startups.  Ministrou palestras e workshops sobre TDD, PHP e tecnologias que o complementam  nos eventos SFD (Software Freedom Day), FTSL (Fórum de Tecnologia em Software Livre) e  FLISOL (Festival Latino Americano de Instalação de Software Livre). Tem uma enorme satisfação  como profissional em compartilhar conhecimento e faz isso participando de diversos grupos  de discussões e alguns projetos open source.",
-          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/andre-cardoso_small.png?54691"
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/andre-cardoso_medium.png?54691"
         },
         {
           "idAutor": 14,
@@ -328,7 +328,7 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/google-go-featured_small.png?v=1411566554",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/google-go-featured_medium.png?v=1411566554",
       "autores": [
         {
           "idAutor": 13,
@@ -348,7 +348,7 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/reflexao-anotacoes-featured_small.png?v=1416318033",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/reflexao-anotacoes-featured_medium.png?v=1416318033",
       "autores": [
         {
           "idAutor": 13,
@@ -368,7 +368,7 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/jsf-jpa-featured_small.png?v=1411486340",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/jsf-jpa-featured_medium.png?v=1411486340",
       "autores": [
         {
           "idAutor": 13,
@@ -388,7 +388,7 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/kinect-featured_small.png?v=1416319109",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/kinect-featured_medium.png?v=1416319109",
       "autores": [
         {
           "idAutor": 13,
@@ -408,7 +408,7 @@
       "valorVirtual": 39.9,
       "valorVirtualComFisico": 79.9,
       "ISBN": "978-85-5519-013-1",
-      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/adobe-lightroom-featured_small.png?v=1416316972",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/adobe-lightroom-featured_medium.png?v=1416316972",
       "autores": [
         {
           "idAutor": 13,
