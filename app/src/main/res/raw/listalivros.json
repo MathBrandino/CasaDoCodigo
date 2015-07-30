@@ -231,6 +231,192 @@
           "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/alexandre-saudate_small.png?54691"
         }
       ]
+    },
+    {
+      "id": 12,
+      "nomeLivro": "MySQL: Comece com o principal banco de dados open source do mercado",
+      "descricaoLivro": "O MySQL é praticamente onipresente nos projetos de software atuais. Boa parte deles o utiliza como banco de dados para armazenar as informações da sua aplicação, por conta da sua facilidade de instalação e configuração.  Neste livro, Vinícius Carvalho introduz o leitor no mundo do banco de dados MySQL, ensinando os principais comandos DML e DDL, e ferramentas gráficas. Você vai aprender a trabalhar com procedures, manipular triggers, criar backups e vários outros recursos que fazem a diferença no dia a dia.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/bancomysql-featured_small.png",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Vinícius Carvalho",
+          "detalhesAutor": "Vinícius Carvalho é entusiasta por computação, apaixonado por informação e por conhecimento, fanático por esporte desde de 2007. Trabalha e estuda diversas áreas de sistemas e tecnologia da informação, mantendo-se atualizado nos assuntos do mundo da tecnologia, computação e empreendedorismo.  Já trabalhou como Analista de Suporte, Desenvolvedor, Analista de Sistemas, Gerente de Projetos, professor de graduação e atualmente é Analista de Sistemas Sênior do maior grupo educacional do mundo, a Kroton, além de manter projetos próprios.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/vinicius-carvalho_small.png"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "nomeLivro": "Caixa de Ferramentas DevOps: Um guia para construção, administração e arquitetura de sistemas modernos",
+      "descricaoLivro": "Sempre que precisamos montar um ambiente, seja para desenvolvimento ou para um servidor que vá executar em produção, gastamos bastante esforço na instalação das dependências necessárias e várias vezes nos pegamos perdendo tempo com detalhes pequenos de configuração pelos quais já passamos várias vezes.  Neste livro, Gleicon Moraes vai ensinar como evitar todos esses problemas com o uso de poderosas ferramentas para criação de ambientes portáveis, fazendo com que você tenha sistemas facilmente reproduzíveis e prontos para executar o que você quiser, sem chateações e problemas obscuros de configuração. ",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/oy0mvtYotVNh0eUSt2CAC3Kf7j_qtMIxtd31jNUYP08_size_1024x768_size_mode_2_small.jpeg?v=1438176025",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Gleicon Moraes ",
+          "detalhesAutor": "Gleicon Moraes é autor e colaborador de projetos opensource como RestMQ e Beano, entre outros. Formado em Ciência da Computação, e pós-graduado em Sistemas de Informação, especializou-se em sistemas distribuídos e operações em larga escala. Palestrou em conferências como OSCon, QCON, Rubyconf, NoSQLBR entre outras.   Pode ser encontrado no Twitter em @gleicon, no GitHub em https://github.com/gleicon e linkedin https://linkedin.com/in/gleicon. Slides e material de palestras podem ser encontrados em http://www.slideshare.net/gleicon e https://speakerdeck.com/gleicon/",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/gleicon-moraes_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "nomeLivro": "Explorando APIs e bibliotecas Java: JDBC, IO, Threads, JavaFX e mais",
+      "descricaoLivro": "Uma vez que você aprende Orientação a Objetos e o básico do Java, é necessário se tornar fluente em suas APIs, que não são poucas. Um programador Java eficaz conhece o que há disponível e sabe quando pode usar cada uma das possibilidades que a linguagem lhe oferece. É isso que queremos para você.  Rodrigo Turini ensina como lidar com as diferentes APIs do Java com exemplos práticos e que são relevantes no seu dia a dia. Você vai aprender as diferentes APIs para fazer IO, trabalhar com threads da forma correta, se conectar com banco de dados via JDBC, integrar com ferramentas de build e muito mais.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/cover-apis-java_small.jpeg?v=1423244220",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Rodrigo Turini",
+          "detalhesAutor": "Rodrigo Turini é Bacharel em Ciência da Computação, desenvolvedor, instrutor pela Caelum e autor de cursos do Alura. Desenvolve sistemas principalmente em Java e, atualmente, participa do expert group que mantém a JSR 371 (Model-View-Controller) e JSR 370 (JAX-RS 2.1), sendo a primeira uma nova especificação do JavaEE 8. Rodrigo tem participação ativa na comunidade, participando de diversas listas de discussões sobre linguagens e frameworks, e tendo palestrado em eventos no Brasil e exterior, como DevCamp 2013 e JavaOne 2014, em San Francisco. É um dos líderes de desenvolvimento do VRaptor e contribui para diversos outros projetos open source. Gosta de estudar continuamente as melhores práticas da orientação a objetos, programação funcional e Java 8.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/rodrigo-turini_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "nomeLivro": "Test-Driven Development: Teste e Design no Mundo Real com PHP",
+      "descricaoLivro": "Por que não testamos software? Porque é caro? Porque é demorado? Porque é chato? Testes automatizados são a solução para todos esses problemas. Aprenda a escrever um programa que testa seu programa de forma rápida, barata e produtiva, e aumente a qualidade do seu produto final.  Neste livro, você aprenderá sobre TDD, uma das práticas ágeis de desenvolvimento de software mais populares. TDD faz o desenvolvedor escrever o teste antes mesmo de implementar o código. Essa simples inversão na maneira de se trabalhar faz com o que o desenvolvedor escreva um código mais testado, com menos bugs, e, inclusive, com mais qualidade. Seja profissional, teste seu software!",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/cover_ce399913-9822-4509-ab16-fad1cfad2df3_small.jpeg?v=1421769309",
+      "autores": [
+        {
+          "idAutor": 16,
+          "nomeAutor": "Andre Cardoso",
+          "detalhesAutor": "Andre Cardoso é desenvolvedor PHP, bacharelando em Análise e Desenvolvimento de Sistemas, Técnico em Informática com foco em desenvolvimento de sistemas Web-based. Trabalha exclusivamente com PHP há cerca de 5 anos e durante este período esteve envolvido em projetos de todos os portes para grandes clientes como HSBC, Renault e Liquigás. Também desenvolveu sistemas para inúmeras startups nos estados do Paraná, Santa Catarina e São Paulo. Antes do PHP, aventurou-se com Java, um pouco de .Net e Delphi, mas foi no PHP que decidiu focar e especializar-se.  Atualmente, trabalha na empresa Redsuns Tecnologia em Curitiba que tem foco em soluções tecnológicas inteligentes e desenvolvimento de startups.  Ministrou palestras e workshops sobre TDD, PHP e tecnologias que o complementam  nos eventos SFD (Software Freedom Day), FTSL (Fórum de Tecnologia em Software Livre) e  FLISOL (Festival Latino Americano de Instalação de Software Livre). Tem uma enorme satisfação  como profissional em compartilhar conhecimento e faz isso participando de diversos grupos  de discussões e alguns projetos open source.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/andre-cardoso_small.png?54691"
+        },
+        {
+          "idAutor": 14,
+          "nomeAutor": "Maurício Aniche",
+          "detalhesAutor": "Maurício é instrutor e desenvolvedor da Caelum, possui mais de 9 anos de experiência de desenvolvimento de softwares, tendo participado de projetos para grandes empresas nacionais e internacionais. Mauricio é também mestre em Ciência da Computação pela Universidade de São Paulo (USP), onde pesquisa sobre TDD e sua influência no design de sistemas orientados a objetos. Atualmente, é aluno de doutorado pelo mesmo instituto. Palestrante em eventos nacionais e internacionais, com destaque para sua apresentação no 1º Workshop Internacional sobre Test-Driven Development, localizado em Paris, no ano de 2010, Agile Brazil 2010, 2011 e 2012, e QCON SP 2010 e 2012. Mauricio gosta de discutir sobre TDD, melhores práticas e princípios de orientação a objetos, métodos ágeis de desenvolvimento de software e linguagens de programação. Está no Twitter como @mauricioaniche .",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/mauricio-aniche_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "nomeLivro": "Programando em Go: Crie aplicações com a linguagem do Google",
+      "descricaoLivro": "Go é uma linguagem moderna, criada com o objetivo principal de melhorar a produtividade no desenvolvimento em larga escala de servidores, baseado nas experiências de alguns times dentro do Google.  Hoje, mais de quatro anos após ter sido anunciada publicamente, cada vez mais empresas têm adotado a linguagem para escrever diversos tipos diferentes de aplicações, muito além dos servidores.  Go traz um misto interessante de recursos de alto e baixo nível que a torna atraente para diferentes públicos. Suas principais características incluem o controle inteligente de dependências, compilação rápida e eficiente, sintaxe simples, gerenciamento automático de memória incluindo um coletor de lixo, sistema de tipos forte e estático, funções de primeira classe e suporte nativo e de alto nível para concorrência.  Este livro apresenta ao leitor os recursos da linguagem Go e importantes partes de sua biblioteca padrão, sempre incluindo exemplos relevantes que demonstram o uso de cada recurso.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/google-go-featured_small.png?v=1411566554",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Caio Filipini",
+          "detalhesAutor": "Caio Filipini é Bacharel em Sistemas de Informacão e trabalha com tecnologia desde 2003. Já participou de diversos projetos como desenvolvedor e consultor, a maioria envolvendo as linguagens Java, JavaScript e Ruby. Foi desenvolvedor na Caelum, e atualmente trabalha como desenvolvedor backend na SoundCloud em Berlim, na Alemanha.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/caio-filipini_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "nomeLivro": "Componentes Reutilizáveis em Java com Reflexão e Anotações",
+      "descricaoLivro": "Muitos dos recursos providos pelos frameworks e componentes mais utilizados na indústria extrapolam os simples conceitos da Orientação a Objetos e fazem uso de reflexão e anotações. A utilização dessas poderosas ferramentas pode fazer uma grande diferença, com potencial de aumentar a produtividade do time e melhorar a estrutura do código.  Neste livro, o uso de reflexão e anotações é abordado por completo, indo desde o funcionamento da API até boas práticas em sua utilização. Além disso, o livro também fala sobre ferramentas de código aberto, manipulação de bytecode e as novidades sobre reflexão do Java 8. Suba de nível em suas habilidades de programação aprendendo essa técnica que vai lhe permitir escrever códigos extremamente flexíveis.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/reflexao-anotacoes-featured_small.png?v=1416318033",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Eduardo Guerra",
+          "detalhesAutor": "Eduardo Guerra é desenvolvedor de frameworks, editor-chefe da revista MundoJ e pesquisador do Instituto Nacional de Pesquisas Espaciais (INPE). Foi professor do Instituto Tecnológico de Aeronáutica (ITA), onde concluiu sua graduação, mestrado e doutorado. Suas pesquisas concentram-se nas áreas de design, arquitetura e teste de software. Possui diversas certificações da plataforma Java e experiência como arquiteto de software. Participa de projetos de frameworks open-source, como SwingBean, Esfinge e ClassMock. Ele acredita que um bom software faz-se mais com criatividade do que com código e vive em busca de melhores formas para seu desenvolvimento.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/eduardo-guerra_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "nomeLivro": "Aplicações Java para a web com JSF e JPA",
+      "descricaoLivro": "Neste livro, você encontrará as especificações mais utilizadas do Java, explicadas com exemplos práticos e claros que mostram como usar cada tecnologia em separado e como utilizá-las em conjunto.  Conheças as melhores práticas da JPA 2.0, seus mapeamentos, caches e truques de performance, e tire o máximo do JSF 2.2 compreendendo seu ciclo de vida e as novidades que surgiram nas atuais versões das especificações.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/jsf-jpa-featured_small.png?v=1411486340",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Gilliard Santos Cordeiro",
+          "detalhesAutor": "Gilliard Santos Cordeiro é Analista de Sistemas pela UFMS e especialista em Engenharia de Software pela Uniderp. É também tomador de tereré, tirador de foto, pescador e karateca amador. Iniciou tomando tereré desde muito cedo, como todo sul-mato-grossense, mas na programação só teve o primeiro contato na faculdade, em 2002.  O início profissional foi em 2003, onde como estagiário programou em Lotus Script e um ano depois começou a desenvolver em Java. Algum tempo depois, junto com outros amigos fundou o JUGMS, que hoje organiza anualmente o Javaneiros, o maior evento de desenvolvedores de Mato Grosso do Sul. O gosto pela pesca e pelo karatê veio depois de 'velho', aos 28 anos. Foi coordenador de novas tecnologias (P&D) no Tribunal de Justiça de MS, onde atualmente é diretor da área de desenvolvimento de sistemas. Ele mantém um blog em http://gilliard.eti.br.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/gilliard-cordeiro_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "nomeLivro": "Microsoft Kinect: Crie aplicações interativas",
+      "descricaoLivro": "Com o crescimento e popularização da tecnologia, é cada vez mais comum pessoas de diferentes idades utilizarem aplicativos. Com isso, surge a necessidade do uso de interfaces naturais em aplicações. Aprenda com este livro a criar aplicações incríveis aproveitando todos os recursos do sensor de movimentos Microsoft Kinect.  Crie aplicativos modernos que são acessíveis através de gestos, poses e comandos de voz. Aprenda a utilizar sistemas de coordenadas de três dimensões e matemática de forma simples e sem traumas. Se você já sabe C# já tem tudo que precisa para entrar neste mundo de interfaces naturais e sensores de movimento.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/kinect-featured_small.png?v=1416319109",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Gabriel Schade Cardoso",
+          "detalhesAutor": "Gabriel Schade Cardoso trabalha como desenvolvedor de software em .NET desde 2008, tem experiência nas plataformas desktop, web e mobile utilizando principalmente metodologias ágeis, e iniciou-se, em 2012, como palestrante em eventos de tecnologia. Bacharel em Ciência da Computação, consumidor e criador de jogos no tempo livre, e apaixonado por tecnologia (principalmente sensores e mobile), filmes, livros e seriados. Pode ser encontrado em facebook.com/gabrielschade, twitter.com/gabrielschade e github.com/gabrielschade.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/gabriel-schade-cardoso_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "nomeLivro": "Edição e organização de fotos com Adobe Lightroom",
+      "descricaoLivro": "Uma imagem vale por mil palavras. Uma foto pode deixar alguém sem palavras. Contudo, como encontrar alguma foto específica no meio de outras milhares? E como editar, corrigir e mostrá-las a amigos ou clientes de maneira eficiente e profissional?  Uma sessão fotográfica pode facilmente conter milhares de arquivos, e o número cresce cada vez mais à medida que os anos passam. Seja você um fotógrafo profissional ou hobbista, ainda é preciso ter uma boa organização sobre seu trabalho, além de ferramentas que lhe ajudem a ser mais produtivo.  Para estas e outras coisas o Adobe Lightroom é a ferramenta perfeita. Com uma interface otimizada para fotógrafos de todos os níveis, pensada desde o início em produtividade e qualidade, este programa para Windows e Mac irá lhe surpreender.!",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/rest-featured_medium.png?v=1411566684",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Rafael Steil",
+          "detalhesAutor": "Rafael Steil é fotógrafo hobbista há mais de 10 anos, tendo passado por diversas fases durante os anos, de filme a digital. Consegue passar horas editando uma única foto simplesmente pelo prazer do processo. Tem grande paixão por fotografia de paisagens e portraits. Acesse seu site.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/rafael-steil_small.png?54691"
+        }
+      ]
     }
   ]
 }

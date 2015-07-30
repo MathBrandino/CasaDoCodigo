@@ -24,7 +24,6 @@ public class CasaDoCodigoStore extends Application {
         super.onTerminate();
 
         for(AsyncTask task : tasks){
-
             task.cancel(true);
         }
     }
