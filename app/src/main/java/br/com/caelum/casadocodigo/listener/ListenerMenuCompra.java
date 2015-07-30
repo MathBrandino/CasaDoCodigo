@@ -47,6 +47,4 @@ public class ListenerMenuCompra implements View.OnClickListener {
 
     }
 
-
-
 }
