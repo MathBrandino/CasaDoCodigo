@@ -7,7 +7,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.modelo.Autor;
 
 /**
  * Created by matheus on 30/07/15.
@@ -76,5 +79,19 @@ public class LivrosActivityHelper {
 
     public RadioGroup getRadioGroup() {
         return radioGroup;
+    }
+
+    public String concatenaAutores(List<Autor> autores){
+        String nomes = "";
+
+        for (int i = 0; i < autores.size() ; i++) {
+            if (i  == autores.size() -1 ){
+                nomes += autores.get(i).getNomeAutor() ;
+            }else  {
+                nomes += autores.get(i).getNomeAutor() + ", ";
+            }
+        }
+
+        return nomes;
     }
 }

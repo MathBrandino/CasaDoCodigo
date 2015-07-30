@@ -70,7 +70,7 @@ public class LeitorDeLivrosServidor implements  LeitorDeLivros {
                 json += line;
             }
         } catch (Exception e){
-            
+
         }
         return json;
     }

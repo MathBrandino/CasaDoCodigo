@@ -60,13 +60,8 @@ public class LivroActivity extends AppCompatActivity {
 
         TextView autorLivro = helper.getNomeAutor();
 
-        String nomes = "";
+        String nomes = helper.concatenaAutores(livro.getAutores());
 
-        for (int i = 0; i < livro.getAutores().size(); i++) {
-
-            nomes = populaAutores(nomes, i);
-
-        }
         autorLivro.setText(nomes);
 
         autorLivro.setOnClickListener(new View.OnClickListener() {
@@ -81,15 +76,6 @@ public class LivroActivity extends AppCompatActivity {
         descricaoLivro.setText(livro.getDescricaoLivro());
     }
 
-    private String populaAutores(String nomes, int i) {
-        if (i  == livro.getAutores().size() -1 ){
-            nomes += livro.getAutores().get(i).getNomeAutor() ;
-        }else  {
-            nomes += livro.getAutores().get(i).getNomeAutor() + ", ";
-
-        }
-        return nomes;
-    }
 
     private void populaFormaPagmento(LivrosActivityHelper helper) {
 
