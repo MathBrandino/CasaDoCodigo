@@ -1,17 +1,13 @@
 package br.com.caelum.casadocodigo.activity;
 
 import android.app.Activity;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
@@ -25,7 +21,6 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 
 public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate {
 
-    private final String LIVROS = "livros";
     private ListView lista ;
     private LivrosAdapter adapter;
     private CarregadorCatalogoTask catalogoTask;
@@ -39,8 +34,19 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         lista = (ListView) findViewById(R.id.lista_livros);
 
-        buscaDadosServidor();
+        livros = getCasaDoCodigoStore().getLivros();
 
+        verificaSeJaPossuiLista();
+
+    }
+
+    private void verificaSeJaPossuiLista() {
+
+        if(livros == null) {
+            buscaDadosServidor();
+        } else {
+            lidaComRetorno(livros);
+        }
     }
 
     private void buscaDadosServidor() {
@@ -75,6 +81,8 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     @Override
     public void lidaComRetorno(List<Livro> livros) {
 
+        getCasaDoCodigoStore().setLivros(livros);
+
         adapter = new LivrosAdapter(livros, this);
 
 
@@ -82,23 +90,14 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
     }
 
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putSerializable(LIVROS, (Serializable) livros);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        livros = (List<Livro>) savedInstanceState.getSerializable(LIVROS);
-    }
-
     @Override
     public void lidaComErro(Exception e) {
-        e.printStackTrace();
-        Toast.makeText(this, "Deu erro", Toast.LENGTH_LONG).show();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Problemas com a conexão")
+                .setMessage("Verifique se está conectado na internet e tente novamente ")
+                .setIcon(R.drawable.casadocodigo)
+                .show();
     }
 
     @Override
@@ -110,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     public CasaDoCodigoStore getCasaDoCodigoStore() {
         return (CasaDoCodigoStore) getApplication();
     }
+
 
     @Override
     protected void onDestroy() {

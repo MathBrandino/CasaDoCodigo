@@ -1,9 +1,6 @@
 package br.com.caelum.casadocodigo.delegate;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
 
 import java.util.List;
 

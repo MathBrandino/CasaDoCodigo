@@ -17,6 +17,7 @@ public class CasaDoCodigoStore extends Application {
 
     private Carrinho carrinho;
     private List<AsyncTask<?,?,?>> tasks = new ArrayList<>();
+    private List<Livro> livros;
 
     @Override
     public void onTerminate() {
@@ -45,4 +46,11 @@ public class CasaDoCodigoStore extends Application {
         return carrinho;
     }
 
+    public List<Livro> getLivros() {
+        return livros;
+    }
+
+    public void setLivros(List<Livro> livros) {
+        this.livros = livros;
+    }
 }

@@ -32,6 +32,7 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
     protected List<Livro> doInBackground(Void... params) {
 
         try {
+
             LeitorDeLivros leitorDeLivros = LeitorDeLivrosFactory.getLeitorDeLivros();
 
             livros = leitorDeLivros.devolveLista();
@@ -59,14 +60,21 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
     protected void onPostExecute(List<Livro> livros) {
         super.onPostExecute(livros);
 
+        trataListaDeRetorno(livros);
+
+        delegate.getCasaDoCodigoStore().remove(this);
+
+        progressDialog.dismiss();
+
+    }
+
+    private void trataListaDeRetorno(List<Livro> livros) {
+
         if (livros != null ){
             delegate.lidaComRetorno(livros);
         } else {
             delegate.lidaComErro(erro);
         }
-
-        delegate.getCasaDoCodigoStore().remove(this);
-        progressDialog.dismiss();
     }
 
 }

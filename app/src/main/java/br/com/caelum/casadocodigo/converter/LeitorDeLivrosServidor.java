@@ -7,15 +7,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
-import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.modelo.Livro;
-import br.com.caelum.casadocodigo.servidor.MexeServidor;
+import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
 
 /**
  * Created by matheus on 29/07/15.
@@ -28,7 +25,7 @@ public class LeitorDeLivrosServidor implements  LeitorDeLivros {
 
         try {
 
-            MexeServidor servidor = new MexeServidor();
+            ComunicaServidor servidor = new ComunicaServidor();
 
             HttpURLConnection connection = servidor.abreConexao();
 
@@ -36,7 +33,7 @@ public class LeitorDeLivrosServidor implements  LeitorDeLivros {
 
             String json = devolveJson(connection);
 
-            converteJson(json);
+            converteJsonParaLista(json);
 
             connection.disconnect();
 
@@ -54,13 +51,14 @@ public class LeitorDeLivrosServidor implements  LeitorDeLivros {
         return null;
     }
 
-    private void converteJson(String json) throws JSONException {
+    private void converteJsonParaLista(String json) throws JSONException {
         LivroConverter converter = new LivroConverter();
         livros = converter.fromJson(json);
     }
 
 
     private String devolveJson(HttpURLConnection connection) throws IOException {
+
         InputStream inputStream = connection.getInputStream();
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
