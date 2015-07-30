@@ -2,9 +2,12 @@ package br.com.caelum.casadocodigo.listener;
 
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.activity.MainActivity;
+import br.com.caelum.casadocodigo.activity.TipoDeCompra;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.modelo.Item;
 import br.com.caelum.casadocodigo.modelo.Livro;
@@ -14,18 +17,14 @@ import br.com.caelum.casadocodigo.modelo.Livro;
  */
 public class ListenerComprarPeloMain implements View.OnClickListener {
 
-    private ListenerMenuCompra listenerMenuCompra;
     private MainActivity activity;
     private Livro livro;
     private CasaDoCodigoStore casaDoCodigoStore;
-    private View alertView;
     private AlertDialog alertDialog;
 
-    public ListenerComprarPeloMain(ListenerMenuCompra listenerMenuCompra, Livro livro, MainActivity activity, View alertView, AlertDialog alertDialog) {
-        this.listenerMenuCompra = listenerMenuCompra;
+    public ListenerComprarPeloMain( Livro livro, MainActivity activity,AlertDialog alertDialog) {
         this.activity = activity;
         this.livro = livro;
-        this.alertView = alertView ;
         casaDoCodigoStore = (CasaDoCodigoStore) activity.getApplication();
         this.alertDialog = alertDialog;
     }
@@ -33,7 +32,7 @@ public class ListenerComprarPeloMain implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        Item item = new Item(livro, listenerMenuCompra.getTipoDeCompra(alertView));
+        Item item = new Item(livro, getTipoDeCompra());
 
         casaDoCodigoStore.getCarrinho().adicionar(item);
 
@@ -45,5 +44,39 @@ public class ListenerComprarPeloMain implements View.OnClickListener {
     }
 
 
+
+    public TipoDeCompra getTipoDeCompra(){
+
+        TipoDeCompra tipoDeCompra = null;
+
+        RadioGroup radioGroup = (RadioGroup) alertDialog.findViewById(R.id.radio_group);
+
+        tipoDeCompra = devolveTipoCompra(radioGroup);
+
+        return tipoDeCompra;
+    };
+
+
+    private TipoDeCompra devolveTipoCompra(RadioGroup radioGroup){
+        TipoDeCompra tipoDeCompra;
+
+        switch (radioGroup.getCheckedRadioButtonId()){
+
+            case (R.id.valor_virtual):
+                tipoDeCompra = TipoDeCompra.VIRTUAL;
+                return tipoDeCompra;
+
+            case (R.id.valor_fisico):
+                tipoDeCompra = TipoDeCompra.FISICO;
+                return tipoDeCompra;
+
+            case (R.id.valor_juntos):
+                tipoDeCompra = TipoDeCompra.JUNTOS;
+                return tipoDeCompra;
+
+            default:
+                return null;
+        }
+    }
 
 }

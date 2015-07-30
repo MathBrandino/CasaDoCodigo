@@ -43,43 +43,10 @@ public class ListenerMenuCompra implements View.OnClickListener {
 
         Button comprar = (Button) alertView.findViewById(R.id.botao_comprar_livro_alert);
 
-        comprar.setOnClickListener(new ListenerComprarPeloMain(this, livro, activity, alertView, alertDialog));
+        comprar.setOnClickListener(new ListenerComprarPeloMain(livro, activity, alertDialog));
 
     }
 
-    public TipoDeCompra getTipoDeCompra(View view){
-
-        TipoDeCompra tipoDeCompra = null;
-
-        RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
-
-        tipoDeCompra = devolveTipoCompra(radioGroup);
-
-        return tipoDeCompra;
-    };
-
-
-    private TipoDeCompra devolveTipoCompra(RadioGroup radioGroup){
-        TipoDeCompra tipoDeCompra;
-
-        switch (radioGroup.getCheckedRadioButtonId()){
-
-            case (R.id.valor_virtual):
-                tipoDeCompra = TipoDeCompra.VIRTUAL;
-                return tipoDeCompra;
-
-            case (R.id.valor_fisico):
-                tipoDeCompra = TipoDeCompra.FISICO;
-                return tipoDeCompra;
-
-            case (R.id.valor_juntos):
-                tipoDeCompra = TipoDeCompra.JUNTOS;
-                return tipoDeCompra;
-
-            default:
-                return null;
-        }
-    }
 
 
 }
