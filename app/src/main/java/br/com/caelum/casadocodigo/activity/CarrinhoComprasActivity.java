@@ -28,7 +28,8 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     private List<Item> itens;
     private double contador = 0;
     private CasaDoCodigoStore casaDoCodigoStore;
-    private  CarrinhoAdapter adapter;
+    private CarrinhoAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,16 +53,16 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         TextView valorCompras = (TextView) findViewById(R.id.valor_lista_compra);
 
-        valorCompras.setText("O valor da compra é : R$ "+ valorCompra);
+        valorCompras.setText("O valor da compra é : R$ " + valorCompra);
     }
 
     private double devolveValorCompra(double contador) {
 
-        for(Item item : itens){
+        for (Item item : itens) {
 
             if (item.getTipoDeCompra() == TipoDeCompra.VIRTUAL) {
                 contador += item.getLivro().getValorVirtual();
-            } else if (item.getTipoDeCompra() == TipoDeCompra.FISICO){
+            } else if (item.getTipoDeCompra() == TipoDeCompra.FISICO) {
                 contador += item.getLivro().getValorFisico();
             } else {
                 contador += item.getLivro().getValorDoisJuntos();
@@ -124,7 +125,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (item.getItemId() == R.id.menu_carrinho_finaliza){
+        if (item.getItemId() == R.id.menu_carrinho_finaliza) {
             item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
@@ -139,7 +140,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     }
 
     private void fazCompra() {
-        if(itens.size() > 0) {
+        if (itens.size() > 0) {
             finalizaCompra();
         } else {
             Toast.makeText(CarrinhoComprasActivity.this, "Você ainda não comprou nada :( ", Toast.LENGTH_LONG).show();
@@ -155,7 +156,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         String json = geraJson();
-
 
 
                         new AlertDialog.Builder(CarrinhoComprasActivity.this).setMessage(json).show();

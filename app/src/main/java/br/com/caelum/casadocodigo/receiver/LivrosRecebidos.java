@@ -20,7 +20,7 @@ public class LivrosRecebidos extends BroadcastReceiver {
     private static String SUCESSO = "sucesso";
     private static String RETORNO = "retorno";
     private BuscaLivrosDelegate delegate;
-    private static final String LIVROS_RECEBIDOS = "livros recebidos";
+    private static final String LIVROS_RECEBIDOS = "livros_recebidos";
 
     public static LivrosRecebidos registraObservador(BuscaLivrosDelegate delegate) {
         LivrosRecebidos receiver = new LivrosRecebidos();
@@ -40,7 +40,7 @@ public class LivrosRecebidos extends BroadcastReceiver {
 
         boolean deuCerto = intent.getBooleanExtra(SUCESSO, false);
 
-        if (deuCerto){
+        if (deuCerto) {
             delegate.lidaComRetorno((List<Livro>) intent.getSerializableExtra(RETORNO));
         } else {
             delegate.lidaComErro((Exception) intent.getSerializableExtra(RETORNO));
@@ -48,12 +48,12 @@ public class LivrosRecebidos extends BroadcastReceiver {
     }
 
 
-    public static void notifica(Context context, List<Livro> resultado, boolean sucesso){
+    public static void notifica(Context context, List<Livro> resultado, boolean sucesso) {
 
         Intent intent = new Intent(LIVROS_RECEBIDOS);
 
         intent.putExtra(RETORNO, (Serializable) resultado);
-        intent.putExtra(SUCESSO, sucesso );
+        intent.putExtra(SUCESSO, sucesso);
 
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
     }

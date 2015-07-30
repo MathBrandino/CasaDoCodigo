@@ -38,7 +38,7 @@ public class LivroActivity extends AppCompatActivity {
         helper = new LivrosActivityHelper(this);
 
 
-        if (pegaLivro.hasExtra("livro")){
+        if (pegaLivro.hasExtra("livro")) {
             livro = (Livro) pegaLivro.getSerializableExtra("livro");
         }
 
@@ -51,7 +51,7 @@ public class LivroActivity extends AppCompatActivity {
     private void populaLivro(LivrosActivityHelper helper) {
         ImageView imagemLivro = helper.getImagemLivro();
 
-        if(livro.getImagemUrl() != null) {
+        if (livro.getImagemUrl() != null) {
             Picasso.with(this).load(Uri.parse(livro.getImagemUrl())).into(imagemLivro);
         }
 
@@ -95,7 +95,6 @@ public class LivroActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -110,9 +109,9 @@ public class LivroActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        switch (id){
+        switch (id) {
 
-            case (R.id.carrinho_compras) :
+            case (R.id.carrinho_compras):
                 item.setOnMenuItemClickListener(new ListenerCarrinho(this));
                 return true;
 
@@ -120,7 +119,7 @@ public class LivroActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public TipoDeCompra getTipoDeCompra(){
+    public TipoDeCompra getTipoDeCompra() {
 
         TipoDeCompra tipoDeCompra = null;
 
@@ -131,12 +130,14 @@ public class LivroActivity extends AppCompatActivity {
 
         return tipoDeCompra;
 
-    };
+    }
 
-    private TipoDeCompra devolveTipoDeCompra(RadioGroup radioGroup){
+    ;
+
+    private TipoDeCompra devolveTipoDeCompra(RadioGroup radioGroup) {
         TipoDeCompra tipoDeCompra;
 
-        switch (radioGroup.getCheckedRadioButtonId()){
+        switch (radioGroup.getCheckedRadioButtonId()) {
 
             case (R.id.valor_virtual):
                 tipoDeCompra = TipoDeCompra.VIRTUAL;

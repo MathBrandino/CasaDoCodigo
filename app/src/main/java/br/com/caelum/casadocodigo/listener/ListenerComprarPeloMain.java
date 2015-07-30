@@ -22,7 +22,7 @@ public class ListenerComprarPeloMain implements View.OnClickListener {
     private CasaDoCodigoStore casaDoCodigoStore;
     private AlertDialog alertDialog;
 
-    public ListenerComprarPeloMain( Livro livro, MainActivity activity,AlertDialog alertDialog) {
+    public ListenerComprarPeloMain(Livro livro, MainActivity activity, AlertDialog alertDialog) {
         this.activity = activity;
         this.livro = livro;
         casaDoCodigoStore = (CasaDoCodigoStore) activity.getApplication();
@@ -44,8 +44,7 @@ public class ListenerComprarPeloMain implements View.OnClickListener {
     }
 
 
-
-    public TipoDeCompra getTipoDeCompra(){
+    public TipoDeCompra getTipoDeCompra() {
 
         TipoDeCompra tipoDeCompra = null;
 
@@ -54,13 +53,15 @@ public class ListenerComprarPeloMain implements View.OnClickListener {
         tipoDeCompra = devolveTipoCompra(radioGroup);
 
         return tipoDeCompra;
-    };
+    }
+
+    ;
 
 
-    private TipoDeCompra devolveTipoCompra(RadioGroup radioGroup){
+    private TipoDeCompra devolveTipoCompra(RadioGroup radioGroup) {
         TipoDeCompra tipoDeCompra;
 
-        switch (radioGroup.getCheckedRadioButtonId()){
+        switch (radioGroup.getCheckedRadioButtonId()) {
 
             case (R.id.valor_virtual):
                 tipoDeCompra = TipoDeCompra.VIRTUAL;

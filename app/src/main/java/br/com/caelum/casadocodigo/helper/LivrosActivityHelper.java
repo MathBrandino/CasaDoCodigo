@@ -81,13 +81,13 @@ public class LivrosActivityHelper {
         return radioGroup;
     }
 
-    public String concatenaAutores(List<Autor> autores){
+    public String concatenaAutores(List<Autor> autores) {
         String nomes = "";
 
-        for (int i = 0; i < autores.size() ; i++) {
-            if (i  == autores.size() -1 ){
-                nomes += autores.get(i).getNomeAutor() ;
-            }else  {
+        for (int i = 0; i < autores.size(); i++) {
+            if (i == autores.size() - 1) {
+                nomes += autores.get(i).getNomeAutor();
+            } else {
                 nomes += autores.get(i).getNomeAutor() + ", ";
             }
         }

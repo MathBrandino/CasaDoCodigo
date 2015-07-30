@@ -2,7 +2,6 @@ package br.com.caelum.casadocodigo.servidor;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -19,7 +18,7 @@ public class ComunicaServidor {
 
         connection = (HttpURLConnection) url.openConnection();
 
-       return connection;
+        return connection;
 
     }
 }

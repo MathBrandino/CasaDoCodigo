@@ -66,13 +66,13 @@ public class LivroConverter {
     }
 
 
-    public String toJson(List<Item> items){
+    public String toJson(List<Item> items) {
 
-        try{
+        try {
             JSONStringer jsonStringer = new JSONStringer();
             jsonStringer.object().key(LIVROS_ENVIAR).array();
 
-            for (Item item : items){
+            for (Item item : items) {
 
                 jsonStringer.object()
                         .key(ID_LIVRO).value(item.getLivro().getId())
@@ -85,8 +85,8 @@ public class LivroConverter {
 
             return jsonSaida;
 
-        } catch (JSONException e){
-            throw  new RuntimeException(e);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
         }
     }
 

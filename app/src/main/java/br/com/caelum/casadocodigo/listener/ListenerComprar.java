@@ -1,7 +1,6 @@
 package br.com.caelum.casadocodigo.listener;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.view.View;
 import android.widget.Toast;
 

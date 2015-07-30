@@ -29,7 +29,7 @@ public class AutorActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        if (intent.hasExtra(LIVRO)){
+        if (intent.hasExtra(LIVRO)) {
             livro = (Livro) intent.getSerializableExtra(LIVRO);
         }
 

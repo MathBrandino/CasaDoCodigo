@@ -16,23 +16,23 @@ public class Carrinho implements Serializable {
         items = new ArrayList<>();
     }
 
-    public void adicionar(Item item){
+    public void adicionar(Item item) {
         items.add(item);
     }
 
-    public void remove(int position){
+    public void remove(int position) {
         items.remove(position);
     }
 
-    public void limpaLista(List<Item> items){
+    public void limpaLista(List<Item> items) {
         items.removeAll(items);
     }
 
-    public Item  getItem(int position) {
+    public Item getItem(int position) {
         return items.get(position);
     }
 
-    public List<Item> pegaListaItens(){
+    public List<Item> pegaListaItens() {
 
         return items;
     }

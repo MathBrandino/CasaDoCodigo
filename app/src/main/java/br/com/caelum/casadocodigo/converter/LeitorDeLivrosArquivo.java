@@ -24,7 +24,7 @@ public class LeitorDeLivrosArquivo implements LeitorDeLivros {
         this.resource = resources;
     }
 
-    private String leArquivo(){
+    private String leArquivo() {
 
 
         InputStream inputStream = resource.openRawResource(R.raw.listalivros);
@@ -35,7 +35,7 @@ public class LeitorDeLivrosArquivo implements LeitorDeLivros {
         String json = "";
 
         try {
-            while ((line = bufferedReader.readLine()) != null){
+            while ((line = bufferedReader.readLine()) != null) {
                 json += line;
             }
         } catch (IOException e) {
@@ -53,7 +53,7 @@ public class LeitorDeLivrosArquivo implements LeitorDeLivros {
         LivroConverter converter = new LivroConverter();
 
         try {
-           livros = converter.fromJson(leArquivo());
+            livros = converter.fromJson(leArquivo());
         } catch (JSONException e) {
             e.printStackTrace();
         }

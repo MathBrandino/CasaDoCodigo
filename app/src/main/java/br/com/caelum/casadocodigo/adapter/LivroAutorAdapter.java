@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -28,7 +27,7 @@ public class LivroAutorAdapter extends BaseAdapter {
         this.activity = activity;
     }
 
-    public class ViewHolder{
+    public class ViewHolder {
 
         ImageView fotoAutor;
         TextView nomeAutor;
@@ -65,7 +64,6 @@ public class LivroAutorAdapter extends BaseAdapter {
 
         ViewHolder holder = (ViewHolder) view.getTag();
 
-        
 
         populaAutor(position, holder);
 
@@ -79,7 +77,8 @@ public class LivroAutorAdapter extends BaseAdapter {
         } else {
 
             view = activity.getLayoutInflater().inflate(R.layout.listagem_autor_livro, parent, false);
-            ViewHolder holder; holder = new ViewHolder(view);
+            ViewHolder holder;
+            holder = new ViewHolder(view);
             view.setTag(holder);
 
         }
@@ -90,9 +89,9 @@ public class LivroAutorAdapter extends BaseAdapter {
 
         ImageView autorImagem = holder.fotoAutor;
         TextView nomeAutor = holder.nomeAutor;
-        TextView descricaoAutor  = holder.descricaoAutor;
+        TextView descricaoAutor = holder.descricaoAutor;
 
-        if (autores.get(position).getImagemAutorUrl() != null){
+        if (autores.get(position).getImagemAutorUrl() != null) {
             Picasso.with(activity).load(autores.get(position).getImagemAutorUrl()).into(autorImagem);
         }
 

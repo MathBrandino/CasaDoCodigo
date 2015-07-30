@@ -13,8 +13,11 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 public interface BuscaLivrosDelegate {
 
     void lidaComRetorno(List<Livro> livros);
+
     void lidaComErro(Exception e);
+
     Activity retornaActivity();
+
     CasaDoCodigoStore getCasaDoCodigoStore();
 }
 

@@ -1,6 +1,5 @@
 package br.com.caelum.casadocodigo.adapter;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +35,7 @@ public class LivrosAdapter extends BaseAdapter {
     }
 
 
-    private class ViewHolder{
+    private class ViewHolder {
 
         final TextView nomeLivro;
         final TextView descricaoLivro;
@@ -108,7 +107,7 @@ public class LivrosAdapter extends BaseAdapter {
         ViewHolder holder = (ViewHolder) view.getTag();
 
         ImageView imagemLivro = holder.imagemLivro;
-        TextView nomeLivro =  holder.nomeLivro;
+        TextView nomeLivro = holder.nomeLivro;
         TextView descricaoLivro = holder.descricaoLivro;
         Button adicionarCarrinho = holder.adicionarCarrinho;
 
@@ -128,7 +127,8 @@ public class LivrosAdapter extends BaseAdapter {
     }
 
     private View criaView(int position, View convertView) {
-        View view;ViewHolder holder;
+        View view;
+        ViewHolder holder;
 
 
         if (convertView != null) {

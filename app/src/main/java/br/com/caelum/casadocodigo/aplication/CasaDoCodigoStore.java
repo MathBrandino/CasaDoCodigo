@@ -15,18 +15,18 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 public class CasaDoCodigoStore extends Application {
 
     private Carrinho carrinho;
-    private List<AsyncTask<?,?,?>> tasks = new ArrayList<>();
+    private List<AsyncTask<?, ?, ?>> tasks = new ArrayList<>();
     private List<Livro> livros;
 
     public CasaDoCodigoStore() {
         carrinho = new Carrinho();
     }
 
-    public void registra(AsyncTask<? , ? , ?> task ){
+    public void registra(AsyncTask<?, ?, ?> task) {
         tasks.add(task);
     }
 
-    public void remove(AsyncTask<? , ? , ?> task ){
+    public void remove(AsyncTask<?, ?, ?> task) {
         tasks.remove(task);
     }
 

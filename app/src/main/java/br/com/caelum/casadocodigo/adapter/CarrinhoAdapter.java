@@ -28,7 +28,7 @@ public class CarrinhoAdapter extends BaseAdapter {
         this.activity = activity;
     }
 
-    private class ViewHolder{
+    private class ViewHolder {
         ImageView imagemLivro;
         TextView nomeLivro;
         TextView valorLivro;
@@ -74,10 +74,10 @@ public class CarrinhoAdapter extends BaseAdapter {
         View view;
 
 
-        if (convertView != null){
+        if (convertView != null) {
             view = convertView;
-        }else {
-            view = View.inflate(activity, R.layout.item_carrinho,null);
+        } else {
+            view = View.inflate(activity, R.layout.item_carrinho, null);
             ViewHolder viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
         }
@@ -104,16 +104,16 @@ public class CarrinhoAdapter extends BaseAdapter {
 
     private void populaImagem(Livro livro, ViewHolder holder) {
         ImageView fotoLivro = holder.imagemLivro;
-        if (livro.getImagemUrl() != null){
+        if (livro.getImagemUrl() != null) {
             Picasso.with(activity).load(livro.getImagemUrl()).into(fotoLivro);
         }
     }
 
 
-    public String devolveValorPeloTipoDeCompra(int position, Livro livro){
+    public String devolveValorPeloTipoDeCompra(int position, Livro livro) {
 
         String valor = "R$ ";
-        switch (itens.get(position).getTipoDeCompra()){
+        switch (itens.get(position).getTipoDeCompra()) {
 
             case VIRTUAL:
                 valor += String.valueOf(livro.getValorVirtual());

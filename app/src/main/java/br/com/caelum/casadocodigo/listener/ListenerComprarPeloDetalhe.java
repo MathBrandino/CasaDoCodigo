@@ -25,7 +25,6 @@ public class ListenerComprarPeloDetalhe implements View.OnClickListener {
     }
 
 
-
     @Override
     public void onClick(View view) {
 

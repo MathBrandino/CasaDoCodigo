@@ -12,7 +12,7 @@ public class OnlyOpenRawResource {
 
     //SOLID
 
-    public OnlyOpenRawResource(Resources resources){
+    public OnlyOpenRawResource(Resources resources) {
         this.resources = resources;
     }
 

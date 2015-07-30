@@ -4,10 +4,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.activity.TipoDeCompra;
 import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -29,7 +27,7 @@ public class ListenerMenuCompra implements View.OnClickListener {
 
         populaRadioGroup(alertView);
 
-        AlertDialog alertDialog =  new AlertDialog.Builder(activity).setView(alertView).setTitle(livro.getNomeLivro()).show();
+        AlertDialog alertDialog = new AlertDialog.Builder(activity).setView(alertView).setTitle(livro.getNomeLivro()).show();
 
         Button comprar = (Button) alertView.findViewById(R.id.botao_comprar_livro_alert);
 

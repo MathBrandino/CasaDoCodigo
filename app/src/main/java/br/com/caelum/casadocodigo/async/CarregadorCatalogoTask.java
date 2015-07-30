@@ -3,13 +3,11 @@ package br.com.caelum.casadocodigo.async;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 
-import java.io.Serializable;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.converter.LeitorDeLivros;
-import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
 import br.com.caelum.casadocodigo.factory.LeitorDeLivrosFactory;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
@@ -18,7 +16,7 @@ import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 /**
  * Created by matheus on 28/07/15.
  */
-public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
+public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
 
     private Exception erro;
 
@@ -43,7 +41,7 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
 
             return livros;
 
-        } catch (Exception e){
+        } catch (Exception e) {
             erro = e;
 
             return null;
@@ -54,6 +52,7 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+
 
     }
 
@@ -69,7 +68,7 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void , List<Livro>>{
 
     private void trataListaDeRetorno(List<Livro> livros) {
 
-        if (livros != null ){
+        if (livros != null) {
             LivrosRecebidos.notifica(casaDoCodigoStore, livros, true);
         } else {
             LivrosRecebidos.notifica(casaDoCodigoStore, livros, false);
