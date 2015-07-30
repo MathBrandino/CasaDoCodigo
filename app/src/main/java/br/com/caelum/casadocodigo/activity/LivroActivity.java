@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.helper.LivrosActivityHelper;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
 import br.com.caelum.casadocodigo.listener.ListenerComprarPeloDetalhe;
 import br.com.caelum.casadocodigo.modelo.Livro;
@@ -25,33 +26,7 @@ public class LivroActivity extends AppCompatActivity {
 
     private final String LIVRO = "livro";
     private Livro livro;
-
-    private class ViewHolder {
-
-        final TextView nomeLivro;
-        final TextView nomeAutor;
-        final TextView descricaoLivro;
-        final Button adicionarCarrinho;
-        final ImageView imagemLivro;
-        final RadioButton virtual;
-        final RadioButton fisico;
-        final RadioButton juntos;
-        final RadioGroup radioGroup;
-
-        public ViewHolder(){
-
-            nomeLivro = (TextView) findViewById(R.id.nome_livro_detalhe);
-            descricaoLivro = (TextView) findViewById(R.id.desc_livro_detalhes);
-            adicionarCarrinho = (Button) findViewById(R.id.botao_comprar_livro);
-            imagemLivro = (ImageView) findViewById(R.id.imagem_livro_desc);
-            virtual = (RadioButton) findViewById(R.id.valor_virtual);
-            fisico = (RadioButton) findViewById(R.id.valor_fisico);
-            juntos = (RadioButton) findViewById(R.id.valor_juntos);
-            nomeAutor = (TextView) findViewById(R.id.autor_livro);
-            radioGroup = (RadioGroup) findViewById(R.id.radio_group);
-
-        }
-    }
+    private LivrosActivityHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,47 +35,36 @@ public class LivroActivity extends AppCompatActivity {
 
         Intent pegaLivro = getIntent();
 
-        ViewHolder holder = new ViewHolder();
+        helper = new LivrosActivityHelper(this);
+
 
         if (pegaLivro.hasExtra("livro")){
             livro = (Livro) pegaLivro.getSerializableExtra("livro");
         }
 
-        populaLivro(holder);
+        populaLivro(helper);
 
-        populaFormaPagmento(holder);
-
-
-
-
+        populaFormaPagmento(helper);
 
     }
 
-
-    private void populaLivro(ViewHolder holder) {
-        ImageView imagemLivro = holder.imagemLivro;
+    private void populaLivro(LivrosActivityHelper helper) {
+        ImageView imagemLivro = helper.getImagemLivro();
 
         if(livro.getImagemUrl() != null) {
             Picasso.with(this).load(Uri.parse(livro.getImagemUrl())).into(imagemLivro);
         }
 
-        TextView nomeLivro = holder.nomeLivro;
+        TextView nomeLivro = helper.getNomeLivro();
         nomeLivro.setText(livro.getNomeLivro());
 
-        TextView autorLivro = holder.nomeAutor;
+        TextView autorLivro = helper.getNomeAutor();
 
         String nomes = "";
 
         for (int i = 0; i < livro.getAutores().size(); i++) {
 
-            if (i  == livro.getAutores().size() -1 ){
-                nomes += livro.getAutores().get(i).getNomeAutor() ;
-            }else  {
-                nomes += livro.getAutores().get(i).getNomeAutor() + ", ";
-
-            }
-
-
+            nomes = populaAutores(nomes, i);
 
         }
         autorLivro.setText(nomes);
@@ -113,28 +77,33 @@ public class LivroActivity extends AppCompatActivity {
                 startActivity(mostraAutores);
             }
         });
-        TextView descricaoLivro = holder.descricaoLivro;
+        TextView descricaoLivro = helper.getDescricaoLivro();
         descricaoLivro.setText(livro.getDescricaoLivro());
     }
 
-    private void populaFormaPagmento(ViewHolder holder) {
+    private String populaAutores(String nomes, int i) {
+        if (i  == livro.getAutores().size() -1 ){
+            nomes += livro.getAutores().get(i).getNomeAutor() ;
+        }else  {
+            nomes += livro.getAutores().get(i).getNomeAutor() + ", ";
 
+        }
+        return nomes;
+    }
 
+    private void populaFormaPagmento(LivrosActivityHelper helper) {
 
-        RadioButton virtual = holder.virtual;
+        RadioButton virtual = helper.getVirtual();
         virtual.setText("Virtual : R$ " + livro.getValorVirtual());
 
-        RadioButton fisico = holder.fisico;
+        RadioButton fisico = helper.getFisico();
         fisico.setText("Fisico : R$ " + livro.getValorFisico());
 
-        RadioButton juntos = holder.juntos;
+        RadioButton juntos = helper.getJuntos();
         juntos.setText("Juntos : R$ " + livro.getValorDoisJuntos());
         juntos.toggle();
 
-
-        Button comprar = holder.adicionarCarrinho;
-
-
+        Button comprar = helper.getAdicionarCarrinho();
 
         comprar.setOnClickListener(new ListenerComprarPeloDetalhe(LivroActivity.this, livro));
     }
@@ -162,8 +131,6 @@ public class LivroActivity extends AppCompatActivity {
                 return true;
 
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -171,18 +138,14 @@ public class LivroActivity extends AppCompatActivity {
 
         TipoDeCompra tipoDeCompra = null;
 
-        ViewHolder holder = new ViewHolder();
 
-
-        RadioGroup radioGroup = holder.radioGroup;
+        RadioGroup radioGroup = helper.getRadioGroup();
 
         tipoDeCompra = devolveTipoDeCompra(radioGroup);
 
         return tipoDeCompra;
 
     };
-
-
 
     private TipoDeCompra devolveTipoDeCompra(RadioGroup radioGroup){
         TipoDeCompra tipoDeCompra;
@@ -205,6 +168,4 @@ public class LivroActivity extends AppCompatActivity {
                 return null;
         }
     }
-
-
 }

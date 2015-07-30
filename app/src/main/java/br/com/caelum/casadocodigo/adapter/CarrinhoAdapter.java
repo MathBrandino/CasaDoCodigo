@@ -6,16 +6,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.modelo.Carrinho;
 import br.com.caelum.casadocodigo.modelo.Item;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -96,7 +92,7 @@ public class CarrinhoAdapter extends BaseAdapter {
 
     private void popularValorLivro(int position, Livro livro, ViewHolder holder) {
         TextView valorLivro = holder.valorLivro;
-        String valor = verificaTipo(position,livro);
+        String valor = devolveValorPeloTipoDeCompra(position, livro);
         valorLivro.setText(valor);
     }
 
@@ -114,7 +110,7 @@ public class CarrinhoAdapter extends BaseAdapter {
     }
 
 
-    public String verificaTipo(int position, Livro livro){
+    public String devolveValorPeloTipoDeCompra(int position, Livro livro){
 
         String valor = "R$ ";
         switch (itens.get(position).getTipoDeCompra()){

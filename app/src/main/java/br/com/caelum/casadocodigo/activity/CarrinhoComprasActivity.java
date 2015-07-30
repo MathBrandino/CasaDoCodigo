@@ -80,10 +80,10 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         listaDeLivrosComprados.setAdapter(adapter);
 
-        removeLivroCarrinho(casaDoCodigoStore, listaDeLivrosComprados, adapter);
+        chamaListenerParaRemocaoDeLivro(casaDoCodigoStore, listaDeLivrosComprados, adapter);
     }
 
-    private void removeLivroCarrinho(final CasaDoCodigoStore casaDoCodigoStore, ListView listaDeLivrosComprados, final CarrinhoAdapter adapter) {
+    private void chamaListenerParaRemocaoDeLivro(final CasaDoCodigoStore casaDoCodigoStore, ListView listaDeLivrosComprados, final CarrinhoAdapter adapter) {
         listaDeLivrosComprados.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {

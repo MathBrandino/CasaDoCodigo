@@ -19,19 +19,9 @@ public class CasaDoCodigoStore extends Application {
     private List<AsyncTask<?,?,?>> tasks = new ArrayList<>();
     private List<Livro> livros;
 
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-
-        for(AsyncTask task : tasks){
-            task.cancel(true);
-        }
-    }
-
     public void registra(AsyncTask<? , ? , ?> task ){
         tasks.add(task);
     }
-
 
     public void remove(AsyncTask<? , ? , ?> task ){
         tasks.remove(task);

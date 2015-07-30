@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         if(livros == null) {
             buscaDadosServidor();
         } else {
-            lidaComRetorno(livros);
+            populaView(livros);
         }
     }
 
@@ -83,9 +83,13 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         getCasaDoCodigoStore().setLivros(livros);
 
+        populaView(livros);
+
+    }
+
+    private void populaView(List<Livro> livros) {
+
         adapter = new LivrosAdapter(livros, this);
-
-
         lista.setAdapter(adapter);
 
     }
@@ -111,9 +115,4 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     }
 
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        getCasaDoCodigoStore().onTerminate();
-    }
 }

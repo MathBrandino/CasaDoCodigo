@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.util.List;
+import java.util.Scanner;
 
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
@@ -59,19 +60,17 @@ public class LeitorDeLivrosServidor implements  LeitorDeLivros {
 
     private String devolveJson(HttpURLConnection connection) throws IOException {
 
-        InputStream inputStream = connection.getInputStream();
-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        Scanner scanner = new Scanner(connection.getInputStream());
 
         String line;
         String json = "";
 
         try {
-            while ((line = bufferedReader.readLine()) != null){
+            while ((line = scanner.nextLine()) != null){
                 json += line;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e){
+            
         }
         return json;
     }
