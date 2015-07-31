@@ -8,17 +8,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.PrintStream;
+import java.net.HttpURLConnection;
 import java.util.List;
+import java.util.Scanner;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.CarrinhoAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.converter.LivroConverter;
+import br.com.caelum.casadocodigo.leitorDeLivros.LeitorDeLivrosServidor;
 import br.com.caelum.casadocodigo.modelo.Item;
+import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
 
 /**
  * Created by matheus on 27/07/15.
@@ -148,6 +156,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     }
 
     private void finalizaCompra() {
+
         new AlertDialog.Builder(CarrinhoComprasActivity.this)
                 .setTitle("Finalizar Compra ?")
                 .setMessage("Sua compra possui " + itens.size() + " livros e o valor é : R$ " + devolveValorCompra(contador) + "0")
@@ -155,19 +164,89 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        String json = geraJson();
+                        final String[] email = {""};
 
+                        View emailView = View.inflate(CarrinhoComprasActivity.this, R.layout.email_compra, null);
 
-                        new AlertDialog.Builder(CarrinhoComprasActivity.this).setMessage(json).show();
+                        final EditText emailUser = (EditText) emailView.findViewById(R.id.email_compra);
+                        Button pegaEmail = (Button) emailView.findViewById(R.id.pega_email_compra);
+                        Button continuaCompra = (Button) emailView.findViewById(R.id.continua_compra);
 
-                        casaDoCodigoStore.getCarrinho().limpaLista(itens);
-                        atualizaListas();
-                        Toast.makeText(CarrinhoComprasActivity.this, "Sua compra já foi recebida e logo você receberá as instrucões", Toast.LENGTH_LONG).show();
+                        final AlertDialog alertDialog = criaAlertaEmail(emailView);
+
+                        concluiCompra(email, emailUser, pegaEmail, continuaCompra, alertDialog);
 
                     }
                 })
                 .setNegativeButton("Quero continuar comprando", null)
                 .show();
+    }
+
+    private AlertDialog criaAlertaEmail(View emailView) {
+        return new AlertDialog.Builder(CarrinhoComprasActivity.this)
+                                    .setView(emailView)
+                                    .setTitle("Por favor passe seu email para passarmos a confirmacao")
+                                    .setCancelable(false)
+                                    .show();
+    }
+
+    private void concluiCompra(final String[] email, final EditText emailUser, Button pegaEmail, Button continuaCompra, final AlertDialog alertDialog) {
+
+
+        pegaEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                email[0] = emailUser.getText().toString();
+                if (validaEmail(email)) {
+                    alertDialog.dismiss();
+                    atualizaFinalizacaoCompra();
+                } else {
+                    emailUser.setError("Por favor coloque um email válido !");
+                }
+            }
+        });
+
+        continuaCompra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+    }
+
+    private boolean validaEmail(String[] email) {
+
+        if(!email[0].trim().isEmpty()){
+            if (email[0].contains("@")){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void atualizaFinalizacaoCompra() {
+        casaDoCodigoStore.getCarrinho().limpaLista(itens);
+        atualizaListas();
+        Toast.makeText(CarrinhoComprasActivity.this, "Sua compra já foi recebida e logo você receberá as instrucões", Toast.LENGTH_LONG).show();
+    }
+
+    public void enviaListaJsonParaServidor() throws IOException {
+        
+        String json = geraJson();
+
+        ComunicaServidor comunicaServidor = new ComunicaServidor();
+
+        HttpURLConnection connection = comunicaServidor.abreConexao();
+
+        //aqui terá que ficar a lógica para enviar (?)
+
+//        connection.setDoOutput(true);
+//
+//        PrintStream stream = new PrintStream(connection.getOutputStream());
+//        stream.println(json);
+
+        connection.connect();
+
     }
 
     private String geraJson() {

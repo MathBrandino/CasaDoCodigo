@@ -7,7 +7,7 @@ import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
-import br.com.caelum.casadocodigo.converter.LeitorDeLivros;
+import br.com.caelum.casadocodigo.leitorDeLivros.LeitorDeLivros;
 import br.com.caelum.casadocodigo.factory.LeitorDeLivrosFactory;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
@@ -51,15 +51,16 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
 
     @Override
     protected void onPreExecute() {
-        super.onPreExecute();
 
-
+        progressDialog = ProgressDialog.show(casaDoCodigoStore.getActivity(),  "Aguarde", "Carregando", false, false);
     }
 
 
     @Override
     protected void onPostExecute(List<Livro> livros) {
         super.onPostExecute(livros);
+
+        progressDialog.dismiss();
 
         trataListaDeRetorno(livros);
 
@@ -74,5 +75,4 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
             LivrosRecebidos.notifica(casaDoCodigoStore, livros, false);
         }
     }
-
 }

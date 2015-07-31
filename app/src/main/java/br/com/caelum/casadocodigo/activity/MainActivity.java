@@ -25,16 +25,19 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     private ListView lista;
     private LivrosAdapter adapter;
     private List<Livro> livros;
+    private CasaDoCodigoStore casaDoCodigoStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         lista = (ListView) findViewById(R.id.lista_livros);
 
         livros = getCasaDoCodigoStore().getLivros();
+
+        casaDoCodigoStore = getCasaDoCodigoStore();
+        casaDoCodigoStore.setActivity(this);
 
         verificaSeJaPossuiLista();
 
@@ -51,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     }
 
     private void buscaDadosServidor() {
-        new CarregadorCatalogoTask(getCasaDoCodigoStore()).execute();
+        CarregadorCatalogoTask task = new CarregadorCatalogoTask((CasaDoCodigoStore) getApplicationContext());
+        task.execute();
     }
 
     @Override
