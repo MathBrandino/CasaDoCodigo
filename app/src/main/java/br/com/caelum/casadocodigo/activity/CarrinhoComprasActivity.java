@@ -22,6 +22,7 @@ import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.CarrinhoAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.converter.LivroConverter;
+import br.com.caelum.casadocodigo.helper.EmailCompraHelper;
 import br.com.caelum.casadocodigo.modelo.Item;
 import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
 
@@ -48,9 +49,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         populaCarrinho(casaDoCodigoStore);
 
-
         atualizaValorCompra(contador);
-
 
     }
 
@@ -77,7 +76,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
         }
 
         return contador;
-
     }
 
     private void populaCarrinho(final CasaDoCodigoStore casaDoCodigoStore) {
@@ -95,7 +93,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-
                 alertaRemocaoLivro(position, casaDoCodigoStore, adapter);
 
                 return false;
@@ -112,8 +109,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         casaDoCodigoStore.getCarrinho().remove(position);
                         atualizaListas();
-
-
                     }
                 })
                 .setNegativeButton("Não !", null).show();
@@ -136,7 +131,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
 
-                    fazCompra();
+                    iniciaCompra();
 
                     return false;
                 }
@@ -145,7 +140,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void fazCompra() {
+    private void iniciaCompra() {
         if (itens.size() > 0) {
             finalizaCompra();
         } else {
@@ -164,12 +159,13 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
 
                         View emailView = View.inflate(CarrinhoComprasActivity.this, R.layout.email_compra, null);
+                        EmailCompraHelper helper = new EmailCompraHelper(emailView);
 
-                        final EditText emailUser = (EditText) emailView.findViewById(R.id.email_compra);
-                        Button pegaEmail = (Button) emailView.findViewById(R.id.pega_email_compra);
-                        Button continuaCompra = (Button) emailView.findViewById(R.id.continua_compra);
+                        EditText emailUser = helper.getColocaEmail();
+                        Button pegaEmail = helper.getPegaEmail();
+                        Button continuaCompra = helper.getContinuaCompra();
 
-                        final AlertDialog alertDialog = criaAlertaEmail(emailView);
+                        AlertDialog alertDialog = criaAlertaEmail(emailView);
 
                         concluiCompra(emailUser, pegaEmail, continuaCompra, alertDialog);
 
@@ -182,7 +178,8 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     private AlertDialog criaAlertaEmail(View emailView) {
         return new AlertDialog.Builder(CarrinhoComprasActivity.this)
                 .setView(emailView)
-                .setTitle("Por favor passe seu email para passarmos a confirmacao")
+                .setTitle("Por favor passe seu email")
+                .setIcon(R.drawable.casadocodigo)
                 .setCancelable(false)
                 .show();
     }
@@ -193,7 +190,9 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
         pegaEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 emailParaJson = emailUser.getText().toString();
+
                 if (validaEmail(emailParaJson)) {
                     alertDialog.dismiss();
 
