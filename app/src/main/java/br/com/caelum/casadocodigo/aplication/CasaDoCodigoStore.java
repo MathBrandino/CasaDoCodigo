@@ -2,7 +2,6 @@ package br.com.caelum.casadocodigo.aplication;
 
 import android.app.Activity;
 import android.app.Application;
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
 
 import java.util.ArrayList;

@@ -6,6 +6,7 @@ import br.com.caelum.casadocodigo.activity.TipoDeCompra;
  * Created by matheus on 27/07/15.
  */
 public class Item {
+
     private Livro livro;
     private TipoDeCompra tipoDeCompra;
 

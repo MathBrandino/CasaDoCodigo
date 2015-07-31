@@ -15,16 +15,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.util.List;
-import java.util.Scanner;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.CarrinhoAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.converter.LivroConverter;
-import br.com.caelum.casadocodigo.leitorDeLivros.LeitorDeLivrosServidor;
 import br.com.caelum.casadocodigo.modelo.Item;
 import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
 
@@ -37,6 +34,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     private double contador = 0;
     private CasaDoCodigoStore casaDoCodigoStore;
     private CarrinhoAdapter adapter;
+    private String emailParaJson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,7 +162,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        final String[] email = {""};
 
                         View emailView = View.inflate(CarrinhoComprasActivity.this, R.layout.email_compra, null);
 
@@ -174,7 +171,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
                         final AlertDialog alertDialog = criaAlertaEmail(emailView);
 
-                        concluiCompra(email, emailUser, pegaEmail, continuaCompra, alertDialog);
+                        concluiCompra(emailUser, pegaEmail, continuaCompra, alertDialog);
 
                     }
                 })
@@ -184,22 +181,24 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
     private AlertDialog criaAlertaEmail(View emailView) {
         return new AlertDialog.Builder(CarrinhoComprasActivity.this)
-                                    .setView(emailView)
-                                    .setTitle("Por favor passe seu email para passarmos a confirmacao")
-                                    .setCancelable(false)
-                                    .show();
+                .setView(emailView)
+                .setTitle("Por favor passe seu email para passarmos a confirmacao")
+                .setCancelable(false)
+                .show();
     }
 
-    private void concluiCompra(final String[] email, final EditText emailUser, Button pegaEmail, Button continuaCompra, final AlertDialog alertDialog) {
+    private void concluiCompra(final EditText emailUser, Button pegaEmail, Button continuaCompra, final AlertDialog alertDialog) {
 
 
         pegaEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email[0] = emailUser.getText().toString();
-                if (validaEmail(email)) {
+                emailParaJson = emailUser.getText().toString();
+                if (validaEmail(emailParaJson)) {
                     alertDialog.dismiss();
+
                     atualizaFinalizacaoCompra();
+
                 } else {
                     emailUser.setError("Por favor coloque um email válido !");
                 }
@@ -214,10 +213,10 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
         });
     }
 
-    private boolean validaEmail(String[] email) {
+    private boolean validaEmail(String email) {
 
-        if(!email[0].trim().isEmpty()){
-            if (email[0].contains("@")){
+        if (!email.trim().isEmpty()) {
+            if (email.contains("@")) {
                 return true;
             }
         }
@@ -231,7 +230,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     }
 
     public void enviaListaJsonParaServidor() throws IOException {
-        
+
         String json = geraJson();
 
         ComunicaServidor comunicaServidor = new ComunicaServidor();
@@ -251,7 +250,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
     private String geraJson() {
         LivroConverter converter = new LivroConverter();
-        return converter.toJson(itens);
+        return converter.toJson(itens, emailParaJson);
     }
 
     private void atualizaListas() {

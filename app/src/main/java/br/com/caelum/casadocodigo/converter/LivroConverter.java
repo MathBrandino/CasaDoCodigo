@@ -18,7 +18,6 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 public class LivroConverter {
 
     private final String ID = "id";
-    private final String NOME_LIVRO_ENVIAR = "nomeLivro";
     private final String DESCRICAO_LIVRO = "descricaoLivro";
     private final String DATA_PUBLICACAO = "dataPublicacao";
     private final String ISBN = "ISBN";
@@ -32,11 +31,16 @@ public class LivroConverter {
     private final String DETALHES_AUTOR = "detalhesAutor";
     private final String IMAGEM_AUTOR = "imagemAutor";
     private final String AUTORES = "autores";
-    private final String LIVROS_ENVIAR = "livros";
+    private final String LISTA_ITENS = "itens";
     private final String LIVROS = "livros";
     private final String ID_LIVRO = "idLivro";
     private final String NOME_LIVRO = "nomeLivro";
     private final String TIPO_LIVRO = "tipoLivro";
+    private final String USUARIO = "usuario";
+    private final String EMAIL = "email";
+    private final String ITEM = "item";
+    private final String LIVRO = "livro";
+    private final String COMPRA = "compra";
 
     public List<Livro> fromJson(String json) throws JSONException {
 
@@ -66,20 +70,41 @@ public class LivroConverter {
     }
 
 
-    public String toJson(List<Item> items) {
+    public String toJson(List<Item> items, String email) {
 
         try {
             JSONStringer jsonStringer = new JSONStringer();
-            jsonStringer.object().key(LIVROS_ENVIAR).array();
+
+            jsonStringer
+                    .object().key(COMPRA).array();
+
+            jsonStringer
+                    .object().key(LISTA_ITENS).array();
 
             for (Item item : items) {
 
+                jsonStringer.object().key(ITEM).array();
+
+                jsonStringer.object().key(LIVRO).array();
+
                 jsonStringer.object()
                         .key(ID_LIVRO).value(item.getLivro().getId())
-                        .key(NOME_LIVRO_ENVIAR).value(item.getLivro().getNomeLivro())
+                        .endObject();
+
+                jsonStringer.endArray().endObject();
+
+                jsonStringer.object()
                         .key(TIPO_LIVRO).value(item.getTipoDeCompra())
                         .endObject();
+
+                jsonStringer.endArray().endObject();
             }
+
+            jsonStringer.object().key(USUARIO).array();
+
+            jsonStringer.object().key(EMAIL).value(email).endObject();
+
+            jsonStringer.endArray().endObject();
 
             String jsonSaida = jsonStringer.endArray().endObject().toString();
 
