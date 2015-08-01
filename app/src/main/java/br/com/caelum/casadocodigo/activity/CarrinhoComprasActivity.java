@@ -72,7 +72,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
             } else {
                 contador += item.getLivro().getValorDoisJuntos();
             }
-
         }
 
         return contador;
@@ -122,7 +121,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
         return true;
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -157,7 +155,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-
                         View emailView = View.inflate(CarrinhoComprasActivity.this, R.layout.email_compra, null);
                         EmailCompraHelper helper = new EmailCompraHelper(emailView);
 
@@ -185,7 +182,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     }
 
     private void concluiCompra(final EditText emailUser, Button pegaEmail, Button continuaCompra, final AlertDialog alertDialog) {
-
 
         pegaEmail.setOnClickListener(new View.OnClickListener() {
             @Override
