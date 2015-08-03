@@ -6,4 +6,5 @@
     <item android:id="@+id/carrinho_compras" android:title="Carrinho"
         android:icon="@drawable/carrinho_vazio"
         android:orderInCategory="100" app:showAsAction="always" />
+
 </menu>

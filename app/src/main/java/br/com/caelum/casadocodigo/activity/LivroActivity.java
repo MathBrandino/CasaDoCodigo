@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -46,6 +48,20 @@ public class LivroActivity extends AppCompatActivity {
 
         populaFormaPagmento(helper);
 
+        populaDetalhes(helper);
+
+    }
+
+    private void populaDetalhes(LivrosActivityHelper helper) {
+
+        TextView numeroPaginas = helper.getNumeroPaginas();
+        numeroPaginas.setText(String.valueOf(livro.getNumPaginas()));
+
+        TextView isbn = helper.getIsbn();
+        isbn.setText(livro.getISBN());
+
+        TextView dataPublicacao = helper.getDataPublicacao();
+        dataPublicacao.setText(livro.getDataPublicacao());
     }
 
     private void populaLivro(LivrosActivityHelper helper) {

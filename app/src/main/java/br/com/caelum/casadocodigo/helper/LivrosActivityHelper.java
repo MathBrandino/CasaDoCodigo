@@ -28,6 +28,9 @@ public class LivrosActivityHelper {
     final RadioButton fisico;
     final RadioButton juntos;
     final RadioGroup radioGroup;
+    final TextView numeroPaginas;
+    final TextView isbn;
+    final TextView dataPublicacao;
 
 
     public LivrosActivityHelper(Activity activity) {
@@ -43,6 +46,9 @@ public class LivrosActivityHelper {
         nomeAutor = (TextView) activity.findViewById(R.id.autor_livro);
         radioGroup = (RadioGroup) activity.findViewById(R.id.radio_group);
 
+        numeroPaginas = (TextView) activity.findViewById(R.id.livro_num_pag);
+        isbn = (TextView) activity.findViewById(R.id.livro_isbn);
+        dataPublicacao = (TextView) activity.findViewById(R.id.livro_data_publicacao);
     }
 
     public TextView getNomeLivro() {
@@ -93,5 +99,17 @@ public class LivrosActivityHelper {
         }
 
         return nomes;
+    }
+
+    public TextView getNumeroPaginas() {
+        return numeroPaginas;
+    }
+
+    public TextView getIsbn() {
+        return isbn;
+    }
+
+    public TextView getDataPublicacao() {
+        return dataPublicacao;
     }
 }

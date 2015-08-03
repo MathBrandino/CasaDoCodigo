@@ -2,6 +2,7 @@ package br.com.caelum.casadocodigo.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -11,7 +12,7 @@ import android.widget.ListView;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.adapter.LivrosAdapter;
+import br.com.caelum.casadocodigo.adapter.ListaDeLivrosAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
@@ -23,7 +24,7 @@ import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate {
 
     private ListView lista;
-    private LivrosAdapter adapter;
+    private ListaDeLivrosAdapter adapter;
     private List<Livro> livros;
     private CasaDoCodigoStore casaDoCodigoStore;
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
         lista = (ListView) findViewById(R.id.lista_livros);
 
         livros = getCasaDoCodigoStore().getLivros();
@@ -72,15 +73,17 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        if (id == R.id.carrinho_compras) {
-            item.setOnMenuItemClickListener(new ListenerCarrinho(this));
-            return true;
+        switch (id) {
+
+            case (R.id.carrinho_compras):
+                item.setOnMenuItemClickListener(new ListenerCarrinho(this));
+                return true;
 
         }
 
-
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public void lidaComRetorno(List<Livro> livros) {
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
     private void populaView(List<Livro> livros) {
 
-        adapter = new LivrosAdapter(livros, this);
+        adapter = new ListaDeLivrosAdapter(livros, this);
         lista.setAdapter(adapter);
 
     }

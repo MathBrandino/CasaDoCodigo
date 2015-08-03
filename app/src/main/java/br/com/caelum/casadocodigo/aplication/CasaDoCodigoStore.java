@@ -20,6 +20,7 @@ public class CasaDoCodigoStore extends Application {
     private List<Livro> livros;
     private Activity activity;
 
+
     public CasaDoCodigoStore() {
         carrinho = new Carrinho();
     }

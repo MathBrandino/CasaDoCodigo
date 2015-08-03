@@ -32,7 +32,7 @@ import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
 public class CarrinhoComprasActivity extends AppCompatActivity {
 
     private List<Item> itens;
-    private double contador = 0;
+    private double contador = 0.00;
     private CasaDoCodigoStore casaDoCodigoStore;
     private CarrinhoAdapter adapter;
     private String emailParaJson;
