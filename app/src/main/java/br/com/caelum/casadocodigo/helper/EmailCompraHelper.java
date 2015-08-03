@@ -9,7 +9,7 @@ import br.com.caelum.casadocodigo.R;
 /**
  * Created by matheus on 31/07/15.
  */
-public class EmailCompraHelper  {
+public class EmailCompraHelper {
 
     private EditText colocaEmail;
     private Button pegaEmail;

@@ -17,10 +17,10 @@ import br.com.caelum.casadocodigo.modelo.Livro;
  */
 public class LivrosRecebidos extends BroadcastReceiver {
 
+    private static final String LIVROS_RECEBIDOS = "livros_recebidos";
     private static String SUCESSO = "sucesso";
     private static String RETORNO = "retorno";
     private BuscaLivrosDelegate delegate;
-    private static final String LIVROS_RECEBIDOS = "livros_recebidos";
 
     public static LivrosRecebidos registraObservador(BuscaLivrosDelegate delegate) {
         LivrosRecebidos receiver = new LivrosRecebidos();
@@ -35,6 +35,16 @@ public class LivrosRecebidos extends BroadcastReceiver {
         return receiver;
     }
 
+    public static void notifica(Context context, List<Livro> resultado, boolean sucesso) {
+
+        Intent intent = new Intent(LIVROS_RECEBIDOS);
+
+        intent.putExtra(RETORNO, (Serializable) resultado);
+        intent.putExtra(SUCESSO, sucesso);
+
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
@@ -45,16 +55,5 @@ public class LivrosRecebidos extends BroadcastReceiver {
         } else {
             delegate.lidaComErro((Exception) intent.getSerializableExtra(RETORNO));
         }
-    }
-
-
-    public static void notifica(Context context, List<Livro> resultado, boolean sucesso) {
-
-        Intent intent = new Intent(LIVROS_RECEBIDOS);
-
-        intent.putExtra(RETORNO, (Serializable) resultado);
-        intent.putExtra(SUCESSO, sucesso);
-
-        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
     }
 }

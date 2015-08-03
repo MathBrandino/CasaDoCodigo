@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -192,7 +193,11 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                 if (validaEmail(emailParaJson)) {
                     alertDialog.dismiss();
 
-                    atualizaFinalizacaoCompra();
+                    try {
+                        atualizaFinalizacaoCompra();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                 } else {
                     emailUser.setError("Por favor coloque um email válido !");
@@ -218,7 +223,10 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
         return false;
     }
 
-    private void atualizaFinalizacaoCompra() {
+    private void atualizaFinalizacaoCompra() throws IOException {
+
+        enviaListaJsonParaServidor();
+
         casaDoCodigoStore.getCarrinho().limpaLista(itens);
         atualizaListas();
         Toast.makeText(CarrinhoComprasActivity.this, "Sua compra já foi recebida e logo você receberá as instrucões", Toast.LENGTH_LONG).show();
@@ -234,12 +242,13 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         //aqui terá que ficar a lógica para enviar (?)
 
-//        connection.setDoOutput(true);
-//
-//        PrintStream stream = new PrintStream(connection.getOutputStream());
-//        stream.println(json);
+        connection.setDoOutput(true);
 
-        connection.connect();
+        connection.setRequestMethod("POST");
+
+        Log.i("Json", json);
+
+//        connection.connect();
 
     }
 

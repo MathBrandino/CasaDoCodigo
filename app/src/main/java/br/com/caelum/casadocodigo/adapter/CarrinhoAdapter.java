@@ -28,19 +28,6 @@ public class CarrinhoAdapter extends BaseAdapter {
         this.activity = activity;
     }
 
-    private class ViewHolder {
-        ImageView imagemLivro;
-        TextView nomeLivro;
-        TextView valorLivro;
-
-        public ViewHolder(View view) {
-
-            imagemLivro = (ImageView) view.findViewById(R.id.foto_livro_compra);
-            nomeLivro = (TextView) view.findViewById(R.id.nome_livro_compra);
-            valorLivro = (TextView) view.findViewById(R.id.mostra_valor_livro);
-        }
-    }
-
     @Override
     public int getCount() {
         return itens.size();
@@ -96,7 +83,6 @@ public class CarrinhoAdapter extends BaseAdapter {
         valorLivro.setText(valor);
     }
 
-
     private void populaNomeLivro(Livro livro, ViewHolder holder) {
         TextView nomeLivro = holder.nomeLivro;
         nomeLivro.setText(livro.getNomeLivro());
@@ -108,7 +94,6 @@ public class CarrinhoAdapter extends BaseAdapter {
             Picasso.with(activity).load(livro.getImagemUrl()).into(fotoLivro);
         }
     }
-
 
     public String devolveValorPeloTipoDeCompra(int position, Livro livro) {
 
@@ -129,6 +114,19 @@ public class CarrinhoAdapter extends BaseAdapter {
                 return valor;
             default:
                 return null;
+        }
+    }
+
+    private class ViewHolder {
+        ImageView imagemLivro;
+        TextView nomeLivro;
+        TextView valorLivro;
+
+        public ViewHolder(View view) {
+
+            imagemLivro = (ImageView) view.findViewById(R.id.foto_livro_compra);
+            nomeLivro = (TextView) view.findViewById(R.id.nome_livro_compra);
+            valorLivro = (TextView) view.findViewById(R.id.mostra_valor_livro);
         }
     }
 }

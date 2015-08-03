@@ -34,28 +34,6 @@ public class ListaDeLivrosAdapter extends BaseAdapter {
 
     }
 
-
-    private class ViewHolder {
-
-        final TextView nomeLivro;
-        final TextView descricaoLivro;
-        final Button adicionarCarrinho;
-        final ImageView imagemLivro;
-
-
-        public ViewHolder(View view) {
-
-            nomeLivro = (TextView) view.findViewById(R.id.nome_livro);
-            descricaoLivro = (TextView) view.findViewById(R.id.desc_livro);
-            adicionarCarrinho = (Button) view.findViewById(R.id.botao_comprar);
-            imagemLivro = (ImageView) view.findViewById(R.id.imagem_livro);
-
-
-        }
-
-
-    }
-
     @Override
     public int getCount() {
         return livros.size();
@@ -70,7 +48,6 @@ public class ListaDeLivrosAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return livros.get(position).getId();
     }
-
 
     @Override
     public int getViewTypeCount() {
@@ -145,5 +122,26 @@ public class ListaDeLivrosAdapter extends BaseAdapter {
             view.setTag(holder);
         }
         return view;
+    }
+
+    private class ViewHolder {
+
+        final TextView nomeLivro;
+        final TextView descricaoLivro;
+        final Button adicionarCarrinho;
+        final ImageView imagemLivro;
+
+
+        public ViewHolder(View view) {
+
+            nomeLivro = (TextView) view.findViewById(R.id.nome_livro);
+            descricaoLivro = (TextView) view.findViewById(R.id.desc_livro);
+            adicionarCarrinho = (Button) view.findViewById(R.id.botao_comprar);
+            imagemLivro = (ImageView) view.findViewById(R.id.imagem_livro);
+
+
+        }
+
+
     }
 }

@@ -2,12 +2,14 @@ package br.com.caelum.casadocodigo.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -21,19 +23,27 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 
 
-public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate {
+public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate, NavigationView.OnNavigationItemSelectedListener {
 
     private ListView lista;
     private ListaDeLivrosAdapter adapter;
     private List<Livro> livros;
     private CasaDoCodigoStore casaDoCodigoStore;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
         lista = (ListView) findViewById(R.id.lista_livros);
+        navigationView = (NavigationView) findViewById(R.id.drawer);
+
+        navigationView.setNavigationItemSelectedListener(this);
 
         livros = getCasaDoCodigoStore().getLivros();
 
@@ -122,4 +132,39 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     }
 
 
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+        switch (menuItem.getItemId()){
+            case R.id.java_menu :
+                Toast.makeText(this, "Livros de java", Toast.LENGTH_LONG).show();
+                return true;
+
+            case R.id.carrinho_menu :
+                menuItem.setOnMenuItemClickListener(new ListenerCarrinho(this));
+                return true;
+
+            case R.id.web_menu:
+                Toast.makeText(this, "Livros de web", Toast.LENGTH_LONG).show();
+                return true;
+
+            case R.id.front_menu:
+                Toast.makeText(this, "Livros de front", Toast.LENGTH_LONG).show();
+                return true;
+
+            case R.id.games_menu:
+                Toast.makeText(this, "Livros de game", Toast.LENGTH_LONG).show();
+                return true;
+
+            case R.id.outros_menu:
+                Toast.makeText(this, "Livros diversos", Toast.LENGTH_LONG).show();
+                return true;
+
+            case R.id.agile_menu:
+                Toast.makeText(this, "Livros de agile", Toast.LENGTH_LONG).show();
+                return true;
+        }
+
+        return false;
+    }
 }

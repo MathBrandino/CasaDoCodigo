@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="5sp"
+    android:paddingTop="5sp">
 
     <ImageView
+        android:id="@+id/imagem_livro"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_weight="1"
         android:layout_gravity="center"
-        android:paddingRight="5sp"
+        android:layout_weight="1"
         android:gravity="center"
-        android:id="@+id/imagem_livro"/>
+        android:paddingRight="5sp" />
+
     <LinearLayout
 
         android:layout_width="0dp"
@@ -19,27 +23,27 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/nome_livro"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:textStyle="bold"
             android:elegantTextHeight="true"
             android:textAlignment="center"
-            android:id="@+id/nome_livro"/>
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/desc_livro"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:textStyle="italic"
             android:layout_weight="1"
-            android:id="@+id/desc_livro"/>
+            android:textStyle="italic" />
 
         <Button
-            android:layout_gravity="center"
-            android:gravity="center"
+            android:id="@+id/botao_comprar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/botao_comprar"/>
+            android:layout_gravity="center"
+            android:gravity="center" />
 
     </LinearLayout>
 

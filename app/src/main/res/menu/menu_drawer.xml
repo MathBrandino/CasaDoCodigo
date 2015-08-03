@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/carrinho"
+        android:icon="@drawable/carrinho_vazio"
+        android:id="@+id/carrinho_menu"/>
+    <item
+        android:title="Java"
+        android:icon="@drawable/java"
+        android:id="@+id/java_menu"
+        />
+    <item
+        android:title="Agile"
+        android:icon="@drawable/agile"
+        android:id="@+id/agile_menu"
+        />
+    <item
+        android:title="Front End"
+        android:icon="@drawable/front"
+        android:id="@+id/front_menu"
+        />
+    <item
+        android:title="Games"
+        android:icon="@drawable/games"
+        android:id="@+id/games_menu"
+        />
+    <item
+        android:title="Mobile"
+        android:id="@+id/mobile_menu"
+        android:icon="@drawable/mobile"
+        />
+    <item
+        android:title="Web"
+        android:id="@+id/web_menu"
+        android:icon="@drawable/web"
+        />
+    <item
+        android:title="Outros"
+        android:id="@+id/outros_menu"
+        android:icon="@drawable/outros"
+        />
+</menu>

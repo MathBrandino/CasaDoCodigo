@@ -27,20 +27,6 @@ public class LivroAutorAdapter extends BaseAdapter {
         this.activity = activity;
     }
 
-    public class ViewHolder {
-
-        ImageView fotoAutor;
-        TextView nomeAutor;
-        TextView descricaoAutor;
-
-        public ViewHolder(View view) {
-
-            fotoAutor = (ImageView) view.findViewById(R.id.foto_autor_livro);
-            nomeAutor = (TextView) view.findViewById(R.id.nome_autor_livro);
-            descricaoAutor = (TextView) view.findViewById(R.id.detalhes_autor_livro);
-        }
-    }
-
     @Override
     public int getCount() {
         return autores.size();
@@ -97,6 +83,20 @@ public class LivroAutorAdapter extends BaseAdapter {
 
         nomeAutor.setText(autores.get(position).getNomeAutor());
         descricaoAutor.setText(autores.get(position).getDetalhesAutor());
+    }
+
+    public class ViewHolder {
+
+        ImageView fotoAutor;
+        TextView nomeAutor;
+        TextView descricaoAutor;
+
+        public ViewHolder(View view) {
+
+            fotoAutor = (ImageView) view.findViewById(R.id.foto_autor_livro);
+            nomeAutor = (TextView) view.findViewById(R.id.nome_autor_livro);
+            descricaoAutor = (TextView) view.findViewById(R.id.detalhes_autor_livro);
+        }
     }
 
 }

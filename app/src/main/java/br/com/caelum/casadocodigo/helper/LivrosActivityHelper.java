@@ -17,8 +17,6 @@ import br.com.caelum.casadocodigo.modelo.Autor;
  */
 public class LivrosActivityHelper {
 
-    private Activity activity;
-
     final TextView nomeLivro;
     final TextView nomeAutor;
     final TextView descricaoLivro;
@@ -31,6 +29,7 @@ public class LivrosActivityHelper {
     final TextView numeroPaginas;
     final TextView isbn;
     final TextView dataPublicacao;
+    private Activity activity;
 
 
     public LivrosActivityHelper(Activity activity) {
