@@ -15,6 +15,7 @@ import java.util.List;
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.adapter.ListaDeLivrosAdapter;
+import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -39,7 +40,9 @@ public class MainFragment extends Fragment {
 
         listaLivros = holder.listaLivros;
 
-        livros = (List<Livro>) bundle.getSerializable("livros");
+        CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
+
+        livros = casaDoCodigoStore.getLivros();
 
         populaLista(livros);
 

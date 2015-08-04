@@ -1,8 +1,10 @@
 package br.com.caelum.casadocodigo.activity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +22,7 @@ import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
 import br.com.caelum.casadocodigo.fragment.MainFragment;
+import br.com.caelum.casadocodigo.fragment.ProgressFragment;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
@@ -27,11 +30,13 @@ import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 
 public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate, NavigationView.OnNavigationItemSelectedListener {
 
+    private final String ESTADO = "ESTADO";
     private ListaDeLivrosAdapter adapter;
     private List<Livro> livros;
     private CasaDoCodigoStore casaDoCodigoStore;
     private NavigationView navigationView;
     private Bundle bundle;
+    private EstadoTela estadoTela;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        estadoTela = EstadoTela.INICIO;
 
         livros = getCasaDoCodigoStore().getLivros();
 
@@ -53,33 +58,31 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         casaDoCodigoStore = getCasaDoCodigoStore();
 
-        verificaSeJaPossuiLista();
 
         LivrosRecebidos.registraObservador(this);
     }
 
-    private void criaFragment() {
-        MainFragment fragment = new MainFragment();
-        fragment.setArguments(bundle);
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_main, fragment);
-        transaction.commit();
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(ESTADO, estadoTela);
     }
 
-    private void verificaSeJaPossuiLista() {
-
-        if (livros == null) {
-            buscaDadosServidor();
-        } else  {
-            bundle.putSerializable("livros", (Serializable) getCasaDoCodigoStore().getLivros());
-            criaFragment();
-
-        }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        estadoTela.executa(this);
     }
 
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
 
-    private void buscaDadosServidor() {
+        estadoTela = (EstadoTela) savedInstanceState.getSerializable(ESTADO);
+    }
+
+    public void buscaDadosServidor() {
         CarregadorCatalogoTask task = new CarregadorCatalogoTask((CasaDoCodigoStore) getApplicationContext());
         task.execute();
     }
@@ -111,10 +114,9 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     public void lidaComRetorno(List<Livro> livros) {
 
         getCasaDoCodigoStore().setLivros(livros);
-        bundle.putSerializable("livros", (Serializable) getCasaDoCodigoStore().getLivros());
 
-        criaFragment();
-
+        this.estadoTela = EstadoTela.LISTA_LIVROS;
+        estadoTela.executa(this);
     }
 
     @Override

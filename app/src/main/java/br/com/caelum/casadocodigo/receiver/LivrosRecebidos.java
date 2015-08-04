@@ -9,6 +9,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import java.io.Serializable;
 import java.util.List;
 
+import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -55,5 +56,9 @@ public class LivrosRecebidos extends BroadcastReceiver {
         } else {
             delegate.lidaComErro((Exception) intent.getSerializableExtra(RETORNO));
         }
+    }
+
+    public void remove(CasaDoCodigoStore casaDoCodigoStore){
+        LocalBroadcastManager.getInstance(casaDoCodigoStore).unregisterReceiver(this);
     }
 }
