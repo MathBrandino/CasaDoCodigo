@@ -1,11 +1,8 @@
 package br.com.caelum.casadocodigo.activity;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
@@ -36,19 +32,19 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     private CasaDoCodigoStore casaDoCodigoStore;
     private NavigationView navigationView;
     private Bundle bundle;
-    private EstadoTela estadoTela;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        casaDoCodigoStore = getCasaDoCodigoStore();
+
         bundle = new Bundle();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        estadoTela = EstadoTela.INICIO;
 
         livros = getCasaDoCodigoStore().getLivros();
 
@@ -56,30 +52,38 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        casaDoCodigoStore = getCasaDoCodigoStore();
-
-
         LivrosRecebidos.registraObservador(this);
+
+        verificaEstado();
+
+    }
+
+    private void verificaEstado() {
+        if(livros == null) {
+            casaDoCodigoStore.setEstadoTela(EstadoTela.INICIO);
+        } else {
+            casaDoCodigoStore.setEstadoTela(EstadoTela.LISTA_LIVROS);
+        }
     }
 
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putSerializable(ESTADO, estadoTela);
+        outState.putSerializable(ESTADO, casaDoCodigoStore.getEstadoTela());
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        estadoTela.executa(this);
+        casaDoCodigoStore.getEstadoTela().executa(this);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        estadoTela = (EstadoTela) savedInstanceState.getSerializable(ESTADO);
+        casaDoCodigoStore.setEstadoTela((EstadoTela) savedInstanceState.getSerializable(ESTADO));
     }
 
     public void buscaDadosServidor() {
@@ -115,8 +119,8 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         getCasaDoCodigoStore().setLivros(livros);
 
-        this.estadoTela = EstadoTela.LISTA_LIVROS;
-        estadoTela.executa(this);
+        casaDoCodigoStore.setEstadoTela(EstadoTela.LISTA_LIVROS);
+        casaDoCodigoStore.getEstadoTela().executa(this);
     }
 
     @Override

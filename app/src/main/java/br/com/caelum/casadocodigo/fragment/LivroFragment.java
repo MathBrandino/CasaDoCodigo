@@ -17,7 +17,10 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.activity.EstadoTela;
+import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.activity.TipoDeCompra;
+import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.helper.LivrosActivityHelper;
 import br.com.caelum.casadocodigo.listener.ListenerComprarPeloDetalhe;
 import br.com.caelum.casadocodigo.modelo.Livro;
@@ -89,10 +92,9 @@ public class LivroFragment extends Fragment {
                 AutorFragment fragment = new AutorFragment();
                 fragment.setArguments(bundle);
 
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_main, fragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
+                casaDoCodigoStore.setEstadoTela(EstadoTela.AUTOR);
+                casaDoCodigoStore.getEstadoTela().colocaFragmentTela((MainActivity) getActivity(), fragment);
 
 
             }

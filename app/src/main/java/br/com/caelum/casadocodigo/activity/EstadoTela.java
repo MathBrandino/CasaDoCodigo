@@ -46,6 +46,38 @@ public enum EstadoTela {
             MainFragment fragment = new MainFragment();
             colocaFragmentTela(activity, fragment);
         }
+    },
+
+    LIVRO{
+        @Override
+        public void colocaFragmentTela(MainActivity activity, Fragment fragment) {
+
+            FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_main, fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+
+        }
+
+        @Override
+        public void executa(MainActivity activity) {
+
+        }
+    },
+    AUTOR{
+        @Override
+        public void colocaFragmentTela(MainActivity activity, Fragment fragment) {
+
+            FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_main, fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
+
+        @Override
+        public void executa(MainActivity activity) {
+
+        }
     };
 
     public abstract void colocaFragmentTela(MainActivity activity, Fragment fragment);

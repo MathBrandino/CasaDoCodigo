@@ -15,6 +15,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.activity.EstadoTela;
 import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.fragment.LivroFragment;
 import br.com.caelum.casadocodigo.listener.ListenerMenuCompra;
@@ -82,10 +83,9 @@ public class ListaDeLivrosAdapter extends BaseAdapter implements Serializable {
                 LivroFragment fragment = new LivroFragment();
 
                 fragment.setArguments(bundle);
-                FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_main, fragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+
+                activity.getCasaDoCodigoStore().setEstadoTela(EstadoTela.LIVRO);
+                activity.getCasaDoCodigoStore().getEstadoTela().colocaFragmentTela(activity, fragment);
             }
         });
 

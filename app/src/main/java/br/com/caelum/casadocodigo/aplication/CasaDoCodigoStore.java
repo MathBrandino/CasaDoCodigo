@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.caelum.casadocodigo.activity.EstadoTela;
 import br.com.caelum.casadocodigo.modelo.Carrinho;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -17,10 +18,19 @@ public class CasaDoCodigoStore extends Application {
     private Carrinho carrinho;
     private List<AsyncTask<?, ?, ?>> tasks = new ArrayList<>();
     private List<Livro> livros;
+    private EstadoTela estadoTela;
 
+    public EstadoTela getEstadoTela() {
+        return estadoTela;
+    }
+
+    public void setEstadoTela(EstadoTela estadoTela) {
+        this.estadoTela = estadoTela;
+    }
 
     public CasaDoCodigoStore() {
         carrinho = new Carrinho();
+        estadoTela = EstadoTela.INICIO;
     }
 
     public void registra(AsyncTask<?, ?, ?> task) {
