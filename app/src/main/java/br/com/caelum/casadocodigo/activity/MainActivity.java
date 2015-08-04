@@ -42,20 +42,27 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         bundle = new Bundle();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        criaActionBar();
 
         livros = getCasaDoCodigoStore().getLivros();
 
-        navigationView = (NavigationView) findViewById(R.id.drawer);
-
-        navigationView.setNavigationItemSelectedListener(this);
+        criaNavigationView();
 
         LivrosRecebidos.registraObservador(this);
 
         verificaEstado();
 
+    }
+
+    private void criaNavigationView() {
+        navigationView = (NavigationView) findViewById(R.id.drawer);
+
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void criaActionBar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     private void verificaEstado() {
