@@ -1,9 +1,11 @@
 package br.com.caelum.casadocodigo.activity;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,6 +45,9 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.carrinho_de_compras);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_carrinho);
+        setSupportActionBar(toolbar);
 
         casaDoCodigoStore = (CasaDoCodigoStore) getApplication();
 

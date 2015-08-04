@@ -1,6 +1,6 @@
 package br.com.caelum.casadocodigo.helper;
 
-import android.app.Activity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -29,25 +29,25 @@ public class LivrosActivityHelper {
     final TextView numeroPaginas;
     final TextView isbn;
     final TextView dataPublicacao;
-    private Activity activity;
+    private View view;
 
 
-    public LivrosActivityHelper(Activity activity) {
-        this.activity = activity;
+    public LivrosActivityHelper(View view) {
+        this.view = view;
 
-        nomeLivro = (TextView) activity.findViewById(R.id.nome_livro_detalhe);
-        descricaoLivro = (TextView) activity.findViewById(R.id.desc_livro_detalhes);
-        adicionarCarrinho = (Button) activity.findViewById(R.id.botao_comprar_livro);
-        imagemLivro = (ImageView) activity.findViewById(R.id.imagem_livro_desc);
-        virtual = (RadioButton) activity.findViewById(R.id.valor_virtual);
-        fisico = (RadioButton) activity.findViewById(R.id.valor_fisico);
-        juntos = (RadioButton) activity.findViewById(R.id.valor_juntos);
-        nomeAutor = (TextView) activity.findViewById(R.id.autor_livro);
-        radioGroup = (RadioGroup) activity.findViewById(R.id.radio_group);
+        nomeLivro = (TextView) this.view.findViewById(R.id.nome_livro_detalhe);
+        descricaoLivro = (TextView) this.view.findViewById(R.id.desc_livro_detalhes);
+        adicionarCarrinho = (Button) this.view.findViewById(R.id.botao_comprar_livro);
+        imagemLivro = (ImageView) this.view.findViewById(R.id.imagem_livro_desc);
+        virtual = (RadioButton) this.view.findViewById(R.id.valor_virtual);
+        fisico = (RadioButton) this.view.findViewById(R.id.valor_fisico);
+        juntos = (RadioButton) this.view.findViewById(R.id.valor_juntos);
+        nomeAutor = (TextView) this.view.findViewById(R.id.autor_livro);
+        radioGroup = (RadioGroup) this.view.findViewById(R.id.radio_group);
 
-        numeroPaginas = (TextView) activity.findViewById(R.id.livro_num_pag);
-        isbn = (TextView) activity.findViewById(R.id.livro_isbn);
-        dataPublicacao = (TextView) activity.findViewById(R.id.livro_data_publicacao);
+        numeroPaginas = (TextView) this.view.findViewById(R.id.livro_num_pag);
+        isbn = (TextView) this.view.findViewById(R.id.livro_isbn);
+        dataPublicacao = (TextView) this.view.findViewById(R.id.livro_data_publicacao);
     }
 
     public TextView getNomeLivro() {

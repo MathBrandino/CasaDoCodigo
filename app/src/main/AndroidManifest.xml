@@ -20,17 +20,10 @@
         </activity>
 
         <activity
-            android:name=".activity.LivroActivity"
-            android:label="@string/livro" />
-
-        <activity
             android:name=".activity.CarrinhoComprasActivity"
             android:label="@string/carrinho"
             android:windowSoftInputMode="stateHidden" />
 
-        <activity
-            android:name=".activity.AutorActivity"
-            android:label="@string/autores" />
     </application>
 
 </manifest>

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?attr/actionBarSize"
-    app:navigationIcon="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
-    android:background="#FF8000"
+    android:background="#000"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:contentInsetStart="72dp" >
 

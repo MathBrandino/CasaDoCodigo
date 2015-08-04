@@ -3,8 +3,8 @@ package br.com.caelum.casadocodigo.listener;
 import android.view.View;
 import android.widget.Toast;
 
-import br.com.caelum.casadocodigo.activity.LivroActivity;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
+import br.com.caelum.casadocodigo.fragment.LivroFragment;
 import br.com.caelum.casadocodigo.modelo.Item;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -13,25 +13,24 @@ import br.com.caelum.casadocodigo.modelo.Livro;
  */
 public class ListenerComprarPeloDetalhe implements View.OnClickListener {
 
-    private LivroActivity activity;
+    private LivroFragment fragment;
     private Livro livro;
     private CasaDoCodigoStore casaDoCodigoStore;
 
-    public ListenerComprarPeloDetalhe(LivroActivity activity, Livro livro) {
-        this.activity = activity;
+    public ListenerComprarPeloDetalhe(LivroFragment fragment, Livro livro) {
+        this.fragment = fragment;
         this.livro = livro;
-        casaDoCodigoStore = (CasaDoCodigoStore) activity.getApplication();
+        casaDoCodigoStore = (CasaDoCodigoStore) fragment.getActivity().getApplication();
 
     }
 
 
     @Override
     public void onClick(View view) {
-
-        Item item = new Item(livro, activity.getTipoDeCompra());
+        Item item = new Item(livro, fragment.getTipoDeCompra());
         casaDoCodigoStore.getCarrinho().adicionar(item);
 
-        Toast.makeText(activity, item.getLivro().getNomeLivro() + " adicionado ao carrinho", Toast.LENGTH_LONG).show();
+        Toast.makeText(fragment.getActivity(), item.getLivro().getNomeLivro() + " adicionado ao carrinho", Toast.LENGTH_LONG).show();
 
     }
 

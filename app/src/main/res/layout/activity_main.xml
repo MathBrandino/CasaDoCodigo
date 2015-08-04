@@ -15,13 +15,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/toolbar" />
-        <ListView
-            android:paddingRight="10sp"
-            android:paddingLeft="10sp"
-            android:id="@+id/lista_livros"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar"/>
+            android:id="@+id/frame_main"
+            android:layout_below="@id/toolbar" />
 
     </RelativeLayout>
 

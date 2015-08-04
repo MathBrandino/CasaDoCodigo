@@ -3,14 +3,16 @@ package br.com.caelum.casadocodigo.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
+import android.widget.Button;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
@@ -18,6 +20,7 @@ import br.com.caelum.casadocodigo.adapter.ListaDeLivrosAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
+import br.com.caelum.casadocodigo.fragment.MainFragment;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
@@ -25,22 +28,22 @@ import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 
 public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate, NavigationView.OnNavigationItemSelectedListener {
 
-    private ListView lista;
     private ListaDeLivrosAdapter adapter;
     private List<Livro> livros;
     private CasaDoCodigoStore casaDoCodigoStore;
     private NavigationView navigationView;
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        bundle = new Bundle();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        lista = (ListView) findViewById(R.id.lista_livros);
         navigationView = (NavigationView) findViewById(R.id.drawer);
 
         navigationView.setNavigationItemSelectedListener(this);
@@ -55,12 +58,21 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         LivrosRecebidos.registraObservador(this);
     }
 
+    private void criaFragment() {
+        MainFragment fragment = new MainFragment();
+        fragment.setArguments(bundle);
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_main, fragment);
+        transaction.commit();
+    }
+
     private void verificaSeJaPossuiLista() {
 
         if (livros == null) {
             buscaDadosServidor();
         } else {
-            populaView(livros);
+            adapter = new ListaDeLivrosAdapter(livros, this);
         }
     }
 
@@ -100,14 +112,10 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         getCasaDoCodigoStore().setLivros(livros);
 
-        populaView(livros);
+        bundle.putSerializable("livros", (Serializable) livros);
 
-    }
+        criaFragment();
 
-    private void populaView(List<Livro> livros) {
-
-        adapter = new ListaDeLivrosAdapter(livros, this);
-        lista.setAdapter(adapter);
 
     }
 
@@ -135,12 +143,12 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-        switch (menuItem.getItemId()){
-            case R.id.java_menu :
+        switch (menuItem.getItemId()) {
+            case R.id.java_menu:
                 Toast.makeText(this, "Livros de java", Toast.LENGTH_LONG).show();
                 return true;
 
-            case R.id.carrinho_menu :
+            case R.id.carrinho_menu:
                 menuItem.setOnMenuItemClickListener(new ListenerCarrinho(this));
                 return true;
 

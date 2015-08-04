@@ -1,6 +1,7 @@
 package br.com.caelum.casadocodigo.adapter;
 
-import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -10,18 +11,19 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.activity.LivroActivity;
 import br.com.caelum.casadocodigo.activity.MainActivity;
+import br.com.caelum.casadocodigo.fragment.LivroFragment;
 import br.com.caelum.casadocodigo.listener.ListenerMenuCompra;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
  * Created by matheus on 22/07/15.
  */
-public class ListaDeLivrosAdapter extends BaseAdapter {
+public class ListaDeLivrosAdapter extends BaseAdapter implements Serializable {
 
     private final String LIVRO = "livro";
     private List<Livro> livros;
@@ -72,9 +74,18 @@ public class ListaDeLivrosAdapter extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mostraLivro = new Intent(activity, LivroActivity.class);
-                mostraLivro.putExtra(LIVRO, livro);
-                activity.startActivity(mostraLivro);
+
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("livro", livro);
+
+
+                LivroFragment fragment = new LivroFragment();
+
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_main, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 
