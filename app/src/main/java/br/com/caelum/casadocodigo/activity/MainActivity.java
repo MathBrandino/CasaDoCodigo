@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.Serializable;
@@ -44,14 +43,15 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
+        livros = getCasaDoCodigoStore().getLivros();
+
         navigationView = (NavigationView) findViewById(R.id.drawer);
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        livros = getCasaDoCodigoStore().getLivros();
-
         casaDoCodigoStore = getCasaDoCodigoStore();
-        casaDoCodigoStore.setActivity(this);
 
         verificaSeJaPossuiLista();
 
@@ -71,10 +71,13 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         if (livros == null) {
             buscaDadosServidor();
-        } else {
-            adapter = new ListaDeLivrosAdapter(livros, this);
+        } else  {
+            bundle.putSerializable("livros", (Serializable) getCasaDoCodigoStore().getLivros());
+            criaFragment();
+
         }
     }
+
 
     private void buscaDadosServidor() {
         CarregadorCatalogoTask task = new CarregadorCatalogoTask((CasaDoCodigoStore) getApplicationContext());
@@ -100,22 +103,17 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
             case (R.id.carrinho_compras):
                 item.setOnMenuItemClickListener(new ListenerCarrinho(this));
                 return true;
-
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 
     @Override
     public void lidaComRetorno(List<Livro> livros) {
 
         getCasaDoCodigoStore().setLivros(livros);
-
-        bundle.putSerializable("livros", (Serializable) livros);
+        bundle.putSerializable("livros", (Serializable) getCasaDoCodigoStore().getLivros());
 
         criaFragment();
-
 
     }
 

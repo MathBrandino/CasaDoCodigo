@@ -27,7 +27,10 @@ public class ListenerMenuCompra implements View.OnClickListener {
 
         populaRadioGroup(alertView);
 
-        AlertDialog alertDialog = new AlertDialog.Builder(activity).setView(alertView).setTitle(livro.getNomeLivro()).show();
+        AlertDialog alertDialog = new AlertDialog.Builder(activity)
+                .setView(alertView)
+                .setTitle(livro.getNomeLivro())
+                .show();
 
         Button comprar = (Button) alertView.findViewById(R.id.botao_comprar_livro_alert);
 

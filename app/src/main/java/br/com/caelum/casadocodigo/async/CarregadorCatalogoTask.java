@@ -51,7 +51,6 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
     @Override
     protected void onPreExecute() {
 
-        progressDialog = ProgressDialog.show(casaDoCodigoStore.getActivity(), "Aguarde", "Carregando", false, false);
     }
 
 
@@ -59,7 +58,6 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
     protected void onPostExecute(List<Livro> livros) {
         super.onPostExecute(livros);
 
-        progressDialog.dismiss();
 
         trataListaDeRetorno(livros);
 

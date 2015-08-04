@@ -1,6 +1,5 @@
 package br.com.caelum.casadocodigo.aplication;
 
-import android.app.Activity;
 import android.app.Application;
 import android.os.AsyncTask;
 
@@ -18,7 +17,6 @@ public class CasaDoCodigoStore extends Application {
     private Carrinho carrinho;
     private List<AsyncTask<?, ?, ?>> tasks = new ArrayList<>();
     private List<Livro> livros;
-    private Activity activity;
 
 
     public CasaDoCodigoStore() {
@@ -45,11 +43,4 @@ public class CasaDoCodigoStore extends Application {
         this.livros = livros;
     }
 
-    public Activity getActivity() {
-        return activity;
-    }
-
-    public void setActivity(Activity activity) {
-        this.activity = activity;
-    }
 }

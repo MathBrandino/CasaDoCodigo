@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,15 +39,17 @@ public class MainFragment extends Fragment {
 
         listaLivros = holder.listaLivros;
 
-        livros = new ArrayList<>();
-
         livros = (List<Livro>) bundle.getSerializable("livros");
 
+        populaLista(livros);
+
+        return view;
+    }
+
+    private void populaLista(List<Livro> livros) {
         adapter = new ListaDeLivrosAdapter(livros, (MainActivity) getActivity());
 
         listaLivros.setAdapter(adapter);
-
-        return view;
     }
 
     private class ViewHolder {
@@ -56,4 +59,5 @@ public class MainFragment extends Fragment {
             listaLivros = (ListView) view.findViewById(R.id.lista_livros);
         }
     }
+
 }
