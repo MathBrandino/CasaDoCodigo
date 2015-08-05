@@ -72,15 +72,16 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putSerializable(ESTADO, casaDoCodigoStore.getEstadoTela());
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         casaDoCodigoStore.getEstadoTela().executa(this);
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(ESTADO, casaDoCodigoStore.getEstadoTela());
     }
 
     @Override
@@ -165,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
                 return true;
 
             case R.id.mobile_menu:
-                Toast.makeText(this, "Livros de mobile", Toast.LENGTH_LONG ).show();
+                Toast.makeText(this, "Livros de mobile", Toast.LENGTH_LONG).show();
                 return true;
 
             case R.id.games_menu:
@@ -182,5 +183,14 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         }
 
         return false;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        LivrosRecebidos livrosRecebidos = new LivrosRecebidos();
+
+        livrosRecebidos.remove(getCasaDoCodigoStore());
     }
 }

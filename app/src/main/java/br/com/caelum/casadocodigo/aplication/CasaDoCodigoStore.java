@@ -23,6 +23,11 @@ public class CasaDoCodigoStore extends Application {
     private EstadoTela estadoTela;
     private String emailDevice;
 
+    public CasaDoCodigoStore() {
+        carrinho = new Carrinho();
+        estadoTela = EstadoTela.INICIO;
+    }
+
     public String getEmailDevice() {
 
         try {
@@ -36,11 +41,6 @@ public class CasaDoCodigoStore extends Application {
             e.printStackTrace();
         }
         return "";
-    }
-
-    public CasaDoCodigoStore() {
-        carrinho = new Carrinho();
-        estadoTela = EstadoTela.INICIO;
     }
 
     public EstadoTela getEstadoTela() {

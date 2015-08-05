@@ -1,6 +1,5 @@
 package br.com.caelum.casadocodigo.async;
 
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
 
 import java.util.List;
@@ -20,7 +19,6 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
     private Exception erro;
 
     private List<Livro> livros;
-    private ProgressDialog progressDialog;
     private CasaDoCodigoStore casaDoCodigoStore;
 
     public CarregadorCatalogoTask(CasaDoCodigoStore casaDoCodigoStore) {
@@ -46,6 +44,7 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
             return null;
         }
 
+
     }
 
     @Override
@@ -54,10 +53,9 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
     }
 
 
-     @Override
+    @Override
     protected void onPostExecute(List<Livro> livros) {
         super.onPostExecute(livros);
-
 
         trataListaDeRetorno(livros);
 
@@ -71,5 +69,6 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
         } else {
             LivrosRecebidos.notifica(casaDoCodigoStore, livros, false);
         }
+        casaDoCodigoStore.remove(this);
     }
 }

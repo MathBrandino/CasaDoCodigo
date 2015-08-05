@@ -9,6 +9,6 @@ import br.com.caelum.casadocodigo.modelo.Livro;
  */
 public interface LeitorDeLivros {
 
-    public List<Livro> devolveLista();
+    List<Livro> devolveLista();
 
 }

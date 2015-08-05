@@ -1,12 +1,7 @@
 package br.com.caelum.casadocodigo.activity;
 
-import android.accounts.Account;
-import android.accounts.AccountManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.provider.Contacts;
-import android.provider.ContactsContract;
-import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -170,7 +165,9 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                         EmailCompraHelper helper = new EmailCompraHelper(emailView);
 
                         EditText emailUser = helper.getColocaEmail();
+
                         emailUser.setText(casaDoCodigoStore.getEmailDevice());
+
                         Button pegaEmail = helper.getPegaEmail();
                         Button continuaCompra = helper.getContinuaCompra();
 
@@ -183,7 +180,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                 .setNegativeButton("Quero continuar comprando", null)
                 .show();
     }
-
 
 
     private AlertDialog criaAlertaEmail(View emailView) {

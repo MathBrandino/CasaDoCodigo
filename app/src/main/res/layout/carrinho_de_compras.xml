@@ -4,10 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar_carrinho"
+    <include
+        android:id="@+id/toolbar_carrinho"
+        layout="@layout/toolbar_carrinho"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbar_carrinho" />
+        android:layout_height="wrap_content" />
 
     <ListView
         android:id="@+id/itens_comprados"

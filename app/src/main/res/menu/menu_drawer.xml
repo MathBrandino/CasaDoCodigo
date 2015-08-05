@@ -2,42 +2,35 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="@string/carrinho"
+        android:id="@+id/carrinho_menu"
         android:icon="@drawable/carrinho_vazio"
-        android:id="@+id/carrinho_menu"/>
+        android:title="@string/carrinho" />
     <item
-        android:title="Java"
-        android:icon="@drawable/java"
         android:id="@+id/java_menu"
-        />
+        android:icon="@drawable/java"
+        android:title="Java" />
     <item
-        android:title="Agile"
-        android:icon="@drawable/agile"
         android:id="@+id/agile_menu"
-        />
+        android:icon="@drawable/agile"
+        android:title="Agile" />
     <item
-        android:title="Front End"
-        android:icon="@drawable/front"
         android:id="@+id/front_menu"
-        />
+        android:icon="@drawable/front"
+        android:title="Front End" />
     <item
-        android:title="Games"
-        android:icon="@drawable/games"
         android:id="@+id/games_menu"
-        />
+        android:icon="@drawable/games"
+        android:title="Games" />
     <item
-        android:title="Mobile"
         android:id="@+id/mobile_menu"
         android:icon="@drawable/mobile"
-        />
+        android:title="Mobile" />
     <item
-        android:title="Web"
         android:id="@+id/web_menu"
         android:icon="@drawable/web"
-        />
+        android:title="Web" />
     <item
-        android:title="Outros"
         android:id="@+id/outros_menu"
         android:icon="@drawable/outros"
-        />
+        android:title="Outros" />
 </menu>
