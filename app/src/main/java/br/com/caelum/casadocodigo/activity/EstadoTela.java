@@ -2,7 +2,6 @@ package br.com.caelum.casadocodigo.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.ProgressBar;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.fragment.MainFragment;
@@ -15,7 +14,6 @@ public enum EstadoTela {
     INICIO {
         @Override
         public void colocaFragmentTela(MainActivity activity, Fragment fragment) {
-
 
             FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_main, fragment);
@@ -48,7 +46,7 @@ public enum EstadoTela {
         }
     },
 
-    LIVRO{
+    LIVRO {
         @Override
         public void colocaFragmentTela(MainActivity activity, Fragment fragment) {
 
@@ -64,7 +62,7 @@ public enum EstadoTela {
 
         }
     },
-    AUTOR{
+    AUTOR {
         @Override
         public void colocaFragmentTela(MainActivity activity, Fragment fragment) {
 
@@ -81,5 +79,6 @@ public enum EstadoTela {
     };
 
     public abstract void colocaFragmentTela(MainActivity activity, Fragment fragment);
+
     public abstract void executa(MainActivity activity);
 }

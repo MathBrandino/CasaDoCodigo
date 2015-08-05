@@ -1,6 +1,5 @@
 package br.com.caelum.casadocodigo.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AlertDialog;
@@ -17,8 +16,6 @@ import br.com.caelum.casadocodigo.adapter.ListaDeLivrosAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
-import br.com.caelum.casadocodigo.fragment.MainFragment;
-import br.com.caelum.casadocodigo.fragment.ProgressFragment;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
@@ -66,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     }
 
     private void verificaEstado() {
-        if(livros == null) {
+        if (livros == null) {
             casaDoCodigoStore.setEstadoTela(EstadoTela.INICIO);
         } else {
             casaDoCodigoStore.setEstadoTela(EstadoTela.LISTA_LIVROS);
@@ -141,11 +138,6 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     }
 
     @Override
-    public Activity retornaActivity() {
-        return this;
-    }
-
-    @Override
     public CasaDoCodigoStore getCasaDoCodigoStore() {
         return (CasaDoCodigoStore) getApplication();
     }
@@ -155,6 +147,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     public boolean onNavigationItemSelected(MenuItem menuItem) {
 
         switch (menuItem.getItemId()) {
+
             case R.id.java_menu:
                 Toast.makeText(this, "Livros de java", Toast.LENGTH_LONG).show();
                 return true;
@@ -169,6 +162,10 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
             case R.id.front_menu:
                 Toast.makeText(this, "Livros de front", Toast.LENGTH_LONG).show();
+                return true;
+
+            case R.id.mobile_menu:
+                Toast.makeText(this, "Livros de mobile", Toast.LENGTH_LONG ).show();
                 return true;
 
             case R.id.games_menu:

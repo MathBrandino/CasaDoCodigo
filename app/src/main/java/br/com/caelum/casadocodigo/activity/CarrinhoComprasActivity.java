@@ -1,7 +1,12 @@
 package br.com.caelum.casadocodigo.activity;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.provider.Contacts;
+import android.provider.ContactsContract;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -38,6 +43,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     private CasaDoCodigoStore casaDoCodigoStore;
     private CarrinhoAdapter adapter;
     private String emailParaJson;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +51,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         setContentView(R.layout.carrinho_de_compras);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_carrinho);
+        Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_carrinho);
         setSupportActionBar(toolbar);
 
         casaDoCodigoStore = (CasaDoCodigoStore) getApplication();
@@ -164,6 +170,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                         EmailCompraHelper helper = new EmailCompraHelper(emailView);
 
                         EditText emailUser = helper.getColocaEmail();
+                        emailUser.setText(casaDoCodigoStore.getEmailDevice());
                         Button pegaEmail = helper.getPegaEmail();
                         Button continuaCompra = helper.getContinuaCompra();
 
@@ -176,6 +183,8 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                 .setNegativeButton("Quero continuar comprando", null)
                 .show();
     }
+
+
 
     private AlertDialog criaAlertaEmail(View emailView) {
         return new AlertDialog.Builder(CarrinhoComprasActivity.this)
@@ -265,5 +274,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
         atualizaValorCompra(contador);
     }
+
 
 }

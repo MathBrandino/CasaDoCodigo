@@ -58,7 +58,7 @@ public class LivrosRecebidos extends BroadcastReceiver {
         }
     }
 
-    public void remove(CasaDoCodigoStore casaDoCodigoStore){
+    public void remove(CasaDoCodigoStore casaDoCodigoStore) {
         LocalBroadcastManager.getInstance(casaDoCodigoStore).unregisterReceiver(this);
     }
 }

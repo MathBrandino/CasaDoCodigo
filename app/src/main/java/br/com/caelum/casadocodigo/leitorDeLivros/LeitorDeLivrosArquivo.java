@@ -28,7 +28,6 @@ public class LeitorDeLivrosArquivo implements LeitorDeLivros {
 
     private String leArquivo() {
 
-
         InputStream inputStream = resource.openRawResource(R.raw.listalivros);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -43,7 +42,6 @@ public class LeitorDeLivrosArquivo implements LeitorDeLivros {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return json;
     }
 
@@ -59,7 +57,6 @@ public class LeitorDeLivrosArquivo implements LeitorDeLivros {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
 
         return livros;
     }

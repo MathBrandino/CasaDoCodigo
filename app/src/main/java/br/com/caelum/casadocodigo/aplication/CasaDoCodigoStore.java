@@ -1,5 +1,7 @@
 package br.com.caelum.casadocodigo.aplication;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Application;
 import android.os.AsyncTask;
 
@@ -19,6 +21,27 @@ public class CasaDoCodigoStore extends Application {
     private List<AsyncTask<?, ?, ?>> tasks = new ArrayList<>();
     private List<Livro> livros;
     private EstadoTela estadoTela;
+    private String emailDevice;
+
+    public String getEmailDevice() {
+
+        try {
+            AccountManager accountManager = AccountManager.get(this);
+            Account[] accounts = accountManager.getAccountsByType("com.google");
+            if (accounts.length > 0) {
+                Account account = accounts[0];
+                return account.name;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public CasaDoCodigoStore() {
+        carrinho = new Carrinho();
+        estadoTela = EstadoTela.INICIO;
+    }
 
     public EstadoTela getEstadoTela() {
         return estadoTela;
@@ -26,11 +49,6 @@ public class CasaDoCodigoStore extends Application {
 
     public void setEstadoTela(EstadoTela estadoTela) {
         this.estadoTela = estadoTela;
-    }
-
-    public CasaDoCodigoStore() {
-        carrinho = new Carrinho();
-        estadoTela = EstadoTela.INICIO;
     }
 
     public void registra(AsyncTask<?, ?, ?> task) {
