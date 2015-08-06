@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     @Override
     protected void onResume() {
         super.onResume();
-        casaDoCodigoStore.getEstadoTela().executa(this, null);
+        casaDoCodigoStore.getEstadoTela().executa(this);
     }
 
 
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         getCasaDoCodigoStore().setLivros(livros);
 
         casaDoCodigoStore.setEstadoTela(EstadoTela.LISTA_LIVROS);
-        casaDoCodigoStore.getEstadoTela().executa(this, null);
+        casaDoCodigoStore.getEstadoTela().executa(this);
     }
 
     @Override

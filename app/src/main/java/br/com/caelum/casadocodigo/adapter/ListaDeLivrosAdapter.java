@@ -1,6 +1,5 @@
 package br.com.caelum.casadocodigo.adapter;
 
-import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -16,6 +15,7 @@ import java.util.List;
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.activity.EstadoTela;
 import br.com.caelum.casadocodigo.activity.MainActivity;
+import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.listener.ListenerMenuCompra;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -74,11 +74,12 @@ public class ListaDeLivrosAdapter extends BaseAdapter implements Serializable {
             @Override
             public void onClick(View v) {
 
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("livro", livro);
+                CasaDoCodigoStore casaDoCodigoStore = activity.getCasaDoCodigoStore();
+
+                casaDoCodigoStore.setLivroSelecionado(livro);
 
                 activity.getCasaDoCodigoStore().setEstadoTela(EstadoTela.LIVRO);
-                activity.getCasaDoCodigoStore().getEstadoTela().executa(activity, bundle);
+                activity.getCasaDoCodigoStore().getEstadoTela().executa(activity);
             }
         });
 

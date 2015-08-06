@@ -30,20 +30,24 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 
 public class LivroFragment extends Fragment {
 
+    private final String LIVRO = "livro";
     private LivrosActivityHelper helper;
     private Livro livro;
-
+    private Bundle bundle;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
+
         View view = inflater.inflate(R.layout.fragment_livro, container, false);
 
         helper = new LivrosActivityHelper(view);
 
-        Bundle bundle = getArguments();
-        livro = (Livro) bundle.getSerializable("livro");
+        casaDoCodigoStore.setEstadoTela(EstadoTela.LIVRO);
+
+        livro = casaDoCodigoStore.getLivroSelecionado();
 
         populaDetalhes(helper);
         populaFormaPagmento(helper);
@@ -85,13 +89,10 @@ public class LivroFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("livro", livro);
-
 
                 CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
                 casaDoCodigoStore.setEstadoTela(EstadoTela.AUTOR);
-                casaDoCodigoStore.getEstadoTela().executa((MainActivity) getActivity(), bundle);
+                casaDoCodigoStore.getEstadoTela().executa((MainActivity) getActivity());
 
 
             }

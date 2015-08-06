@@ -11,6 +11,7 @@ import android.widget.ListView;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.activity.EstadoTela;
 import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.adapter.ListaDeLivrosAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
@@ -23,7 +24,6 @@ public class MainFragment extends Fragment {
 
     private ListView listaLivros;
     private List<Livro> livros;
-    private Bundle bundle;
 
     private ListaDeLivrosAdapter adapter;
 
@@ -32,13 +32,13 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment, container, false);
 
-        bundle = getArguments();
+        CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
+
+        casaDoCodigoStore.setEstadoTela(EstadoTela.LISTA_LIVROS);
 
         ViewHolder holder = new ViewHolder(view);
 
         listaLivros = holder.listaLivros;
-
-        CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
 
         livros = casaDoCodigoStore.getLivros();
 

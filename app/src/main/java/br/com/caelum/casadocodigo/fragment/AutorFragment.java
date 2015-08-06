@@ -12,6 +12,7 @@ import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.LivroAutorAdapter;
+import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.modelo.Autor;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -20,6 +21,7 @@ import br.com.caelum.casadocodigo.modelo.Livro;
  */
 public class AutorFragment extends Fragment {
 
+    private final String LIVRO = "livro";
     private Livro livro;
     private List<Autor> autores;
 
@@ -28,9 +30,9 @@ public class AutorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_autor, container, false);
 
-        Bundle bundle = getArguments();
+        CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
 
-        livro = (Livro) bundle.getSerializable("livro");
+        livro = casaDoCodigoStore.getLivroSelecionado();
 
         autores = livro.getAutores();
 

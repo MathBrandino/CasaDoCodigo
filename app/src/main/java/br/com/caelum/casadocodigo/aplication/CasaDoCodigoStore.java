@@ -24,10 +24,19 @@ public class CasaDoCodigoStore extends Application {
     private EstadoTela estadoTela;
     private String emailDevice;
     private double saldo = 0.00;
+    private Livro livroSelecionado;
 
     public CasaDoCodigoStore() {
         carrinho = new Carrinho();
         estadoTela = EstadoTela.INICIO;
+    }
+
+    public Livro getLivroSelecionado() {
+        return livroSelecionado;
+    }
+
+    public void setLivroSelecionado(Livro livroSelecionado) {
+        this.livroSelecionado = livroSelecionado;
     }
 
     public double getSaldo(List<Item> items) {

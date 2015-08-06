@@ -1,7 +1,5 @@
 package br.com.caelum.casadocodigo.activity;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
@@ -26,7 +24,7 @@ public enum EstadoTela {
         }
 
         @Override
-        public void executa(MainActivity activity, Bundle bundle) {
+        public void executa(MainActivity activity) {
             activity.buscaDadosServidor();
             ProgressFragment progressFragment = new ProgressFragment();
             colocaFragmentTela(activity, progressFragment);
@@ -43,7 +41,7 @@ public enum EstadoTela {
         }
 
         @Override
-        public void executa(MainActivity activity, Bundle bundle) {
+        public void executa(MainActivity activity) {
 
             MainFragment fragment = new MainFragment();
             colocaFragmentTela(activity, fragment);
@@ -62,11 +60,9 @@ public enum EstadoTela {
         }
 
         @Override
-        public void executa(MainActivity activity, Bundle bundle) {
+        public void executa(MainActivity activity) {
 
             LivroFragment fragment = new LivroFragment();
-
-            fragment.setArguments(bundle);
 
             colocaFragmentTela(activity, fragment);
 
@@ -83,10 +79,9 @@ public enum EstadoTela {
         }
 
         @Override
-        public void executa(MainActivity activity, Bundle bundle) {
+        public void executa(MainActivity activity) {
 
             AutorFragment fragment = new AutorFragment();
-            fragment.setArguments(bundle);
 
             colocaFragmentTela(activity, fragment);
 
@@ -95,6 +90,6 @@ public enum EstadoTela {
 
     public abstract void colocaFragmentTela(MainActivity activity, Fragment fragment);
 
-    public abstract void executa(MainActivity activity, @Nullable Bundle bundle);
+    public abstract void executa(MainActivity activity);
 
 }
