@@ -20,7 +20,6 @@ public enum EstadoTela {
             FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_main, fragment);
             transaction.commit();
-
         }
 
         @Override
@@ -30,6 +29,22 @@ public enum EstadoTela {
             colocaFragmentTela(activity, progressFragment);
         }
     },
+    CARREGAMENTO{
+        @Override
+        public void colocaFragmentTela(MainActivity activity, Fragment fragment) {
+
+            FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_main, fragment);
+            transaction.commit();
+        }
+
+        @Override
+        public void executa(MainActivity activity) {
+            ProgressFragment  progressFragment = new ProgressFragment();
+            colocaFragmentTela(activity, progressFragment);
+        }
+    },
+
     LISTA_LIVROS {
         @Override
         public void colocaFragmentTela(MainActivity activity, Fragment fragment) {
@@ -37,7 +52,6 @@ public enum EstadoTela {
             FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_main, fragment);
             transaction.commit();
-
         }
 
         @Override

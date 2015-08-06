@@ -62,17 +62,16 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
     private void verificaEstado() {
         if (livros == null) {
+
             casaDoCodigoStore.setEstadoTela(EstadoTela.INICIO);
+            casaDoCodigoStore.getEstadoTela().executa(this);
+
         } else {
+
             casaDoCodigoStore.setEstadoTela(EstadoTela.LISTA_LIVROS);
+            casaDoCodigoStore.getEstadoTela().executa(this);
+
         }
-    }
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        casaDoCodigoStore.getEstadoTela().executa(this);
     }
 
 
@@ -130,12 +129,4 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     }
 
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        LivrosRecebidos livrosRecebidos = new LivrosRecebidos();
-
-        livrosRecebidos.remove(getCasaDoCodigoStore());
-    }
 }

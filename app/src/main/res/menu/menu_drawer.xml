@@ -2,40 +2,55 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/carrinho_menu"
-        android:icon="@drawable/carrinho_vazio"
-        android:title="@string/carrinho" />
+        android:title="Livros">
+        <menu>
+
+            <item
+                android:id="@+id/todos_menu"
+                android:icon="@drawable/lista_"
+                android:title="Novidades" />
+
+            <item
+                android:id="@+id/java_menu"
+                android:icon="@drawable/java"
+                android:title="Java" />
+            <item
+                android:id="@+id/agile_menu"
+                android:icon="@drawable/agile"
+                android:title="Agile" />
+            <item
+                android:id="@+id/front_menu"
+                android:icon="@drawable/front"
+                android:title="Front End" />
+            <item
+                android:id="@+id/games_menu"
+                android:icon="@drawable/games"
+                android:title="Games" />
+            <item
+                android:id="@+id/mobile_menu"
+                android:icon="@drawable/mobile"
+                android:title="Mobile" />
+            <item
+                android:id="@+id/web_menu"
+                android:icon="@drawable/web"
+                android:title="Web" />
+            <item
+                android:id="@+id/outros_menu"
+                android:icon="@drawable/outros"
+                android:title="Outros" />
+        </menu>
+    </item>
+
     <item
-        android:id="@+id/java_menu"
-        android:icon="@drawable/java"
-        android:title="Java" />
-    <item
-        android:id="@+id/agile_menu"
-        android:icon="@drawable/agile"
-        android:title="Agile" />
-    <item
-        android:id="@+id/front_menu"
-        android:icon="@drawable/front"
-        android:title="Front End" />
-    <item
-        android:id="@+id/games_menu"
-        android:icon="@drawable/games"
-        android:title="Games" />
-    <item
-        android:id="@+id/mobile_menu"
-        android:icon="@drawable/mobile"
-        android:title="Mobile" />
-    <item
-        android:id="@+id/web_menu"
-        android:icon="@drawable/web"
-        android:title="Web" />
-    <item
-        android:id="@+id/outros_menu"
-        android:icon="@drawable/outros"
-        android:title="Outros" />
-    <item
-        android:id="@+id/todos_menu"
-        android:icon="@drawable/lista_"
-        android:title="Todos Livros" />
+        android:title="Opcoes">
+    <menu>
+
+        <item
+            android:id="@+id/carrinho_menu"
+            android:icon="@drawable/carrinho_vazio"
+            android:title="@string/carrinho" />
+    </menu>
+    </item>
+
 
 </menu>

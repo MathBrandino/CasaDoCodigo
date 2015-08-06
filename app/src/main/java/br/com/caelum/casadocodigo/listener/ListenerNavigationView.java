@@ -6,6 +6,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.activity.EstadoTela;
+import br.com.caelum.casadocodigo.activity.MainActivity;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 
@@ -68,5 +70,8 @@ public class ListenerNavigationView implements NavigationView.OnNavigationItemSe
     public void buscaDadosServidor(int i) {
         CarregadorCatalogoTask task = new CarregadorCatalogoTask((CasaDoCodigoStore) activity.getApplication());
         task.execute(i);
+        CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) activity.getApplication();
+        casaDoCodigoStore.setEstadoTela(EstadoTela.CARREGAMENTO);
+        casaDoCodigoStore.getEstadoTela().executa((MainActivity) activity);
     }
 }
