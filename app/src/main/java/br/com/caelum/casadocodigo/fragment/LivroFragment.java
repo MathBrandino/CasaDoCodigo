@@ -33,7 +33,6 @@ public class LivroFragment extends Fragment {
     private final String LIVRO = "livro";
     private LivrosActivityHelper helper;
     private Livro livro;
-    private Bundle bundle;
 
     @Nullable
     @Override

@@ -1,0 +1,130 @@
+{
+  "livros": [
+    {
+      "id": 4,
+      "nomeLivro": "PL/SQL: Domine a linguagem do banco de dados Oracle",
+      "descricaoLivro": "Durante o dia, milhões de dados trafegam por servidores ao redor do mundo. São informações de todo tipo e muitas delas precisam ser preservadas. Qual a forma de fazer isso? Persistindo os dados.  Neste livro, Eduardo Gonçalves mostra o poder da linguagem PL/SQL e como você pode conseguir um alto grau de produtividade e performance para as suas aplicações. Os leitores iniciantes terão contato com conceitos sobre a estrutura da linguagem PL/SQL e suas características, e criarão programas, dos mais simples até os mais complexos, para atender às mais diversas necessidades. Para os já experientes, ajudará como fonte de referência e para atualizar conceitos e técnicas da linguagem.",
+      "dataPublicacao": " 06/2015",
+      "numeroPaginas": 96,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/plsql-featured_medium.png",
+      "autores": [
+        {
+          "idAutor": 1,
+          "nomeAutor": "Eduardo Gonçalves",
+          "detalhesAutor": "Eduardo Gonçalves é formado em Tecnologia da Informação e possui mais de 14 anos de experiência em análise e desenvolvimentos de sistema em Oracle SQL e PL/SQL. Também tem experiência em análise de performance e monitoramento de aplicações (Tuning). Já trabalhou para grandes empresas como Lojas Renner, Mundial S.A, Tigre S.A, Pernambucanas, Tractebel Energia, Portobello Cerâmica, Bematech, Positivo, entre outras. É instrutor de cursos oficiais da Oracle nas linguagens SQL e PL/SQL, e também atua no desenvolvimento de aplicações mobile para a plataforma iOS. Atualmente, é líder operacional de projetos e atua ativamente na frente de desenvolvimento mobile na empresa Supero TI.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/eduardo-goncalves_small.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nomeLivro": "Controlando versões com Git e GitHub",
+      "descricaoLivro": "Desenvolver software não é fácil. Há sempre demandas de novas funcionalidades a serem desenvolvidas e de alterações nas funcionalidades já existentes. Por isso, uma das preocupações nos projetos é manter um histórico de evolução do código fonte, facilitando o trabalho de desfazer algumas dessas alterações, caso seja necessário. Além disso, como geralmente trabalhamos em equipe, outra preocupação é sobre a integração do trabalho entre os membros da equipe. Diversos problemas relacionados com essas preocupações podem acontecer durante o desenvolvimento de um software, e, para evitá-los, é essencial a utilização de uma ferramenta de controle de versão.  O Git é uma dessas ferramentas de controle de versão. Foi criado em 2005 por Linus Torvalds, o criador do Linux, e hoje é uma das ferramentas de controle de versão mais utilizadas nos projetos de desenvolvimento de software, por ser mais rápido e eficiente do que as outras ferramentas tradicionais, como CVS e SVN.  Já o GitHub é um serviço web que nos permite hospedar repositórios de projetos que utilizam o Git, facilitando, assim, o trabalho em equipe e a colaboração com projetos open source. ",
+      "dataPublicacao": " 08/2014",
+      "numeroPaginas": 199,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/git-github-miniature.png",
+      "autores": [
+        {
+          "idAutor": 5,
+          "nomeAutor": "Alexandre Aquiles",
+          "detalhesAutor": "Alexandre Aquiles formou-se em Engenharia da Computação pela Unicamp e pós-graduou-se em Engenharia de Software Ágil pela UNA/BH. Desenvolve software profissionalmente desde 2005, tendo trabalhado nas áreas de logística, governo, mineração e seguros. Acredita que softwares devem ser desenvolvidos de forma iterativa e incremental, entregando continuamente software de valor e com qualidade.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/alexandre-aquiles_small.png"
+        },
+        {
+          "idAutor": 6,
+          "nomeAutor": "Rodrigo Ferreira",
+          "detalhesAutor": "Rodrigo Ferreira é bacharel em Sistemas de Informação pela Universidade Católica de Brasília e trabalha com desenvolvimento de software há mais de 5 anos. Sempre focado em boas práticas de programação, qualidade e produtividade. Atualmente, é instrutor na Caelum, onde ministra treinamentos de Java, Front-end e Agile.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/rodrigo-ferreira_small.png"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "nomeLivro": "MySQL: Comece com o principal banco de dados open source do mercado",
+      "descricaoLivro": "O MySQL é praticamente onipresente nos projetos de software atuais. Boa parte deles o utiliza como banco de dados para armazenar as informações da sua aplicação, por conta da sua facilidade de instalação e configuração.  Neste livro, Vinícius Carvalho introduz o leitor no mundo do banco de dados MySQL, ensinando os principais comandos DML e DDL, e ferramentas gráficas. Você vai aprender a trabalhar com procedures, manipular triggers, criar backups e vários outros recursos que fazem a diferença no dia a dia.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/bancomysql-featured_medium.png",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Vinícius Carvalho",
+          "detalhesAutor": "Vinícius Carvalho é entusiasta por computação, apaixonado por informação e por conhecimento, fanático por esporte desde de 2007. Trabalha e estuda diversas áreas de sistemas e tecnologia da informação, mantendo-se atualizado nos assuntos do mundo da tecnologia, computação e empreendedorismo.  Já trabalhou como Analista de Suporte, Desenvolvedor, Analista de Sistemas, Gerente de Projetos, professor de graduação e atualmente é Analista de Sistemas Sênior do maior grupo educacional do mundo, a Kroton, além de manter projetos próprios.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/vinicius-carvalho_small.png"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "nomeLivro": "Caixa de Ferramentas DevOps: Um guia para construção, administração e arquitetura de sistemas modernos",
+      "descricaoLivro": "Sempre que precisamos montar um ambiente, seja para desenvolvimento ou para um servidor que vá executar em produção, gastamos bastante esforço na instalação das dependências necessárias e várias vezes nos pegamos perdendo tempo com detalhes pequenos de configuração pelos quais já passamos várias vezes.  Neste livro, Gleicon Moraes vai ensinar como evitar todos esses problemas com o uso de poderosas ferramentas para criação de ambientes portáveis, fazendo com que você tenha sistemas facilmente reproduzíveis e prontos para executar o que você quiser, sem chateações e problemas obscuros de configuração. ",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/oy0mvtYotVNh0eUSt2CAC3Kf7j_qtMIxtd31jNUYP08_size_1024x768_size_mode_2_medium.jpeg?v=1438176025",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Gleicon Moraes ",
+          "detalhesAutor": "Gleicon Moraes é autor e colaborador de projetos opensource como RestMQ e Beano, entre outros. Formado em Ciência da Computação, e pós-graduado em Sistemas de Informação, especializou-se em sistemas distribuídos e operações em larga escala. Palestrou em conferências como OSCon, QCON, Rubyconf, NoSQLBR entre outras.   Pode ser encontrado no Twitter em @gleicon, no GitHub em https://github.com/gleicon e linkedin https://linkedin.com/in/gleicon. Slides e material de palestras podem ser encontrados em http://www.slideshare.net/gleicon e https://speakerdeck.com/gleicon/",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/gleicon-moraes_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "nomeLivro": "Microsoft Kinect: Crie aplicações interativas",
+      "descricaoLivro": "Com o crescimento e popularização da tecnologia, é cada vez mais comum pessoas de diferentes idades utilizarem aplicativos. Com isso, surge a necessidade do uso de interfaces naturais em aplicações. Aprenda com este livro a criar aplicações incríveis aproveitando todos os recursos do sensor de movimentos Microsoft Kinect.  Crie aplicativos modernos que são acessíveis através de gestos, poses e comandos de voz. Aprenda a utilizar sistemas de coordenadas de três dimensões e matemática de forma simples e sem traumas. Se você já sabe C# já tem tudo que precisa para entrar neste mundo de interfaces naturais e sensores de movimento.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/kinect-featured_medium.png?v=1416319109",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Gabriel Schade Cardoso",
+          "detalhesAutor": "Gabriel Schade Cardoso trabalha como desenvolvedor de software em .NET desde 2008, tem experiência nas plataformas desktop, web e mobile utilizando principalmente metodologias ágeis, e iniciou-se, em 2012, como palestrante em eventos de tecnologia. Bacharel em Ciência da Computação, consumidor e criador de jogos no tempo livre, e apaixonado por tecnologia (principalmente sensores e mobile), filmes, livros e seriados. Pode ser encontrado em facebook.com/gabrielschade, twitter.com/gabrielschade e github.com/gabrielschade.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/gabriel-schade-cardoso_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "nomeLivro": "Edição e organização de fotos com Adobe Lightroom",
+      "descricaoLivro": "Uma imagem vale por mil palavras. Uma foto pode deixar alguém sem palavras. Contudo, como encontrar alguma foto específica no meio de outras milhares? E como editar, corrigir e mostrá-las a amigos ou clientes de maneira eficiente e profissional?  Uma sessão fotográfica pode facilmente conter milhares de arquivos, e o número cresce cada vez mais à medida que os anos passam. Seja você um fotógrafo profissional ou hobbista, ainda é preciso ter uma boa organização sobre seu trabalho, além de ferramentas que lhe ajudem a ser mais produtivo.  Para estas e outras coisas o Adobe Lightroom é a ferramenta perfeita. Com uma interface otimizada para fotógrafos de todos os níveis, pensada desde o início em produtividade e qualidade, este programa para Windows e Mac irá lhe surpreender.!",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/adobe-lightroom-featured_medium.png?v=1416316972",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Rafael Steil",
+          "detalhesAutor": "Rafael Steil é fotógrafo hobbista há mais de 10 anos, tendo passado por diversas fases durante os anos, de filme a digital. Consegue passar horas editando uma única foto simplesmente pelo prazer do processo. Tem grande paixão por fotografia de paisagens e portraits. Acesse seu site.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/rafael-steil_small.png?54691"
+        }
+      ]
+    }
+  ]
+}

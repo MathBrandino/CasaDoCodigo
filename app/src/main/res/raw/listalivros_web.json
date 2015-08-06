@@ -1,0 +1,84 @@
+{
+  "livros": [
+    {
+      "id": 2,
+      "nomeLivro": "Spring MVC: Domine o principal framework web Java",
+      "descricaoLivro": "O Spring é o principal concorrente da especificação JavaEE. Com uma plataforma muito estável e com integração fina entre todas as suas extensões, fornece um ambiente muito propício para que o programador foque nas regras de negócio e esqueça dos problemas de infraestrutura.   Durante o livro, será construída uma aplicação baseada na loja da Casa do Código e você terá a chance de utilizar diversas das funcionalidades e integrações providas pelo framework. Usaremos o Spring MVC como alicerce da nossa aplicação web e para implementar todas as funcionalidades, utilizaremos diversas integrações, como: Spring JPA, para facilitar o acesso ao banco de dados; Spring Security, para segurança da aplicação; diferenciação de ambientes com a parte de Profiles; respostas assíncronas para melhorarmos a escalabilidade; e ainda detalhes, como cache e suporte às requisições, seguindo o estilo REST.   Tudo isso sem uma linha de XML, todas configurações serão feitas baseadas em anotações e código Java.",
+      "dataPublicacao": " 06/2015",
+      "numeroPaginas": 96,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/spring-mvc-miniature.png?",
+      "autores": [
+        {
+          "idAutor": 2,
+          "nomeAutor": "Alberto Souza",
+          "detalhesAutor": "Alberto Souza é Bacharel em Ciência da Computação pela Universidade Salvador e desenvolvedor desde 2005, tendo participado de muitos projetos web e experimentado diversas linguagens. Participa de projetos open source como o Stella e VRaptor. Possui a certificação SCJP e trabalha como desenvolvedor e instrutor pela Caelum. Seu Twitter é @alberto_souza e você também pode encontrá-lo no Github, no endereço http://www.github.com/asouza",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/alberto-souza_medium.png"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "nomeLivro": "Aplicações web real-time com Node.js",
+      "descricaoLivro": "Node.js é uma poderosa plataforma. Ele permite escrever aplicações JavaScript no server-side, tirando proveito da sintaxe e familiaridade da linguagem para escrever aplicações web escaláveis.  Como o Node.js usa um modelo orientado a eventos, focado em I/O não bloqueante, desenvolver nele pode ser diferente para quem está acostumado às aplicações web tradicionais. Neste livro, Caio Ribeiro Pereira quebra essa enorme barreira, mostrando claramente essa mudança de paradigma, além de focar em tópicos importantes, as APIs principais e frameworks como o Express e o Socket.IO.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/nodejs-featured_medium.png?v=1411486494",
+      "autores": [
+        {
+          "idAutor": 12,
+          "nomeAutor": "Caio Ribeiro Pereira",
+          "detalhesAutor": "Caio Ribeiro Pereira trabalha como web developer na Concrete Solutions e sua experiência é baseado no domínio dessa sopa de letrinhas: Node.js; Javascript; Meteor; Ruby; Java; MongoDB; Redis; Riak; Filosofia Lean; Agile; XP e TDD.  É bacharel em Sistemas de Informação, blogueiro nos tempos livres e apaixonado por programação, web, tecnologia, filmes e seriados. Participante ativo das comunidades: NodeBr, DevInSantos e Guru-Baixada e iniciou-se, em 2011, como palestrante nos eventos DevInSantos e Exatec, abordando temas atuais sobre Node.js e Javascript. Criador do DevFreeCasts e DevFreeBooks, moderador da comunidade Meteor Brasil e editor do UDGWebDev Weekly.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/caio-ribeiro-pereira_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "nomeLivro": "REST: Construa API's inteligentes de maneira simples",
+      "descricaoLivro": "De alguma maneira, os sistemas modernos precisam se integrar com outros sistemas, seja para coletar dados, enviar informações, autenticação ou várias outras funcionalidades.  Neste livro, Alexandre Saudate ensina como implementar APIs REST, que são simples e fáceis de manter, indo desde o básico dos formatos de dados como XML e JSON, passando por uma implementação rústica de um serviço e evoluindo para uso da poderosa especificação Java, o JAX-RS. Você ainda vai aprender técnicas avançadas, como trabalhar com as Hypermedias, criando fluxos inteligentes nos seus serviços. Veja também como realizar autenticação através do OAuth e muito mais!",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/rest-featured_medium.png?v=1411566684",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Alexandre Saudate",
+          "detalhesAutor": "Alexandre Saudate é graduado em Sistemas de Informação pela Universidade de São Paulo (USP). Trabalha com desenvolvimento desde 2005 e com SOA desde 2008. Desde então, tem trabalhado com pesquisa e desenvolvimento sobre esse tipo de arquitetura e também com projetos envolvendo tecnologias de ponta, para empresas como Porto Seguro, Serasa, Porto de Santos, iG e outras.  Foi instrutor Oracle e, mais recentemente, se tornou instrutor da SOA|Expert, uma escola especializada no assunto. Hoje, é especialista em projetos de integração SOA e/ou Cloud Computing.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/alexandre-saudate_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "nomeLivro": "Aplicações Java para a web com JSF e JPA",
+      "descricaoLivro": "Neste livro, você encontrará as especificações mais utilizadas do Java, explicadas com exemplos práticos e claros que mostram como usar cada tecnologia em separado e como utilizá-las em conjunto.  Conheças as melhores práticas da JPA 2.0, seus mapeamentos, caches e truques de performance, e tire o máximo do JSF 2.2 compreendendo seu ciclo de vida e as novidades que surgiram nas atuais versões das especificações.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/jsf-jpa-featured_medium.png?v=1411486340",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Gilliard Santos Cordeiro",
+          "detalhesAutor": "Gilliard Santos Cordeiro é Analista de Sistemas pela UFMS e especialista em Engenharia de Software pela Uniderp. É também tomador de tereré, tirador de foto, pescador e karateca amador. Iniciou tomando tereré desde muito cedo, como todo sul-mato-grossense, mas na programação só teve o primeiro contato na faculdade, em 2002.  O início profissional foi em 2003, onde como estagiário programou em Lotus Script e um ano depois começou a desenvolver em Java. Algum tempo depois, junto com outros amigos fundou o JUGMS, que hoje organiza anualmente o Javaneiros, o maior evento de desenvolvedores de Mato Grosso do Sul. O gosto pela pesca e pelo karatê veio depois de 'velho', aos 28 anos. Foi coordenador de novas tecnologias (P&D) no Tribunal de Justiça de MS, onde atualmente é diretor da área de desenvolvimento de sistemas. Ele mantém um blog em http://gilliard.eti.br.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/gilliard-cordeiro_small.png?54691"
+        }
+      ]
+    }
+  ]
+}

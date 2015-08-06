@@ -1,0 +1,136 @@
+{
+  "livros": [
+    {
+      "id": 3,
+      "nomeLivro": "Testes automatizados de software: Um guia prático",
+      "descricaoLivro": "Quantas vezes você não colocou um 'else' a mais ou trocou um maior por maior-igual? Problemas como esses acontecem todos os dias em nossos códigos. E aposto que você sabe como evitá-los: testando seu software. A grande pergunta é: por que evitamos (ou pior, odiamos) testar?  Testar custa caro, é demorado e é chato. Mas tudo isso só é verdade, pois ainda delegamos essas tarefas para um ser humano. Este livro mostra de maneira prática como escrever um programa que fará esse teste por você!  Mergulhe de cabeça nessa ideia, aprenda a escrever testes automatizados, e passe a dormir bem, tranquilo, pois seu software agora funciona.",
+      "dataPublicacao": " 06/2015",
+      "numeroPaginas": 96,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/testes-de-software-miniature.png",
+      "autores": [
+        {
+          "idAutor": 3,
+          "nomeAutor": "Maurício Aniche",
+          "detalhesAutor": "Maurício é instrutor e desenvolvedor da Caelum, possui mais de 9 anos de experiência de desenvolvimento de softwares, tendo participado de projetos para grandes empresas nacionais e internacionais. Mauricio é também mestre em Ciência da Computação pela Universidade de São Paulo (USP), onde pesquisa sobre TDD e sua influência no design de sistemas orientados a objetos. Atualmente, é aluno de doutorado pelo mesmo instituto. Palestrante em eventos nacionais e internacionais, com destaque para sua apresentação no 1o Workshop Internacional sobre Test-Driven Development, localizado em Paris, no ano de 2010, Agile Brazil 2010, 2011 e 2012, e QCON SP 2010 e 2012. Mauricio gosta de discutir sobre TDD, melhores práticas e princípios de orientação a objetos, métodos ágeis de desenvolvimento de software e linguagens de programação. Está no Twitter como @mauricioaniche .",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/mauricio-aniche_small.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nomeLivro": "Controlando versões com Git e GitHub",
+      "descricaoLivro": "Desenvolver software não é fácil. Há sempre demandas de novas funcionalidades a serem desenvolvidas e de alterações nas funcionalidades já existentes. Por isso, uma das preocupações nos projetos é manter um histórico de evolução do código fonte, facilitando o trabalho de desfazer algumas dessas alterações, caso seja necessário. Além disso, como geralmente trabalhamos em equipe, outra preocupação é sobre a integração do trabalho entre os membros da equipe. Diversos problemas relacionados com essas preocupações podem acontecer durante o desenvolvimento de um software, e, para evitá-los, é essencial a utilização de uma ferramenta de controle de versão.  O Git é uma dessas ferramentas de controle de versão. Foi criado em 2005 por Linus Torvalds, o criador do Linux, e hoje é uma das ferramentas de controle de versão mais utilizadas nos projetos de desenvolvimento de software, por ser mais rápido e eficiente do que as outras ferramentas tradicionais, como CVS e SVN.  Já o GitHub é um serviço web que nos permite hospedar repositórios de projetos que utilizam o Git, facilitando, assim, o trabalho em equipe e a colaboração com projetos open source. ",
+      "dataPublicacao": " 08/2014",
+      "numeroPaginas": 199,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/git-github-miniature.png",
+      "autores": [
+        {
+          "idAutor": 5,
+          "nomeAutor": "Alexandre Aquiles",
+          "detalhesAutor": "Alexandre Aquiles formou-se em Engenharia da Computação pela Unicamp e pós-graduou-se em Engenharia de Software Ágil pela UNA/BH. Desenvolve software profissionalmente desde 2005, tendo trabalhado nas áreas de logística, governo, mineração e seguros. Acredita que softwares devem ser desenvolvidos de forma iterativa e incremental, entregando continuamente software de valor e com qualidade.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/alexandre-aquiles_small.png"
+        },
+        {
+          "idAutor": 6,
+          "nomeAutor": "Rodrigo Ferreira",
+          "detalhesAutor": "Rodrigo Ferreira é bacharel em Sistemas de Informação pela Universidade Católica de Brasília e trabalha com desenvolvimento de software há mais de 5 anos. Sempre focado em boas práticas de programação, qualidade e produtividade. Atualmente, é instrutor na Caelum, onde ministra treinamentos de Java, Front-end e Agile.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/rodrigo-ferreira_small.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nomeLivro": "Scrum 360: Um guia completo e prático de agilidade",
+      "descricaoLivro": "Trabalhar com agilidade não é fácil. Fazer com que um time inteiro trabalhe de forma ágil, entregando resultados, produzindo de forma plena e sem impedimentos é muito mais difícil. Justamente para isso temos o Scrum, uma metodologia para gerenciamento de projetos que o torna produtivo.  Nesse livro, Jorge Audy vai ensinar de forma objetiva e prática a metodologia, mostrando como ela se cruza com outras práticas, como XP, PMBOK, Lean. Além de também formar no leitor a base dos princípios ágeis, pré-requisito para qualquer gerente de projetos do mercado contemporâneo.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/scrum360-miniature.png?",
+      "autores": [
+        {
+          "idAutor": 7,
+          "nomeAutor": "Jorge Audy",
+          "detalhesAutor": "Jorge Audy é escoteiro e agilista. Formou-se em 1986, foi concursado nos anos 80 e empresário nos 90. Também é Mestre em Administração na linha de pesquisa de Gestão da Informação e foi coordenador de desenvolvimento na ADP Brasil nos anos 2000 e no Grupo RBS até 2013, em equipes corporativas e de produtos digitais. Desde então, é consultor na DBServer. Praticante de métodos ágeis desde 2008, e Agile Coach desde 2011; e palestrante e participante ativo em eventos sobre métodos ágeis, equipes de alta performance e, mais especificamente, SCRUM. Confira mais sobre o autor em https://jorgekotickaudy.wordpress.com/about/.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/jorge-audy_medium.png"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "nomeLivro": "Caixa de Ferramentas DevOps: Um guia para construção, administração e arquitetura de sistemas modernos",
+      "descricaoLivro": "Sempre que precisamos montar um ambiente, seja para desenvolvimento ou para um servidor que vá executar em produção, gastamos bastante esforço na instalação das dependências necessárias e várias vezes nos pegamos perdendo tempo com detalhes pequenos de configuração pelos quais já passamos várias vezes.  Neste livro, Gleicon Moraes vai ensinar como evitar todos esses problemas com o uso de poderosas ferramentas para criação de ambientes portáveis, fazendo com que você tenha sistemas facilmente reproduzíveis e prontos para executar o que você quiser, sem chateações e problemas obscuros de configuração. ",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/oy0mvtYotVNh0eUSt2CAC3Kf7j_qtMIxtd31jNUYP08_size_1024x768_size_mode_2_medium.jpeg?v=1438176025",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Gleicon Moraes ",
+          "detalhesAutor": "Gleicon Moraes é autor e colaborador de projetos opensource como RestMQ e Beano, entre outros. Formado em Ciência da Computação, e pós-graduado em Sistemas de Informação, especializou-se em sistemas distribuídos e operações em larga escala. Palestrou em conferências como OSCon, QCON, Rubyconf, NoSQLBR entre outras.   Pode ser encontrado no Twitter em @gleicon, no GitHub em https://github.com/gleicon e linkedin https://linkedin.com/in/gleicon. Slides e material de palestras podem ser encontrados em http://www.slideshare.net/gleicon e https://speakerdeck.com/gleicon/",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/gleicon-moraes_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "nomeLivro": "Test-Driven Development: Teste e Design no Mundo Real com PHP",
+      "descricaoLivro": "Por que não testamos software? Porque é caro? Porque é demorado? Porque é chato? Testes automatizados são a solução para todos esses problemas. Aprenda a escrever um programa que testa seu programa de forma rápida, barata e produtiva, e aumente a qualidade do seu produto final.  Neste livro, você aprenderá sobre TDD, uma das práticas ágeis de desenvolvimento de software mais populares. TDD faz o desenvolvedor escrever o teste antes mesmo de implementar o código. Essa simples inversão na maneira de se trabalhar faz com o que o desenvolvedor escreva um código mais testado, com menos bugs, e, inclusive, com mais qualidade. Seja profissional, teste seu software!",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/cover_ce399913-9822-4509-ab16-fad1cfad2df3_medium.jpeg?v=1421769309",
+      "autores": [
+        {
+          "idAutor": 16,
+          "nomeAutor": "Andre Cardoso",
+          "detalhesAutor": "Andre Cardoso é desenvolvedor PHP, bacharelando em Análise e Desenvolvimento de Sistemas, Técnico em Informática com foco em desenvolvimento de sistemas Web-based. Trabalha exclusivamente com PHP há cerca de 5 anos e durante este período esteve envolvido em projetos de todos os portes para grandes clientes como HSBC, Renault e Liquigás. Também desenvolveu sistemas para inúmeras startups nos estados do Paraná, Santa Catarina e São Paulo. Antes do PHP, aventurou-se com Java, um pouco de .Net e Delphi, mas foi no PHP que decidiu focar e especializar-se.  Atualmente, trabalha na empresa Redsuns Tecnologia em Curitiba que tem foco em soluções tecnológicas inteligentes e desenvolvimento de startups.  Ministrou palestras e workshops sobre TDD, PHP e tecnologias que o complementam  nos eventos SFD (Software Freedom Day), FTSL (Fórum de Tecnologia em Software Livre) e  FLISOL (Festival Latino Americano de Instalação de Software Livre). Tem uma enorme satisfação  como profissional em compartilhar conhecimento e faz isso participando de diversos grupos  de discussões e alguns projetos open source.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/andre-cardoso_medium.png?54691"
+        },
+        {
+          "idAutor": 14,
+          "nomeAutor": "Maurício Aniche",
+          "detalhesAutor": "Maurício é instrutor e desenvolvedor da Caelum, possui mais de 9 anos de experiência de desenvolvimento de softwares, tendo participado de projetos para grandes empresas nacionais e internacionais. Mauricio é também mestre em Ciência da Computação pela Universidade de São Paulo (USP), onde pesquisa sobre TDD e sua influência no design de sistemas orientados a objetos. Atualmente, é aluno de doutorado pelo mesmo instituto. Palestrante em eventos nacionais e internacionais, com destaque para sua apresentação no 1º Workshop Internacional sobre Test-Driven Development, localizado em Paris, no ano de 2010, Agile Brazil 2010, 2011 e 2012, e QCON SP 2010 e 2012. Mauricio gosta de discutir sobre TDD, melhores práticas e princípios de orientação a objetos, métodos ágeis de desenvolvimento de software e linguagens de programação. Está no Twitter como @mauricioaniche .",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/mauricio-aniche_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "nomeLivro": "Aplicações Java para a web com JSF e JPA",
+      "descricaoLivro": "Neste livro, você encontrará as especificações mais utilizadas do Java, explicadas com exemplos práticos e claros que mostram como usar cada tecnologia em separado e como utilizá-las em conjunto.  Conheças as melhores práticas da JPA 2.0, seus mapeamentos, caches e truques de performance, e tire o máximo do JSF 2.2 compreendendo seu ciclo de vida e as novidades que surgiram nas atuais versões das especificações.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/jsf-jpa-featured_medium.png?v=1411486340",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Gilliard Santos Cordeiro",
+          "detalhesAutor": "Gilliard Santos Cordeiro é Analista de Sistemas pela UFMS e especialista em Engenharia de Software pela Uniderp. É também tomador de tereré, tirador de foto, pescador e karateca amador. Iniciou tomando tereré desde muito cedo, como todo sul-mato-grossense, mas na programação só teve o primeiro contato na faculdade, em 2002.  O início profissional foi em 2003, onde como estagiário programou em Lotus Script e um ano depois começou a desenvolver em Java. Algum tempo depois, junto com outros amigos fundou o JUGMS, que hoje organiza anualmente o Javaneiros, o maior evento de desenvolvedores de Mato Grosso do Sul. O gosto pela pesca e pelo karatê veio depois de 'velho', aos 28 anos. Foi coordenador de novas tecnologias (P&D) no Tribunal de Justiça de MS, onde atualmente é diretor da área de desenvolvimento de sistemas. Ele mantém um blog em http://gilliard.eti.br.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/gilliard-cordeiro_small.png?54691"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "livros": [
+    {
+      "id": 1,
+      "nomeLivro": "Jogos Android: Crie um game do zero usando classes nativas",
+      "descricaoLivro": "195, 300, 800 milhões de dólares!!! Essas são as cifras por trás dos jogos Angry Birds, Candy Crush e Clash of Clans. Quer pensar em cifras menores? Que tal 120 mil reais por dia? Foi o que Flappy Bird chegou a faturar. Pois é, já pensou em trabalhar com algo criativo, divertido e recompensador? Desenvolver jogos pode ser assim.   Neste livro, Felipe Torres mostra como criar um jogo do zero sem usar frameworks e discute as vantagens e desvantagens dessa abordagem usada pelo criador de Flappy Bird. Usando a linguagem Java, você vai desenvolver um jogo para Android e entender de fato como funciona a criação de jogos através da óptica do desenvolvedor e terá mais confiança e informação para decidir os caminhos do que esperamos. Seja o novo jogo viral do mercado!",
+      "dataPublicacao": " 06/2015",
+      "numeroPaginas": 96,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/games-android-miniature.png",
+      "autores": [
+        {
+          "idAutor": 1,
+          "nomeAutor": "Felipe Torres",
+          "detalhesAutor": "Felipe Torres é Bacharel em Ciência da Computação pelo IME-USP e atua como instrutor e desenvolvedor Android há mais de 5 anos na Caelum. Apaixonado por programação de jogos, criou sua versão de Carmen Sandiego, que teve mais de 100.000 downloads no Google Play Store. Além disso, participa ativamente de diversas comunidades como o GUJ, onde foca no ensino e solução de dúvidas e o Android Open Source Project, com contribuições no código-fonte do sistema Android.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/felipe-torres_medium.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "nomeLivro": "Swift: Programe para iPhone e iPad",
+      "descricaoLivro": "Desenvolver aplicativos para iPhone e iPad nunca foi tão prazeroso. Com a nova linguagem da Apple (Swift) e com a recente versão do iOS, o desenvolvimento se torna descomplicado, pois há uma nova gama de recursos disponíveis que mantêm a clássica elegância da principal plataforma mobile do mundo.  Programadores do mundo inteiro estão aprendendo a programar para iOS com Swift. Nesse livro, Guilherme Silveira e Joviane Jardim vão ensinar como entrar nesse universo e criar sua aplicação, do início ao fim, aprendendo os recursos da nova linguagem e do novo iOS, usando várias boas práticas de programação de quebra.",
+      "dataPublicacao": " 12/2014",
+      "numeroPaginas": 261,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/swift-ios-miniature.png",
+      "autores": [
+        {
+          "idAutor": 8,
+          "nomeAutor": "Guilherme Silveira",
+          "detalhesAutor": "Guilherme Silveira é líder técnico na Caelum e no Alura, cofundador do GUJ.com.br e um dos criadores do VRaptor. Especializou-se na área de ensino de Desenvolvimento de Software e é um dos principais autores dos cursos online do Alura. Ele pode ser encontrado no twitter em @guilhermecaelum.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/guilherme-silveira_small.png?54691"
+        },
+        {
+          "idAutor": 9,
+          "nomeAutor": "Joviane Jardim",
+          "detalhesAutor": "Joviane Jardim já trabalhou como desenvolvedora C e com banco de dados Oracle utilizando PL/SQL por 5,5 anos. Hoje é instrutora e desenvolvedora na Caelum dos cursos de iOS. Gosta também de C, Prolog, Java e Ruby.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/joviane-jardim_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "nomeLivro": "Google Android: crie aplicações para celulares e tablets",
+      "descricaoLivro": "Faça as melhores aplicações Android com as melhores práticas da área. Aprenda como publicar a aplicação e tê-la no ar em 1 dia, saiba como utilizar o máximo dos aparelhos e crie aplicações extremamente ricas para celulares e tablets!  Desenvolva para todas as versões do Android e conheça as novidades da versão 5.0 (Lollipop)! Durante o livro, você criará uma aplicação que envolverá funcionalidades das suas principais versões e aprenderá como utilizar a ActionBar, o Navigation Drawer e também os novos widgets do Android 5.0, como o botão de ação flutuante e os cartões, e também vai descobrir como engajar o usuário projetando um esquema efetivo de navegação entre as telas do seu aplicativo.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/android-featured_medium.png?v=1411489561",
+      "autores": [
+        {
+          "idAutor": 11,
+          "nomeAutor": "João Bosco Monteiro",
+          "detalhesAutor": "João Bosco Monteiro é engenheiro de computação e possui especialização em Engenharia de Software. Começou a trabalhar com Java e web em 2002 e, desde então, tem participado e liderado projetos utilizando essa plataforma. Participou de grupos de pesquisa na área de Visão Computacional, tendo publicado diversos artigos científicos. Atuante nas comunidades de usuários e palestrante em eventos, é também um dos coordenadores do JUGMS. Entusiasta de novas tecnologias, agora se dedica ao desenvolvimento mobile e atualmente coordena a área de mobilidade da TecSinapse. Está no Twitter como @joaobmonteiro.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/joao-bosco-monteiro_small.png?54691"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "nomeLivro": "Programando em Go: Crie aplicações com a linguagem do Google",
+      "descricaoLivro": "Go é uma linguagem moderna, criada com o objetivo principal de melhorar a produtividade no desenvolvimento em larga escala de servidores, baseado nas experiências de alguns times dentro do Google.  Hoje, mais de quatro anos após ter sido anunciada publicamente, cada vez mais empresas têm adotado a linguagem para escrever diversos tipos diferentes de aplicações, muito além dos servidores.  Go traz um misto interessante de recursos de alto e baixo nível que a torna atraente para diferentes públicos. Suas principais características incluem o controle inteligente de dependências, compilação rápida e eficiente, sintaxe simples, gerenciamento automático de memória incluindo um coletor de lixo, sistema de tipos forte e estático, funções de primeira classe e suporte nativo e de alto nível para concorrência.  Este livro apresenta ao leitor os recursos da linguagem Go e importantes partes de sua biblioteca padrão, sempre incluindo exemplos relevantes que demonstram o uso de cada recurso.",
+      "dataPublicacao": " 05/2015",
+      "numeroPaginas": 163,
+      "valorFisico": 59.9,
+      "valorVirtual": 39.9,
+      "valorVirtualComFisico": 79.9,
+      "ISBN": "978-85-5519-013-1",
+      "imagemUrl": "http://cdn.shopify.com/s/files/1/0155/7645/products/google-go-featured_medium.png?v=1411566554",
+      "autores": [
+        {
+          "idAutor": 13,
+          "nomeAutor": "Caio Filipini",
+          "detalhesAutor": "Caio Filipini é Bacharel em Sistemas de Informacão e trabalha com tecnologia desde 2003. Já participou de diversos projetos como desenvolvedor e consultor, a maioria envolvendo as linguagens Java, JavaScript e Ruby. Foi desenvolvedor na Caelum, e atualmente trabalha como desenvolvedor backend na SoundCloud em Berlim, na Alemanha.",
+          "imagemAutor": "http://cdn.shopify.com/s/files/1/0155/7645/files/caio-filipini_small.png?54691"
+        }
+      ]
+    }
+  ]
+}
