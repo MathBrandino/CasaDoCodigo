@@ -70,6 +70,10 @@ public class ListenerNavigationView implements NavigationView.OnNavigationItemSe
     public void buscaDadosServidor(int i) {
         CarregadorCatalogoTask task = new CarregadorCatalogoTask((CasaDoCodigoStore) activity.getApplication());
         task.execute(i);
+        preparaTelaParaTrocaDeFragment();
+    }
+
+    private void preparaTelaParaTrocaDeFragment() {
         CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) activity.getApplication();
         casaDoCodigoStore.setEstadoTela(EstadoTela.CARREGAMENTO);
         casaDoCodigoStore.getEstadoTela().executa((MainActivity) activity);
