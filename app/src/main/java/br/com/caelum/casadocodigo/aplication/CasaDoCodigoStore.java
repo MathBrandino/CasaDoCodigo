@@ -26,7 +26,8 @@ public class CasaDoCodigoStore extends Application {
     private double saldo = 0.00;
 
     public double getSaldo(List<Item> items) {
-        saldo = 0; 
+
+        saldo = 0;
 
         for (int i = 0; i < items.size(); i++) {
 

@@ -18,11 +18,12 @@ import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
 import br.com.caelum.casadocodigo.listener.ListenerCarrinho;
+import br.com.caelum.casadocodigo.listener.ListenerNavigationView;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 
 
-public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate, NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate {
 
     private final String ESTADO = "ESTADO";
     private ListaDeLivrosAdapter adapter;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
     private void criaNavigationView() {
         navigationView = (NavigationView) findViewById(R.id.drawer);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(new ListenerNavigationView(this));
     }
 
     private void criaActionBar() {
@@ -145,46 +146,6 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     }
 
 
-    @Override
-    public boolean onNavigationItemSelected(MenuItem menuItem) {
-
-        switch (menuItem.getItemId()) {
-
-            case R.id.java_menu:
-                Toast.makeText(this, "Livros de java", Toast.LENGTH_LONG).show();
-                return true;
-
-            case R.id.carrinho_menu:
-                menuItem.setOnMenuItemClickListener(new ListenerCarrinho(this));
-                return true;
-
-            case R.id.web_menu:
-                Toast.makeText(this, "Livros de web", Toast.LENGTH_LONG).show();
-                return true;
-
-            case R.id.front_menu:
-                Toast.makeText(this, "Livros de front", Toast.LENGTH_LONG).show();
-                return true;
-
-            case R.id.mobile_menu:
-                Toast.makeText(this, "Livros de mobile", Toast.LENGTH_LONG).show();
-                return true;
-
-            case R.id.games_menu:
-                Toast.makeText(this, "Livros de game", Toast.LENGTH_LONG).show();
-                return true;
-
-            case R.id.outros_menu:
-                Toast.makeText(this, "Livros diversos", Toast.LENGTH_LONG).show();
-                return true;
-
-            case R.id.agile_menu:
-                Toast.makeText(this, "Livros de agile", Toast.LENGTH_LONG).show();
-                return true;
-        }
-
-        return false;
-    }
 
     @Override
     protected void onDestroy() {
