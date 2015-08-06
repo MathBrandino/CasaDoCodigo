@@ -147,11 +147,11 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                         View emailView = View.inflate(CarrinhoComprasActivity.this, R.layout.email_compra, null);
                         EmailCompraHelper helper = new EmailCompraHelper(emailView);
 
-                        EditText emailUser = helper.getColocaEmail();
+                        EditText emailUser = helper.getEmailUser();
 
                         emailUser.setText(casaDoCodigoStore.getEmailDevice());
 
-                        Button pegaEmail = helper.getPegaEmail();
+                        Button pegaEmail = helper.getBotaoValidaEmail();
                         Button continuaCompra = helper.getContinuaCompra();
 
                         AlertDialog alertDialog = criaAlertaEmail(emailView);

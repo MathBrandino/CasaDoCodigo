@@ -7,8 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -30,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     private List<Livro> livros;
     private CasaDoCodigoStore casaDoCodigoStore;
     private NavigationView navigationView;
-    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         casaDoCodigoStore = getCasaDoCodigoStore();
 
-        bundle = new Bundle();
 
         criaActionBar();
 

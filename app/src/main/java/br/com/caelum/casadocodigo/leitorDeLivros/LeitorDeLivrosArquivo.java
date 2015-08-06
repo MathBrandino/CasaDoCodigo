@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.converter.LivroConverter;
@@ -28,20 +29,15 @@ public class LeitorDeLivrosArquivo implements LeitorDeLivros {
 
     private String leArquivo() {
 
-        InputStream inputStream = resource.openRawResource(R.raw.listalivros);
-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        Scanner scanner  = new Scanner(resource.openRawResource(R.raw.listalivros));
 
         String line;
         String json = "";
 
-        try {
-            while ((line = bufferedReader.readLine()) != null) {
-                json += line;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        while ((line = scanner.nextLine()) != null) {
+            json += line;
         }
+
         return json;
     }
 
