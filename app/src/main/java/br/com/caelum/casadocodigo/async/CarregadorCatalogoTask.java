@@ -57,12 +57,12 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
     protected void onPostExecute(List<Livro> livros) {
         super.onPostExecute(livros);
 
-        trataListaDeRetorno(livros);
+        trataRetornoTask(livros);
 
         casaDoCodigoStore.remove(this);
     }
 
-    private void trataListaDeRetorno(List<Livro> livros) {
+    private void trataRetornoTask(List<Livro> livros) {
 
         if (livros != null) {
             LivrosRecebidos.notifica(casaDoCodigoStore, livros, true);

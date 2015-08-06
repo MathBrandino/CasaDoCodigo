@@ -10,6 +10,7 @@ import java.util.List;
 
 import br.com.caelum.casadocodigo.activity.EstadoTela;
 import br.com.caelum.casadocodigo.modelo.Carrinho;
+import br.com.caelum.casadocodigo.modelo.Item;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
 /**
@@ -22,6 +23,39 @@ public class CasaDoCodigoStore extends Application {
     private List<Livro> livros;
     private EstadoTela estadoTela;
     private String emailDevice;
+    private double saldo = 0.00;
+
+    public double getSaldo(List<Item> items) {
+        saldo = 0; 
+
+        for (int i = 0; i < items.size(); i++) {
+
+            Item item = carrinho.pegaListaItens().get(i);
+
+            adicionaValorAoSaldo(item);
+
+        }
+
+        return saldo;
+    }
+
+
+    private void adicionaValorAoSaldo(Item item) {
+
+        switch (item.getTipoDeCompra()) {
+
+            case VIRTUAL:
+                saldo += item.getLivro().getValorVirtual();
+                return;
+            case JUNTOS:
+                saldo += item.getLivro().getValorDoisJuntos();
+                return;
+            case FISICO:
+                saldo += item.getLivro().getValorFisico();
+                return;
+
+        }
+    }
 
     public CasaDoCodigoStore() {
         carrinho = new Carrinho();

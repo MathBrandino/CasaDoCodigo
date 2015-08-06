@@ -136,8 +136,8 @@ public class LivroConverter {
         Livro livro = new Livro();
 
         livro.setId(objectLivro.getLong(ID));
-        livro.setNomeLivro(objectLivro.getString(NOME_LIVRO));
-        livro.setDescricaoLivro(objectLivro.getString(DESCRICAO_LIVRO));
+        livro.setNome(objectLivro.getString(NOME_LIVRO));
+        livro.setDescricao(objectLivro.getString(DESCRICAO_LIVRO));
         livro.setDataPublicacao(objectLivro.getString(DATA_PUBLICACAO));
         livro.setISBN(objectLivro.getString(ISBN));
         livro.setNumPaginas(objectLivro.getInt(NUMERO_PAGINAS));

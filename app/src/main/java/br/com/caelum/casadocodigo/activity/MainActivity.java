@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.List;
@@ -53,13 +54,13 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
     private void criaNavigationView() {
         navigationView = (NavigationView) findViewById(R.id.drawer);
-
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     private void criaActionBar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
     }
 
     private void verificaEstado() {

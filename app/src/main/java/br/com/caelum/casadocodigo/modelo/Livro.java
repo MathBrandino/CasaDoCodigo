@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class Livro implements Serializable {
 
-    private String nomeLivro;
-    private String descricaoLivro;
+    private String nome;
+    private String descricao;
     private int numPaginas;
     private String dataPublicacao;
     private String ISBN;
@@ -69,20 +69,20 @@ public class Livro implements Serializable {
         this.valorDoisJuntos = valorDoisJuntos;
     }
 
-    public String getNomeLivro() {
-        return nomeLivro;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeLivro(String nomeLivro) {
-        this.nomeLivro = nomeLivro;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getDescricaoLivro() {
-        return descricaoLivro;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescricaoLivro(String descricaoLivro) {
-        this.descricaoLivro = descricaoLivro;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public int getNumPaginas() {

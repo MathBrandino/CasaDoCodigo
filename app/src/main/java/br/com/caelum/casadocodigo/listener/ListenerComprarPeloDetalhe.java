@@ -30,7 +30,7 @@ public class ListenerComprarPeloDetalhe implements View.OnClickListener {
         Item item = new Item(livro, fragment.getTipoDeCompra());
         casaDoCodigoStore.getCarrinho().adicionar(item);
 
-        Toast.makeText(fragment.getActivity(), item.getLivro().getNomeLivro() + " adicionado ao carrinho", Toast.LENGTH_LONG).show();
+        Toast.makeText(fragment.getActivity(), item.getLivro().getNome() + " adicionado ao carrinho", Toast.LENGTH_LONG).show();
 
     }
 

@@ -106,8 +106,8 @@ public class ListaDeLivrosAdapter extends BaseAdapter implements Serializable {
                     into(imagemLivro);
         }
 
-        nomeLivro.setText(livro.getNomeLivro());
-        descricaoLivro.setText(livro.getDescricaoLivro());
+        nomeLivro.setText(livro.getNome());
+        descricaoLivro.setText(livro.getDescricao());
 
         adicionarCarrinho.setText(view.getResources().getString(R.string.comprar));
 

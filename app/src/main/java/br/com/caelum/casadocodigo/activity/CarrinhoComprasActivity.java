@@ -34,11 +34,9 @@ import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
 public class CarrinhoComprasActivity extends AppCompatActivity {
 
     private List<Item> itens;
-    private double contador = 0.00;
     private CasaDoCodigoStore casaDoCodigoStore;
     private CarrinhoAdapter adapter;
     private String emailParaJson;
-    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,33 +53,18 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         populaCarrinho(casaDoCodigoStore);
 
-        atualizaValorCompra(contador);
+        atualizaValorCompra();
 
     }
 
-    private void atualizaValorCompra(double contador) {
-        double valorCompra = devolveValorCompra(contador);
+    private void atualizaValorCompra() {
+        double valorCompra = casaDoCodigoStore.getSaldo(itens);
 
         TextView valorCompras = (TextView) findViewById(R.id.valor_lista_compra);
 
         valorCompras.setText("O valor da compra é : R$ " + valorCompra);
     }
 
-    private double devolveValorCompra(double contador) {
-
-        for (Item item : itens) {
-
-            if (item.getTipoDeCompra() == TipoDeCompra.VIRTUAL) {
-                contador += item.getLivro().getValorVirtual();
-            } else if (item.getTipoDeCompra() == TipoDeCompra.FISICO) {
-                contador += item.getLivro().getValorFisico();
-            } else {
-                contador += item.getLivro().getValorDoisJuntos();
-            }
-        }
-
-        return contador;
-    }
 
     private void populaCarrinho(final CasaDoCodigoStore casaDoCodigoStore) {
         ListView listaDeLivrosComprados = (ListView) findViewById(R.id.itens_comprados);
@@ -156,7 +139,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         new AlertDialog.Builder(CarrinhoComprasActivity.this)
                 .setTitle("Finalizar Compra ?")
-                .setMessage("Sua compra possui " + itens.size() + " livros e o valor é : R$ " + devolveValorCompra(contador) + "0")
+                .setMessage("Sua compra possui " + itens.size() + " livros e o valor é : R$ " + casaDoCodigoStore.getSaldo(itens) + "0")
                 .setPositiveButton("Sim ! ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -268,7 +251,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
     private void atualizaListas() {
         adapter.notifyDataSetChanged();
-        atualizaValorCompra(contador);
+        atualizaValorCompra();
     }
 
 

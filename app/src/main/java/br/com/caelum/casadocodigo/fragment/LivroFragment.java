@@ -73,7 +73,7 @@ public class LivroFragment extends Fragment {
         }
 
         TextView nomeLivro = helper.getNomeLivro();
-        nomeLivro.setText(livro.getNomeLivro());
+        nomeLivro.setText(livro.getNome());
 
         TextView autorLivro = helper.getNomeAutor();
 
@@ -99,7 +99,7 @@ public class LivroFragment extends Fragment {
             }
         });
         TextView descricaoLivro = helper.getDescricaoLivro();
-        descricaoLivro.setText(livro.getDescricaoLivro());
+        descricaoLivro.setText(livro.getDescricao());
     }
 
 

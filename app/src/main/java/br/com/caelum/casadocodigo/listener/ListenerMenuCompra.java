@@ -29,7 +29,7 @@ public class ListenerMenuCompra implements View.OnClickListener {
 
         AlertDialog alertDialog = new AlertDialog.Builder(activity)
                 .setView(alertView)
-                .setTitle(livro.getNomeLivro())
+                .setTitle(livro.getNome())
                 .show();
 
         Button comprar = (Button) alertView.findViewById(R.id.botao_comprar_livro_alert);

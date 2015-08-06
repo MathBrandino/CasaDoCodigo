@@ -36,7 +36,7 @@ public class ListenerComprarPeloMain implements View.OnClickListener {
 
         casaDoCodigoStore.getCarrinho().adicionar(item);
 
-        Toast.makeText(activity, item.getLivro().getNomeLivro() + " foi adicionado ao carrinho", Toast.LENGTH_LONG).show();
+        Toast.makeText(activity, item.getLivro().getNome() + " foi adicionado ao carrinho", Toast.LENGTH_LONG).show();
 
         alertDialog.cancel();
 

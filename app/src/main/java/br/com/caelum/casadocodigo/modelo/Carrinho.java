@@ -12,6 +12,7 @@ public class Carrinho implements Serializable {
     private List<Item> items;
 
 
+
     public Carrinho() {
         items = new ArrayList<>();
     }
@@ -26,10 +27,6 @@ public class Carrinho implements Serializable {
 
     public void limpaLista(List<Item> items) {
         items.removeAll(items);
-    }
-
-    public Item getItem(int position) {
-        return items.get(position);
     }
 
     public List<Item> pegaListaItens() {

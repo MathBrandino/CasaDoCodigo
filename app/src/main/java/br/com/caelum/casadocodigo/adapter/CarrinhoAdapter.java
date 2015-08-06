@@ -85,7 +85,7 @@ public class CarrinhoAdapter extends BaseAdapter {
 
     private void populaNomeLivro(Livro livro, ViewHolder holder) {
         TextView nomeLivro = holder.nomeLivro;
-        nomeLivro.setText(livro.getNomeLivro());
+        nomeLivro.setText(livro.getNome());
     }
 
     private void populaImagem(Livro livro, ViewHolder holder) {
