@@ -12,7 +12,6 @@ public class Carrinho implements Serializable {
     private List<Item> items;
 
 
-
     public Carrinho() {
         items = new ArrayList<>();
     }

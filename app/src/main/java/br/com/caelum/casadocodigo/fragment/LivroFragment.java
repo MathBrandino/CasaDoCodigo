@@ -88,12 +88,10 @@ public class LivroFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("livro", livro);
 
-                AutorFragment fragment = new AutorFragment();
-                fragment.setArguments(bundle);
 
                 CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
                 casaDoCodigoStore.setEstadoTela(EstadoTela.AUTOR);
-                casaDoCodigoStore.getEstadoTela().colocaFragmentTela((MainActivity) getActivity(), fragment);
+                casaDoCodigoStore.getEstadoTela().executa((MainActivity) getActivity(), bundle);
 
 
             }

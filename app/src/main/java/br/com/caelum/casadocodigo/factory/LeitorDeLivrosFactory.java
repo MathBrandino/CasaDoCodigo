@@ -1,12 +1,6 @@
 package br.com.caelum.casadocodigo.factory;
 
-import android.app.Activity;
-import android.content.Context;
-
-import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
-import br.com.caelum.casadocodigo.converter.OnlyOpenRawResource;
 import br.com.caelum.casadocodigo.leitorDeLivros.LeitorDeLivros;
-import br.com.caelum.casadocodigo.leitorDeLivros.LeitorDeLivrosArquivo;
 import br.com.caelum.casadocodigo.leitorDeLivros.LeitorDeLivrosServidor;
 
 /**

@@ -25,6 +25,11 @@ public class CasaDoCodigoStore extends Application {
     private String emailDevice;
     private double saldo = 0.00;
 
+    public CasaDoCodigoStore() {
+        carrinho = new Carrinho();
+        estadoTela = EstadoTela.INICIO;
+    }
+
     public double getSaldo(List<Item> items) {
 
         saldo = 0;
@@ -39,7 +44,6 @@ public class CasaDoCodigoStore extends Application {
 
         return saldo;
     }
-
 
     private void adicionaValorAoSaldo(Item item) {
 
@@ -56,11 +60,6 @@ public class CasaDoCodigoStore extends Application {
                 return;
 
         }
-    }
-
-    public CasaDoCodigoStore() {
-        carrinho = new Carrinho();
-        estadoTela = EstadoTela.INICIO;
     }
 
     public String getEmailDevice() {

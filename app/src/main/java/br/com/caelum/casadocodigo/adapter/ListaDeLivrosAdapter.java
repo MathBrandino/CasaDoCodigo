@@ -16,7 +16,6 @@ import java.util.List;
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.activity.EstadoTela;
 import br.com.caelum.casadocodigo.activity.MainActivity;
-import br.com.caelum.casadocodigo.fragment.LivroFragment;
 import br.com.caelum.casadocodigo.listener.ListenerMenuCompra;
 import br.com.caelum.casadocodigo.modelo.Livro;
 
@@ -78,13 +77,8 @@ public class ListaDeLivrosAdapter extends BaseAdapter implements Serializable {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("livro", livro);
 
-
-                LivroFragment fragment = new LivroFragment();
-
-                fragment.setArguments(bundle);
-
                 activity.getCasaDoCodigoStore().setEstadoTela(EstadoTela.LIVRO);
-                activity.getCasaDoCodigoStore().getEstadoTela().colocaFragmentTela(activity, fragment);
+                activity.getCasaDoCodigoStore().getEstadoTela().executa(activity, bundle);
             }
         });
 
@@ -141,17 +135,12 @@ public class ListaDeLivrosAdapter extends BaseAdapter implements Serializable {
         final Button adicionarCarrinho;
         final ImageView imagemLivro;
 
-
         public ViewHolder(View view) {
 
             nomeLivro = (TextView) view.findViewById(R.id.nome_livro);
             descricaoLivro = (TextView) view.findViewById(R.id.desc_livro);
             adicionarCarrinho = (Button) view.findViewById(R.id.botao_comprar);
             imagemLivro = (ImageView) view.findViewById(R.id.imagem_livro);
-
-
         }
-
-
     }
 }

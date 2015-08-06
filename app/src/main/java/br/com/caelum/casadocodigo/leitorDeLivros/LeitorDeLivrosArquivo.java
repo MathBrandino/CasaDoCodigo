@@ -3,10 +3,6 @@ package br.com.caelum.casadocodigo.leitorDeLivros;
 
 import org.json.JSONException;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,7 +25,7 @@ public class LeitorDeLivrosArquivo implements LeitorDeLivros {
 
     private String leArquivo() {
 
-        Scanner scanner  = new Scanner(resource.openRawResource(R.raw.listalivros));
+        Scanner scanner = new Scanner(resource.openRawResource(R.raw.listalivros));
 
         String line;
         String json = "";
