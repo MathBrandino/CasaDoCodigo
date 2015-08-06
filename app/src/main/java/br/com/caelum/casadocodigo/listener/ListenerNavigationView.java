@@ -6,6 +6,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import br.com.caelum.casadocodigo.R;
+import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
+import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 
 /**
  * Created by matheus on 06/08/15.
@@ -24,7 +26,7 @@ public class ListenerNavigationView implements NavigationView.OnNavigationItemSe
         switch (menuItem.getItemId()) {
 
             case R.id.java_menu:
-                Toast.makeText(activity, "Livros de java", Toast.LENGTH_LONG).show();
+                buscaDadosServidor(2);
                 return true;
 
             case R.id.carrinho_menu:
@@ -32,30 +34,39 @@ public class ListenerNavigationView implements NavigationView.OnNavigationItemSe
                 return true;
 
             case R.id.web_menu:
-                Toast.makeText(activity, "Livros de web", Toast.LENGTH_LONG).show();
+                buscaDadosServidor(7);
                 return true;
 
             case R.id.front_menu:
-                Toast.makeText(activity, "Livros de front", Toast.LENGTH_LONG).show();
+                buscaDadosServidor(4);
                 return true;
 
             case R.id.mobile_menu:
-                Toast.makeText(activity, "Livros de mobile", Toast.LENGTH_LONG).show();
+                buscaDadosServidor(6);
                 return true;
 
             case R.id.games_menu:
-                Toast.makeText(activity, "Livros de game", Toast.LENGTH_LONG).show();
+                buscaDadosServidor(5);
                 return true;
 
             case R.id.outros_menu:
-                Toast.makeText(activity, "Livros diversos", Toast.LENGTH_LONG).show();
+                buscaDadosServidor(8);
                 return true;
 
             case R.id.agile_menu:
-                Toast.makeText(activity, "Livros de agile", Toast.LENGTH_LONG).show();
+                buscaDadosServidor(3);
+                return true;
+
+            case R.id.todos_menu:
+                buscaDadosServidor(1);
                 return true;
         }
 
         return false;
+    }
+
+    public void buscaDadosServidor(int i) {
+        CarregadorCatalogoTask task = new CarregadorCatalogoTask((CasaDoCodigoStore) activity.getApplication());
+        task.execute(i);
     }
 }

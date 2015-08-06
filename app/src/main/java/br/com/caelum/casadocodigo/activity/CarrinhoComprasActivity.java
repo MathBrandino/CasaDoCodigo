@@ -230,7 +230,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         ComunicaServidor comunicaServidor = new ComunicaServidor();
 
-        HttpURLConnection connection = comunicaServidor.abreConexao();
+        HttpURLConnection connection = comunicaServidor.abreConexaoListaCompleta();
 
         //aqui terá que ficar a lógica para enviar (?)
 

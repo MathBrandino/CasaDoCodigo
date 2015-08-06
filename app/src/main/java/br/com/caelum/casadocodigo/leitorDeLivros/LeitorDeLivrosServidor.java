@@ -20,12 +20,18 @@ public class LeitorDeLivrosServidor implements LeitorDeLivros {
     private List<Livro> livros;
     private ComunicaServidor servidor;
 
+    private int i;
+
+    public LeitorDeLivrosServidor(int i) {
+        this.i = i;
+    }
+
     @Override
     public List<Livro> devolveLista() {
 
         try {
 
-            HttpURLConnection connection = pegaConexao();
+            HttpURLConnection connection = pegaConexao(i);
 
             connection.setDoInput(true);
 
@@ -49,10 +55,39 @@ public class LeitorDeLivrosServidor implements LeitorDeLivros {
         return null;
     }
 
-    private HttpURLConnection pegaConexao() throws IOException {
+    private HttpURLConnection pegaConexao(int tipoConexao) throws IOException {
         servidor = new ComunicaServidor();
 
-        return servidor.abreConexao();
+        switch (tipoConexao){
+
+            case 1:
+                return servidor.abreConexaoListaCompleta();
+
+            case 2:
+                return servidor.abreConexaoListaJava();
+
+            case 3:
+                return servidor.abreConexaoListaAgile();
+
+            case 4:
+                return servidor.abreConexaoListaFront();
+
+            case 5:
+                return servidor.abreConexaoListaGames();
+
+            case 6:
+                return servidor.abreConexaoListaMobile();
+
+            case 7:
+                return servidor.abreConexaoListaWeb();
+
+            case 8:
+                return servidor.abreConexaoListaOutros();
+
+            default:
+                return servidor.abreConexaoListaCompleta();
+        }
+
     }
 
     private void converteJsonParaLista(String json) throws JSONException {

@@ -14,7 +14,7 @@ import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 /**
  * Created by matheus on 28/07/15.
  */
-public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
+public class CarregadorCatalogoTask extends AsyncTask<Integer, Void, List<Livro>> {
 
     private Exception erro;
 
@@ -28,11 +28,12 @@ public class CarregadorCatalogoTask extends AsyncTask<Void, Void, List<Livro>> {
     }
 
     @Override
-    protected List<Livro> doInBackground(Void... params) {
+    protected List<Livro> doInBackground(Integer... params) {
+        Integer[] i = params;
 
         try {
 
-            LeitorDeLivros leitorDeLivros = LeitorDeLivrosFactory.getLeitorDeLivros();
+            LeitorDeLivros leitorDeLivros = LeitorDeLivrosFactory.getLeitorDeLivros(i[0]);
 
             livros = leitorDeLivros.devolveLista();
 

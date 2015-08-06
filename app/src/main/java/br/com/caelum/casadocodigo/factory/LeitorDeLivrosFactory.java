@@ -8,14 +8,14 @@ import br.com.caelum.casadocodigo.leitorDeLivros.LeitorDeLivrosServidor;
  */
 public class LeitorDeLivrosFactory {
 
-    public static LeitorDeLivros getLeitorDeLivros() {
+    public static LeitorDeLivros getLeitorDeLivros(int i) {
 
 
         //LeitorDeLivros leitorDeLivros = new LeitorDeLivrosArquivo(new OnlyOpenRawResource(activity.getResources()));
 
         // LeitorDeLivros leitorDeLivros = new LeitorDeLivrosHardCode();
 
-        LeitorDeLivros leitorDeLivros = new LeitorDeLivrosServidor();
+        LeitorDeLivros leitorDeLivros = new LeitorDeLivrosServidor(i);
 
         return leitorDeLivros;
     }

@@ -33,4 +33,9 @@
         android:id="@+id/outros_menu"
         android:icon="@drawable/outros"
         android:title="Outros" />
+    <item
+        android:id="@+id/todos_menu"
+        android:icon="@drawable/lista_"
+        android:title="Todos Livros" />
+
 </menu>

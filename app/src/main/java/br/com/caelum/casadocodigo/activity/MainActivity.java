@@ -76,22 +76,10 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     }
 
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putSerializable(ESTADO, casaDoCodigoStore.getEstadoTela());
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-
-        casaDoCodigoStore.setEstadoTela((EstadoTela) savedInstanceState.getSerializable(ESTADO));
-    }
 
     public void buscaDadosServidor() {
         CarregadorCatalogoTask task = new CarregadorCatalogoTask((CasaDoCodigoStore) getApplicationContext());
-        task.execute();
+        task.execute(1);
     }
 
     @Override
