@@ -29,7 +29,7 @@ public enum EstadoTela {
             colocaFragmentTela(activity, progressFragment);
         }
     },
-    CARREGAMENTO{
+    CARREGAMENTO {
         @Override
         public void colocaFragmentTela(MainActivity activity, Fragment fragment) {
 
@@ -40,7 +40,7 @@ public enum EstadoTela {
 
         @Override
         public void executa(MainActivity activity) {
-            ProgressFragment  progressFragment = new ProgressFragment();
+            ProgressFragment progressFragment = new ProgressFragment();
             colocaFragmentTela(activity, progressFragment);
         }
     },
@@ -51,7 +51,7 @@ public enum EstadoTela {
 
             FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_main, fragment);
-            transaction.commitAllowingStateLoss();
+            transaction.commit();
         }
 
         @Override

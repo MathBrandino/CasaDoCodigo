@@ -17,12 +17,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.util.List;
+import java.util.Scanner;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.CarrinhoAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
+import br.com.caelum.casadocodigo.async.EnviaJsonTask;
 import br.com.caelum.casadocodigo.converter.LivroConverter;
 import br.com.caelum.casadocodigo.helper.EmailCompraHelper;
 import br.com.caelum.casadocodigo.modelo.Item;
@@ -183,6 +186,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                 emailParaJson = emailUser.getText().toString();
 
                 if (validaEmail(emailParaJson)) {
+
                     alertDialog.dismiss();
 
                     try {
@@ -221,26 +225,16 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         casaDoCodigoStore.getCarrinho().limpaLista(itens);
         atualizaListas();
-        Toast.makeText(CarrinhoComprasActivity.this, "Sua compra já foi recebida e logo você receberá as instrucões", Toast.LENGTH_LONG).show();
+        Toast.makeText(CarrinhoComprasActivity.this, "OK" , Toast.LENGTH_LONG).show();
     }
 
     public void enviaListaJsonParaServidor() throws IOException {
 
         String json = geraJson();
 
-        ComunicaServidor comunicaServidor = new ComunicaServidor();
+        EnviaJsonTask task  = new EnviaJsonTask();
+        task.execute(json);
 
-        HttpURLConnection connection = comunicaServidor.abreConexaoListaCompleta();
-
-        //aqui terá que ficar a lógica para enviar (?)
-
-        connection.setDoOutput(true);
-
-        connection.setRequestMethod("POST");
-
-        Log.i("Json", json);
-
-//        connection.connect();
 
     }
 

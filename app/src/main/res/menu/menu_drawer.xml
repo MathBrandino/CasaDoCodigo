@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:title="@string/livro">
+    <item android:title="@string/livro">
         <menu>
 
             <item
@@ -41,15 +40,14 @@
         </menu>
     </item>
 
-    <item
-        android:title="Opcoes">
-    <menu>
+    <item android:title="@string/opcao">
+        <menu>
 
-        <item
-            android:id="@+id/carrinho_menu"
-            android:icon="@drawable/carrinho_vazio"
-            android:title="@string/carrinho" />
-    </menu>
+            <item
+                android:id="@+id/carrinho_menu"
+                android:icon="@drawable/carrinho_vazio"
+                android:title="@string/carrinho" />
+        </menu>
     </item>
 
 

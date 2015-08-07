@@ -58,7 +58,7 @@ public class LeitorDeLivrosServidor implements LeitorDeLivros {
     private HttpURLConnection pegaConexao(int tipoConexao) throws IOException {
         servidor = new ComunicaServidor();
 
-        switch (tipoConexao){
+        switch (tipoConexao) {
 
             case 1:
                 return servidor.abreConexaoListaCompleta();

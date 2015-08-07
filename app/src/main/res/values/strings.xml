@@ -7,9 +7,10 @@
     <string name="comprar">Comprar</string>
     <string name="mudar">Mudar</string>
     <string name="catalogo">Catálogo</string>
-    <string name="livro">Livro</string>
+    <string name="livro">Categorias</string>
     <string name="autores">Autores</string>
     <string name="carrinho">Carrinho</string>
+    <string name="opcao">Opcões</string>
 
     <string name="detalhes">Detalhes</string>
     <string name="paginas">N. Páginas :  </string>

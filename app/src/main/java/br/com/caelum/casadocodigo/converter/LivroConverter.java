@@ -33,14 +33,11 @@ public class LivroConverter {
     private final String AUTORES = "autores";
     private final String LISTA_ITENS = "itens";
     private final String LIVROS = "livros";
-    private final String ID_LIVRO = "idLivro";
     private final String NOME_LIVRO = "nomeLivro";
-    private final String TIPO_LIVRO = "tipoLivro";
+    private final String TIPO_LIVRO = "formatoLivro";
     private final String USUARIO = "usuario";
     private final String EMAIL = "email";
-    private final String ITEM = "item";
     private final String LIVRO = "livro";
-    private final String COMPRA = "compra";
 
     public List<Livro> fromJson(String json) throws JSONException {
 
@@ -76,37 +73,29 @@ public class LivroConverter {
             JSONStringer jsonStringer = new JSONStringer();
 
             jsonStringer
-                    .object().key(COMPRA).array();
-
-            jsonStringer
                     .object().key(LISTA_ITENS).array();
 
             for (Item item : items) {
 
-                jsonStringer.object().key(ITEM).array();
-
-                jsonStringer.object().key(LIVRO).array();
+                jsonStringer.object().key(LIVRO);
 
                 jsonStringer.object()
-                        .key(ID_LIVRO).value(item.getLivro().getId())
+                        .key(ID).value(item.getLivro().getId())
                         .endObject();
 
-                jsonStringer.endArray().endObject();
+                jsonStringer
+                        .key(TIPO_LIVRO).value(item.getTipoDeCompra());
 
-                jsonStringer.object()
-                        .key(TIPO_LIVRO).value(item.getTipoDeCompra())
-                        .endObject();
-
-                jsonStringer.endArray().endObject();
+                jsonStringer.endObject();
             }
 
-            jsonStringer.object().key(USUARIO).array();
+            jsonStringer.endArray();
+
+            jsonStringer.key(USUARIO);
 
             jsonStringer.object().key(EMAIL).value(email).endObject();
 
-            jsonStringer.endArray().endObject();
-
-            String jsonSaida = jsonStringer.endArray().endObject().toString();
+            String jsonSaida = jsonStringer.endObject().toString();
 
             return jsonSaida;
 

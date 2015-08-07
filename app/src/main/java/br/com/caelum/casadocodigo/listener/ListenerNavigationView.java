@@ -3,7 +3,6 @@ package br.com.caelum.casadocodigo.listener;
 import android.app.Activity;
 import android.support.design.widget.NavigationView;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.activity.EstadoTela;
@@ -17,7 +16,6 @@ import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 public class ListenerNavigationView implements NavigationView.OnNavigationItemSelectedListener {
 
     private Activity activity;
-
 
     public ListenerNavigationView(Activity activity) {
         this.activity = activity;
