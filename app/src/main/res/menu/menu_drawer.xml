@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Livros">
+        android:title="@string/livro">
         <menu>
 
             <item

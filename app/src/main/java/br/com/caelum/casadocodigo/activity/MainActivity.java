@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
-import br.com.caelum.casadocodigo.adapter.ListaDeLivrosAdapter;
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.async.CarregadorCatalogoTask;
 import br.com.caelum.casadocodigo.delegate.BuscaLivrosDelegate;
@@ -24,7 +23,6 @@ import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 public class MainActivity extends AppCompatActivity implements BuscaLivrosDelegate {
 
     private final String ESTADO = "ESTADO";
-    private ListaDeLivrosAdapter adapter;
     private List<Livro> livros;
     private CasaDoCodigoStore casaDoCodigoStore;
     private NavigationView navigationView;
@@ -49,6 +47,25 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putSerializable(ESTADO, casaDoCodigoStore.getEstadoTela());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        recuperaEstadoColocandoNaTela((EstadoTela) savedInstanceState.getSerializable(ESTADO));
+    }
+
+    private void recuperaEstadoColocandoNaTela(EstadoTela estadoTela) {
+        casaDoCodigoStore.setEstadoTela(estadoTela);
+        casaDoCodigoStore.getEstadoTela().executa(this);
+    }
+
     private void criaNavigationView() {
         navigationView = (NavigationView) findViewById(R.id.drawer);
         navigationView.setNavigationItemSelectedListener(new ListenerNavigationView(this));
@@ -62,19 +79,12 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
     private void verificaEstado() {
         if (livros == null) {
-
-            casaDoCodigoStore.setEstadoTela(EstadoTela.INICIO);
-            casaDoCodigoStore.getEstadoTela().executa(this);
+            recuperaEstadoColocandoNaTela(EstadoTela.INICIO);
 
         } else {
-
-            casaDoCodigoStore.setEstadoTela(EstadoTela.LISTA_LIVROS);
-            casaDoCodigoStore.getEstadoTela().executa(this);
-
+            recuperaEstadoColocandoNaTela(EstadoTela.LISTA_LIVROS);
         }
     }
-
-
 
     public void buscaDadosServidor() {
         CarregadorCatalogoTask task = new CarregadorCatalogoTask((CasaDoCodigoStore) getApplicationContext());
@@ -109,8 +119,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         getCasaDoCodigoStore().setLivros(livros);
 
-        casaDoCodigoStore.setEstadoTela(EstadoTela.LISTA_LIVROS);
-        casaDoCodigoStore.getEstadoTela().executa(this);
+        recuperaEstadoColocandoNaTela(EstadoTela.LISTA_LIVROS);
     }
 
     @Override
@@ -127,6 +136,4 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     public CasaDoCodigoStore getCasaDoCodigoStore() {
         return (CasaDoCodigoStore) getApplication();
     }
-
-
 }

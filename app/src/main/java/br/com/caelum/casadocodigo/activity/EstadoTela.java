@@ -51,7 +51,7 @@ public enum EstadoTela {
 
             FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_main, fragment);
-            transaction.commit();
+            transaction.commitAllowingStateLoss();
         }
 
         @Override
