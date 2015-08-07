@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         casaDoCodigoStore = getCasaDoCodigoStore();
 
-
         criaActionBar();
 
         livros = getCasaDoCodigoStore().getLivros();

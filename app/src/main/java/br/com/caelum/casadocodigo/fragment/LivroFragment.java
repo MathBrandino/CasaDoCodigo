@@ -30,15 +30,16 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 
 public class LivroFragment extends Fragment {
 
-    private final String LIVRO = "livro";
     private LivrosActivityHelper helper;
     private Livro livro;
+    private CasaDoCodigoStore casaDoCodigoStore;
+    private TipoDeCompra tipoDeCompra;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
+        casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
 
         View view = inflater.inflate(R.layout.fragment_livro, container, false);
 
@@ -88,11 +89,8 @@ public class LivroFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-
-                CasaDoCodigoStore casaDoCodigoStore = (CasaDoCodigoStore) getActivity().getApplication();
                 casaDoCodigoStore.setEstadoTela(EstadoTela.AUTOR);
                 casaDoCodigoStore.getEstadoTela().executa((MainActivity) getActivity());
-
 
             }
         });
@@ -120,9 +118,6 @@ public class LivroFragment extends Fragment {
 
     public TipoDeCompra getTipoDeCompra() {
 
-        TipoDeCompra tipoDeCompra = null;
-
-
         RadioGroup radioGroup = helper.getRadioGroup();
 
         tipoDeCompra = devolveTipoDeCompra(radioGroup);
@@ -131,10 +126,7 @@ public class LivroFragment extends Fragment {
 
     }
 
-    ;
-
     private TipoDeCompra devolveTipoDeCompra(RadioGroup radioGroup) {
-        TipoDeCompra tipoDeCompra;
 
         switch (radioGroup.getCheckedRadioButtonId()) {
 
@@ -154,5 +146,4 @@ public class LivroFragment extends Fragment {
                 return null;
         }
     }
-
 }
