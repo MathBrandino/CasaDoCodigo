@@ -97,9 +97,9 @@ public class ComunicaServidor {
 
     }
 
-    public void abreConexaoMandaJson(String json) throws IOException {
+    public String abreConexaoMandaJson(String json) throws IOException {
 
-        url = new URL("http://3f0a38a1.ngrok.io/casadocodigo/registrarCompra");
+        url = new URL("http://6ff27d5e.ngrok.io/casadocodigo/registrarCompra");
 
         connection = (HttpURLConnection) url.openConnection();
 
@@ -119,5 +119,6 @@ public class ComunicaServidor {
 
         Log.i("jsonResposta", jsonDeResposta);
 
+        return jsonDeResposta;
     }
 }
