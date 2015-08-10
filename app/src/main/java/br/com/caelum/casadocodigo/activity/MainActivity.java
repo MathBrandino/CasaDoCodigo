@@ -2,11 +2,14 @@ package br.com.caelum.casadocodigo.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.List;
 
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     private List<Livro> livros;
     private CasaDoCodigoStore casaDoCodigoStore;
     private NavigationView navigationView;
+    private ActionBarDrawerToggle iconeMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         livros = getCasaDoCodigoStore().getLivros();
 
         criaNavigationView();
+
 
         LivrosRecebidos.registraObservador(this);
 
@@ -73,6 +78,27 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
     private void criaActionBar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+         iconeMenu = new ActionBarDrawerToggle(this,
+                drawerLayout,
+                toolbar,
+                0,
+                0
+                ){
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                supportInvalidateOptionsMenu();
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                supportInvalidateOptionsMenu();
+            }
+        };
+
+        drawerLayout.setDrawerListener(iconeMenu);
 
     }
 
