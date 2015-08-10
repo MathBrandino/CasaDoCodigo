@@ -117,7 +117,7 @@ public class ComunicaServidor {
 
         String jsonDeResposta = new Scanner(connection.getInputStream()).next();
 
-        Log.i("jsonResposta",jsonDeResposta);
+        Log.i("jsonResposta", jsonDeResposta);
 
     }
 }

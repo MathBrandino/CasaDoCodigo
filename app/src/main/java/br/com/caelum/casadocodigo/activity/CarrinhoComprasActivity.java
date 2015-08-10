@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,10 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
-import java.io.PrintStream;
-import java.net.HttpURLConnection;
 import java.util.List;
-import java.util.Scanner;
 
 import br.com.caelum.casadocodigo.R;
 import br.com.caelum.casadocodigo.adapter.CarrinhoAdapter;
@@ -29,7 +25,6 @@ import br.com.caelum.casadocodigo.async.EnviaJsonTask;
 import br.com.caelum.casadocodigo.converter.LivroConverter;
 import br.com.caelum.casadocodigo.helper.EmailCompraHelper;
 import br.com.caelum.casadocodigo.modelo.Item;
-import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
 
 /**
  * Created by matheus on 27/07/15.
@@ -225,14 +220,14 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         casaDoCodigoStore.getCarrinho().limpaLista(itens);
         atualizaListas();
-        Toast.makeText(CarrinhoComprasActivity.this, "OK" , Toast.LENGTH_LONG).show();
+        Toast.makeText(CarrinhoComprasActivity.this, "OK", Toast.LENGTH_LONG).show();
     }
 
     public void enviaListaJsonParaServidor() throws IOException {
 
         String json = geraJson();
 
-        EnviaJsonTask task  = new EnviaJsonTask();
+        EnviaJsonTask task = new EnviaJsonTask();
         task.execute(json);
 
 

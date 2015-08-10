@@ -5,8 +5,8 @@ import android.os.AsyncTask;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
-import br.com.caelum.casadocodigo.factory.LeitorDeLivrosFactory;
 import br.com.caelum.casadocodigo.leitorDeLivros.LeitorDeLivros;
+import br.com.caelum.casadocodigo.leitorDeLivros.LeitorDeLivrosFactory;
 import br.com.caelum.casadocodigo.modelo.Livro;
 import br.com.caelum.casadocodigo.receiver.LivrosRecebidos;
 

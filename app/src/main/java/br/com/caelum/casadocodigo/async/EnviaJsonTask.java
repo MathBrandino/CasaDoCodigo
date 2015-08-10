@@ -1,13 +1,9 @@
 package br.com.caelum.casadocodigo.async;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 
-import br.com.caelum.casadocodigo.aplication.CasaDoCodigoStore;
 import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
 
 /**
@@ -28,8 +24,6 @@ public class EnviaJsonTask extends AsyncTask<String, Void, Void> {
 
         return null;
     }
-
-
 
 
 }

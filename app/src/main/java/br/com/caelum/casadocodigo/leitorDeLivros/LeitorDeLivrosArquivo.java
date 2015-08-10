@@ -15,7 +15,7 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 /**
  * Created by matheus on 23/07/15.
  */
-public class LeitorDeLivrosArquivo implements LeitorDeLivros {
+class LeitorDeLivrosArquivo implements LeitorDeLivros {
 
     private OnlyOpenRawResource resource;
 

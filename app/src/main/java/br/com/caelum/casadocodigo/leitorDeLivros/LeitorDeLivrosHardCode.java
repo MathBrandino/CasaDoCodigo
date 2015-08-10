@@ -9,7 +9,7 @@ import br.com.caelum.casadocodigo.modelo.Livro;
 /**
  * Created by matheus on 23/07/15.
  */
-public class LeitorDeLivrosHardCode implements LeitorDeLivros {
+class LeitorDeLivrosHardCode implements LeitorDeLivros {
 
 
     @Override

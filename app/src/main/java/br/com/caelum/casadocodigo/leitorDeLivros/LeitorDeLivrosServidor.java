@@ -16,7 +16,7 @@ import br.com.caelum.casadocodigo.servidor.ComunicaServidor;
 /**
  * Created by matheus on 29/07/15.
  */
-public class LeitorDeLivrosServidor implements LeitorDeLivros {
+class LeitorDeLivrosServidor implements LeitorDeLivros {
     private List<Livro> livros;
     private ComunicaServidor servidor;
 
