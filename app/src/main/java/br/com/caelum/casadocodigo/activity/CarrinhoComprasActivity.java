@@ -79,14 +79,14 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                alertaRemocaoLivro(position, casaDoCodigoStore, adapter);
+                alertaRemocaoLivro(position, casaDoCodigoStore);
 
                 return false;
             }
         });
     }
 
-    private void alertaRemocaoLivro(final int position, final CasaDoCodigoStore casaDoCodigoStore, final CarrinhoAdapter adapter) {
+    private void alertaRemocaoLivro(final int position, final CasaDoCodigoStore casaDoCodigoStore) {
 
         new AlertDialog.Builder(CarrinhoComprasActivity.this)
                 .setMessage("Deseja remover ? ")
@@ -127,13 +127,13 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
     private void iniciaCompra() {
         if (itens.size() > 0) {
-            finalizaCompra();
+            iniciaFechamentoCompra();
         } else {
             Toast.makeText(CarrinhoComprasActivity.this, "Você ainda não comprou nada :( ", Toast.LENGTH_LONG).show();
         }
     }
 
-    private void finalizaCompra() {
+    private void iniciaFechamentoCompra() {
 
         new AlertDialog.Builder(CarrinhoComprasActivity.this)
                 .setTitle("Finalizar Compra ?")
@@ -178,7 +178,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                emailParaJson = emailUser.getText().toString();
+                emailParaJson = emailUser.getText().toString().trim();
 
                 if (validaEmail(emailParaJson)) {
 
@@ -207,7 +207,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
     private boolean validaEmail(String email) {
 
         if (!email.trim().isEmpty()) {
-            if (email.contains("@")) {
+            if (email.contains("@") && email.contains(".")) {
                 return true;
             }
         }
@@ -229,8 +229,6 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         EnviaJsonTask task = new EnviaJsonTask();
         task.execute(json);
-
-
     }
 
     private String geraJson() {
@@ -242,6 +240,4 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
         atualizaValorCompra();
     }
-
-
 }
