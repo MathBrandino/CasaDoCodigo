@@ -1,6 +1,7 @@
 package br.com.caelum.casadocodigo.async;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.util.List;
 

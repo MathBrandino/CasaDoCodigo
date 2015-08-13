@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 
 import java.io.Serializable;
 import java.util.List;
@@ -21,7 +22,7 @@ public class LivrosRecebidos extends BroadcastReceiver {
     private static final String LIVROS_RECEBIDOS = "livros_recebidos";
     private static String SUCESSO = "sucesso";
     private static String RETORNO = "retorno";
-    private BuscaLivrosDelegate delegate;
+    private static BuscaLivrosDelegate delegate;
 
     public static LivrosRecebidos registraObservador(BuscaLivrosDelegate delegate) {
         LivrosRecebidos receiver = new LivrosRecebidos();

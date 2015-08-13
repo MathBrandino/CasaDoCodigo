@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
@@ -48,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
         LivrosRecebidos.registraObservador(this);
 
         verificaEstado();
-
     }
 
     @Override
