@@ -1,6 +1,7 @@
 package br.com.caelum.casadocodigo.listener;
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.NavigationView;
 import android.view.MenuItem;
 

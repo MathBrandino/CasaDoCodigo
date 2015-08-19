@@ -20,7 +20,7 @@ public class LivroConverter {
     private final String ID = "id";
     private final String DESCRICAO_LIVRO = "descricaoLivro";
     private final String DATA_PUBLICACAO = "dataPublicacao";
-    private final String ISBN = "ISBN";
+    private final String ISBN = "isbn";
     private final String NUMERO_PAGINAS = "numeroPaginas";
     private final String VALOR_FISICO = "valorFisico";
     private final String VALOR_VIRTUAL = "valorVirtual";
@@ -128,7 +128,11 @@ public class LivroConverter {
         livro.setNome(objectLivro.getString(NOME_LIVRO));
         livro.setDescricao(objectLivro.getString(DESCRICAO_LIVRO));
         livro.setDataPublicacao(objectLivro.getString(DATA_PUBLICACAO));
-        livro.setISBN(objectLivro.getString(ISBN));
+        if (objectLivro.has(ISBN)) {
+            livro.setISBN(objectLivro.getString(ISBN));
+        } else {
+            livro.setISBN(objectLivro.getString("ISBN"));
+        }
         livro.setNumPaginas(objectLivro.getInt(NUMERO_PAGINAS));
         livro.setValorFisico(objectLivro.getDouble(VALOR_FISICO));
         livro.setValorVirtual(objectLivro.getDouble(VALOR_VIRTUAL));

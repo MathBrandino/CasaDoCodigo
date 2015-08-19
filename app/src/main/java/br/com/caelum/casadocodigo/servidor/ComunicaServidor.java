@@ -18,8 +18,7 @@ public class ComunicaServidor {
 
     public HttpURLConnection abreConexaoListaCompleta() throws IOException {
 
-        url = new URL("https://raw.githubusercontent.com/MathBrandino/CasaDoCodigo/master/app/src/main/res/raw/listalivros.json");
-        //url = new URL("http://3f0a38a1.ngrok.io/casadocodigo/listarLivros?indicePrimeiroLivro=0&qtdLivros=20");
+        url = new URL("http://cdcmob.herokuapp.com/listarLivros?indicePrimeiroLivro=0&qtdLivros=20");
 
         connection = (HttpURLConnection) url.openConnection();
 
@@ -99,7 +98,7 @@ public class ComunicaServidor {
 
     public String abreConexaoMandaJson(String json) throws IOException {
 
-        url = new URL("http://6ff27d5e.ngrok.io/casadocodigo/registrarCompra");
+        url = new URL("http://cdcmob.herokuapp.com/registrarCompra");
 
         connection = (HttpURLConnection) url.openConnection();
 

@@ -105,6 +105,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.menu_carrinho, menu);
 
+
         return true;
     }
 
@@ -118,7 +119,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
                     iniciaCompra();
 
-                    return false;
+                    return true;
                 }
             });
         }
