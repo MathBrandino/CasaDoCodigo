@@ -44,6 +44,7 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
 
         Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_carrinho);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         casaDoCodigoStore = (CasaDoCodigoStore) getApplication();
 
@@ -122,6 +123,10 @@ public class CarrinhoComprasActivity extends AppCompatActivity {
                     return true;
                 }
             });
+        }
+
+        if (item.getItemId() == android.R.id.home) {
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

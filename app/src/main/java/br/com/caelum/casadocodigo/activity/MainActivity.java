@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.lang.ref.WeakReference;
 import java.util.List;
 
 import br.com.caelum.casadocodigo.R;
@@ -81,12 +80,12 @@ public class MainActivity extends AppCompatActivity implements BuscaLivrosDelega
 
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-         iconeMenu = new ActionBarDrawerToggle(this,
+        iconeMenu = new ActionBarDrawerToggle(this,
                 drawerLayout,
                 toolbar,
                 0,
                 0
-                ){
+        ) {
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
                 supportInvalidateOptionsMenu();

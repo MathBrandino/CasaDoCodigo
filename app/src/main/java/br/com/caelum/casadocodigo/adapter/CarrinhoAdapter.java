@@ -28,6 +28,7 @@ public class CarrinhoAdapter extends BaseAdapter {
         this.activity = activity;
     }
 
+
     @Override
     public int getCount() {
         return itens.size();

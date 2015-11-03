@@ -19,12 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.CarrinhoComprasActivity"
             android:label="@string/carrinho"
             android:windowSoftInputMode="stateHidden" />
-
     </application>
-
 </manifest>

@@ -1,11 +1,6 @@
 package br.com.caelum.casadocodigo.async;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.AsyncTask;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
-import android.view.View;
 
 import java.io.IOException;
 
@@ -26,7 +21,7 @@ public class EnviaJsonTask extends AsyncTask<String, Void, String> {
 
         ComunicaServidor comunicaServidor = new ComunicaServidor();
         try {
-           resposta = comunicaServidor.abreConexaoMandaJson(json[0]);
+            resposta = comunicaServidor.abreConexaoMandaJson(json[0]);
         } catch (IOException e) {
             e.printStackTrace();
         }
